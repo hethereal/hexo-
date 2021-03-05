@@ -1,0 +1,724 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C++-PrimerPlus-Chap05-Day09 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C++-PrimerPlus-Chap05-Day09
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-21 11:10" pubdate>
+        2021年2月21日 上午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2.6k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C++-PrimerPlus-Chap05-Day09</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月22日 早上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="5-2-while循环"><a href="#5-2-while循环" class="headerlink" title="5.2 while循环"></a>5.2 while循环</h3><p>while循环是没有初始化和更新部分的for循环，它只有测试条件和循环体；</p>
+<p>其执行顺序与原理基本同for循环一致；</p>
+<p>但要注意的是，因为while循环没有更新部分，所以要想最终停止循环，必须在循环体内添加一个可以影响测试条件值的部分；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a word:&quot;</span>;
+<span class="hljs-keyword">char</span> word[<span class="hljs-number">12</span>];
+<span class="hljs-built_in">cin</span> &gt;&gt; word;
+<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+<span class="hljs-keyword">while</span> (word[i])
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; word[i] &lt;&lt; <span class="hljs-string">&quot;: &quot;</span> &lt;&lt; <span class="hljs-keyword">int</span>(word[i]) &lt;&lt; <span class="hljs-built_in">endl</span>;
+    i++;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>Enter a word:Rossia<br>R: 82<br>o: 111<br>s: 115<br>s: 115<br>i: 105<br>a: 97</em></strong></p>
+<p>由于while循环没有初始化部分，所以我们需要先循环语句之前声明一个变量；</p>
+<p>对于while循环的测试部分，因为C-风格字符串以<code>&#39;\0&#39;</code>作为结束的标记，而<code>word[i]</code>显示的是字符的值，当i推进到空字符时，其值将为0，循环将结束；这样写更为简洁，当然也更常用；还有一种较为复杂的写法：<code>word[i] != 0</code>，最终的结果是一致的；</p>
+<p>另外，可以看到我们用<code>i++;</code>来影响while循环的测试条件部分；</p>
+<h4 id="for-VS-while"><a href="#for-VS-while" class="headerlink" title="for VS while"></a>for VS while</h4><p>通常来说，用for循环可以编写的程序用while循环也可以，反之也成立；所以本质上来说，for循环与while循环等效；</p>
+<p>但其二者有稍许不同：</p>
+<ol>
+<li>在for循环中省略了测试条件时，将认为条件为true；</li>
+<li>在for循环中，可以使用初始化语句声明一个局部变量，但在while中不可以；</li>
+<li>如果循环体中包括continue语句，情况将稍有不同；</li>
+</ol>
+<p>那么如何去判断何时该用哪个循环呢？</p>
+<p>通常，程序员使用for循环来为循环计数，因为for循环将所有相关信息放在同一个地方；在无法预知循环将执行多少次时，程序员优先使用while循环；</p>
+<h4 id="延时循环"><a href="#延时循环" class="headerlink" title="延时循环"></a>延时循环</h4><p>这里需要用到一个函数<code>clock()</code>，该函数被定义在头文件<code>ctime</code>中，用来返回程序开始执行后所用的系统时间；需要注意：clock返回的不一定是秒，其次该函数的返回类型不确定；</p>
+<p>针对这个问题，头文件<code>ctime</code>提供了针对性解决方案：首先，它定义了一个符号常量——<code>CLOCKS_PER_SEC</code>,该常量等于每秒钟包含的系统时间数；因此，将其乘以秒数，就得到了以系统时间表示的该秒数；将系统时间除以<code>CLOCKS_PER_SEC</code>就得到了秒数表示的该系统时间；</p>
+<p>其次，<code>ctime</code>定义了<code>clock_t</code>作为<code>clock()</code>返回类型的别名，然后由系统将其转换为其他类型（long或者unsigned int或其他适合系统的类型）；</p>
+<p>由此我们编写一个根据用户输入来延迟的程序：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">float</span> secs;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the delay time(s): &quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; secs;
+<span class="hljs-keyword">clock_t</span> delay = secs * CLOCKS_PER_SEC;<span class="hljs-comment">//将用户输入秒数转换为系统时间</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Starting...\a\n&quot;</span>;
+<span class="hljs-keyword">clock_t</span>  start = clock();<span class="hljs-comment">//声明一个start变量表示程序开始</span>
+
+<span class="hljs-keyword">while</span> (clock() - start &lt; delay)
+    ;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Done!\a\n&quot;</span>;</code></pre>
+<p>该函数以系统时间为单位，避免了转换为秒所消耗的时间；</p>
+<h5 id="类型别名"><a href="#类型别名" class="headerlink" title="类型别名"></a>类型别名</h5><p>类型别名是类型的另一个名字，本质上还是那个类型；</p>
+<p>C++为定义类型别名提供两种方式：</p>
+<ol>
+<li>使用预处理器；</li>
+<li>使用C++关键字：<code>tepedef</code>；</li>
+</ol>
+<p>首先来说第一种方法：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> BYTE char</span></code></pre>
+<p>比较简单，之前我们也提过，这样编写代码将使得预处理器在执行代码之前将源文件中所有的<code>char</code>替换为<code>BYTE</code>，通过这样的方法，将<code>BYTE</code>作为<code>char</code>的类型别名；</p>
+<p>然后就是通过关键字来定义类型别名：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">typedef</span> <span class="hljs-keyword">int</span> alis;</code></pre>
+<p>在这条语句中，将使得<code>alis</code>作为<code>int</code>的类型别名；</p>
+<p>与define相比，typedef是一种更好的选择，有时候也是唯一的选择；</p>
+<h3 id="5-3-do-while循环"><a href="#5-3-do-while循环" class="headerlink" title="5.3 do while循环"></a>5.3 do while循环</h3><p>不同于for循环和while循环的入口条件循环，do while是一种<strong>出口条件（exit condition）</strong>，即程序先执行循环体，然后再进行测试条件部分，这意味着do while循环至少执行一次；</p>
+<p>通常来说，入口条件循环比出口条件循环要好，因为它在进入循环之前对条件进行检查，但在某些情况下，出口条件循环要更好一些；</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the number from 1 to 10:\n&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Guess which number is my favorite.\n&quot;</span>;
+
+    <span class="hljs-keyword">int</span> num;
+
+    <span class="hljs-keyword">do</span>
+        &#123;
+            <span class="hljs-built_in">cin</span> &gt;&gt; num;
+        &#125; <span class="hljs-keyword">while</span> (num != <span class="hljs-number">8</span>);
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Yes,it&#x27;s my favorite number.&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>Enter the number from 1 to 10:</em></strong></p>
+<p><strong><em>Guess which number is my favorite.</em></strong><br><strong><em>4</em></strong><br><strong><em>6</em></strong><br><strong><em>8</em></strong></p>
+<p><strong><em>Yes,it’s my favorite number.</em></strong></p>
+<p>显然在这种情况下，do while要优于for和while循环；</p>
+<h3 id="5-4-基于范围的for循环"><a href="#5-4-基于范围的for循环" class="headerlink" title="5.4 基于范围的for循环"></a>5.4 基于范围的for循环</h3><p>在C++11中新增了一种循环——基于范围的for循环，它简化了针对于数组（或容器类——vector或array）的操作；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> i[<span class="hljs-number">5</span>] &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>&#125;;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> x:i)
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;</code></pre>
+<p>程序遍历数组内每个元素并输出；</p>
+<p>如果要修改数组内元素，则需要使用不同语法：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">double</span> x:i)
+&#123;
+    x *= <span class="hljs-number">0.8</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>0.8<br>1.6<br>2.4<br>3.2<br>4</p>
+</blockquote>
+<h3 id="5-5-循环和文本输入"><a href="#5-5-循环和文本输入" class="headerlink" title="5.5 循环和文本输入"></a>5.5 循环和文本输入</h3><p>在进行重复输入、逐字符获取文本输入时，使用循环是常见的；通常，使用while循环来完成这项任务；</p>
+<p>cin对象只此3种不同模式的单字符输入，其用户接口各不相同；</p>
+<h4 id="cin输入"><a href="#cin输入" class="headerlink" title="cin输入"></a>cin输入</h4><p>使用while循环执行此类任务时，我们需要知道程序何时停止，一般使用<strong>哨兵字符（sentinel character）</strong>——即选择某个特殊字符——来作为停止标记；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch;
+<span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (ch != <span class="hljs-string">&#x27;#&#x27;</span>)
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; ch;
+    ++count;
+    <span class="hljs-built_in">cin</span> &gt;&gt; ch;
+&#125;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The sum of characters is &quot;</span> &lt;&lt; count &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>上述程序将用户输入记录下来并统计字符数；</p>
+<p>程序输出如下：</p>
+<p><strong><em>I love the sun and the moon.#But I do love you so much.<br> Ilovethesunandthemoon.The sum of characters is 23</em></strong></p>
+<p>但可以看到该程序并没有原样输出——它省略了空格；其原因在于<code>cin</code>;它在读取char值时，同读取其他类型一样，将忽略空格和换行符；只有当用户按下回车键时，输入的内容才会被发送给程序；</p>
+<p>还有一个问题是，因为cin会暂时将当前输入缓冲，所以即使输入<code>&#39;#&#39;</code>，程序也没有及时停止，当用户按下回车键时，所有的字符序列被发送给程序，但程序在遇到哨兵字符时结束对剩余字符的处理；</p>
+<p>所以我们可以在哨兵字符后面输入更多字符；</p>
+<h4 id="cin-get-ch"><a href="#cin-get-ch" class="headerlink" title="cin.get(ch)"></a>cin.get(ch)</h4><p>使用cin对象的成员函数<code>get()</code>可以补救一部分cin的缺陷；</p>
+<p>它将读取下一个字符——即使是空格——并将其赋给变量<code>ch</code>；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch;
+<span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+
+<span class="hljs-keyword">while</span> (ch != <span class="hljs-string">&#x27;#&#x27;</span>)
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; ch;
+    ++count;
+    <span class="hljs-built_in">cin</span>.get(ch);
+&#125;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The sum of characters are &quot;</span> &lt;&lt; count &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>I love the sun and the moon.#But I do love you so much.<br>I love the sun and the moon.The sum of characters are 29</p>
+</blockquote>
+<p>可以看到，程序如实输出了空格；但输入依旧被缓冲，所以输入字符仍然比预定要多；</p>
+<h3 id="5-6-嵌套循环和二维数组"><a href="#5-6-嵌套循环和二维数组" class="headerlink" title="5.6 嵌套循环和二维数组"></a>5.6 嵌套循环和二维数组</h3><p>C++没有提供二维数组的类型，但用户可以创建每个元素都是数组的数组；</p>
+<p>例如：<code>int map[4][5];</code>可以看作是一个包含4个元素，且每个元素都是包含5个元素的数组的数组；进一步地，可以将4看成行，5看作列；于是我们可以把二维数组看作一个表格；</p>
+<p>如果要打印二维数组的每一个元素，需要使用for循环来遍历；</p>
+<h4 id="初始化二维数组"><a href="#初始化二维数组" class="headerlink" title="初始化二维数组"></a>初始化二维数组</h4><p>对二维数组初始化的方式同对结构数组的初始化方式基本雷同；都是要先初始化外层，然后再初始化里层；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> <span class="hljs-built_in">map</span>[<span class="hljs-number">4</span>][<span class="hljs-number">5</span>]
+&#123;
+    &#123;<span class="hljs-number">1</span>,<span class="hljs-number">2</span>,<span class="hljs-number">3</span>,<span class="hljs-number">4</span>,<span class="hljs-number">5</span>&#125;,
+    &#123;<span class="hljs-number">6</span>,<span class="hljs-number">7</span>,<span class="hljs-number">8</span>,<span class="hljs-number">9</span>,<span class="hljs-number">0</span>&#125;,
+    &#123;<span class="hljs-number">11</span>,<span class="hljs-number">13</span>,<span class="hljs-number">14</span>,<span class="hljs-number">43</span>,<span class="hljs-number">65</span>&#125;,
+    &#123;<span class="hljs-number">21</span>,<span class="hljs-number">32</span>,<span class="hljs-number">5</span>,<span class="hljs-number">4</span>,<span class="hljs-number">6</span>&#125;
+&#125;;</code></pre>
+<p><code>=</code>是可选的；</p>
+<p>然后我们来遍历一下：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> row = <span class="hljs-number">0</span>; row &lt; <span class="hljs-number">4</span>; row++)
+&#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> col = <span class="hljs-number">0</span>; col &lt; <span class="hljs-number">5</span>; col++)
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">map</span>[row][col] &lt;&lt; <span class="hljs-string">&quot;  &quot;</span>;
+    &#125;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>1  2  3  4  5<br>6  7  8  9  0<br>11  13  14  43  65<br>21  32  5  4  6</p>
+</blockquote>
+<h4 id="二维数组的使用"><a href="#二维数组的使用" class="headerlink" title="二维数组的使用"></a>二维数组的使用</h4><p>二维数组的使用本质上来说与一维数组的使用大同小异，都是可以按照索引去访问数组成员；</p>
+<p>同时，二维数组也可以同指针数组相结合，例如：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//用来展示5年间4个城市的最大温度</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> Cities = <span class="hljs-number">4</span>;<span class="hljs-comment">//声明城市常量</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> Years = <span class="hljs-number">5</span>;<span class="hljs-comment">//声明年份常量</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//声明一个指针数组，每一个元素都是一个指针，可被初始化一个字符串地址</span>
+    <span class="hljs-keyword">char</span> * city[Cities]
+    &#123;
+        <span class="hljs-string">&quot;Gribble City&quot;</span>,
+        <span class="hljs-string">&quot;Gribbletown&quot;</span>,
+        <span class="hljs-string">&quot;New Gribble&quot;</span>,
+        <span class="hljs-string">&quot;San Gribble&quot;</span>
+    &#125;;
+
+    <span class="hljs-comment">//声明一个二维数组并初始化，记录4个城市5年间的最大温度情况</span>
+    <span class="hljs-keyword">int</span> maxtemps[Cities][Years]
+    &#123;
+            &#123;<span class="hljs-number">97</span>,<span class="hljs-number">96</span>,<span class="hljs-number">98</span>,<span class="hljs-number">97</span>,<span class="hljs-number">99</span>&#125;,
+            &#123;<span class="hljs-number">101</span>,<span class="hljs-number">106</span>,<span class="hljs-number">108</span>,<span class="hljs-number">107</span>,<span class="hljs-number">109</span>&#125;,
+            &#123;<span class="hljs-number">87</span>,<span class="hljs-number">86</span>,<span class="hljs-number">88</span>,<span class="hljs-number">87</span>,<span class="hljs-number">89</span>&#125;,
+            &#123;<span class="hljs-number">93</span>,<span class="hljs-number">94</span>,<span class="hljs-number">93</span>,<span class="hljs-number">92</span>,<span class="hljs-number">91</span>&#125;,
+    &#125;;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Maximum temperatures for 2009 - 2012\n\n&quot;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; Cities; i++)<span class="hljs-comment">//用来输出城市</span>
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; city[i] &lt;&lt; <span class="hljs-string">&quot;:\t&quot;</span>;
+        <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; Years; j++)<span class="hljs-comment">//输出各年份温度</span>
+        &#123;
+            <span class="hljs-built_in">cout</span> &lt;&lt; maxtemps[i][j] &lt;&lt; <span class="hljs-string">&quot;\t&quot;</span>;
+        &#125;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    &#125;
+
+
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Maximum temperatures for 2009 - 2012</p>
+<p>Gribble City:   97      96      98      97      99<br>Gribbletown:    101     106     108     107     109<br>New Gribble:    87      86      88      87      89<br>San Gribble:    93      94      93      92      91</p>
+</blockquote>
+<p>改程序输出4个城市5年间的最大温度情况；可以看到它将一个char指针数组同一个int类型的二维数组相结合使用；</p>
+<p>至此，第五章全部结束；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/22/C-PrimerPlus-Chap05-exercise-Day09/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap05-exercise-Day09</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/19/C-PrimerPlus-Chap05-Day08/">
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap05-Day08</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

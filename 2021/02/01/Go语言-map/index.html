@@ -1,0 +1,626 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>Go语言-map - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Go语言-map
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-01 19:15" pubdate>
+        2021年2月1日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      970 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Go语言-map</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月9日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="map"><a href="#map" class="headerlink" title="map"></a>map</h2><p>Go语言中，<code>map</code>是一种无序<code>键值对(key-value)</code>的数据结构；为引用类型，须初始化后使用；</p>
+<p>引用类型默认值为<code>nil</code></p>
+<h3 id="map的声明与初始化"><a href="#map的声明与初始化" class="headerlink" title="map的声明与初始化"></a>map的声明与初始化</h3><p>共有两种方法：</p>
+<pre><code class="hljs go"><span class="hljs-comment">//map的声明与初始化</span>
+<span class="hljs-comment">//先声明后初始化</span>
+<span class="hljs-keyword">var</span> a <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>        <span class="hljs-comment">//声明一个map，键为string类型，值为int类型</span>
+a = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>, <span class="hljs-number">5</span>) <span class="hljs-comment">//初始化</span>
+fmt.Printf(<span class="hljs-string">&quot;%T  %v&quot;</span>, a, a)  <span class="hljs-comment">//map[string]int  map[]</span>
+a[<span class="hljs-string">&quot;bili&quot;</span>] = <span class="hljs-number">4</span>
+a[<span class="hljs-string">&quot;ten&quot;</span>] = <span class="hljs-number">3</span>
+a[<span class="hljs-string">&quot;you&quot;</span>] = <span class="hljs-number">2</span>
+a[<span class="hljs-string">&quot;aq&quot;</span>] = <span class="hljs-number">1</span>
+fmt.Printf(<span class="hljs-string">&quot;a：%#v&quot;</span>, a)
+<span class="hljs-comment">//a：map[string]int&#123;&quot;aq&quot;:1, &quot;bili&quot;:4, &quot;ten&quot;:3, &quot;you&quot;:2&#125;</span>
+
+<span class="hljs-comment">//声明的同时初始化</span>
+x := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">string</span>&#123;
+	<span class="hljs-number">1</span>: <span class="hljs-string">&quot;C++&quot;</span>,
+	<span class="hljs-number">2</span>: <span class="hljs-string">&quot;Java&quot;</span>,
+	<span class="hljs-number">3</span>: <span class="hljs-string">&quot;Python&quot;</span>,
+	<span class="hljs-number">4</span>: <span class="hljs-string">&quot;Golang&quot;</span>,
+&#125;
+fmt.Printf(<span class="hljs-string">&quot;x：%#v&quot;</span>, x)
+<span class="hljs-comment">//x：map[int]string&#123;1:&quot;C++&quot;, 2:&quot;Java&quot;, 3:&quot;Python&quot;, 4:&quot;Golang&quot;&#125;</span></code></pre>
+<h3 id="map的使用"><a href="#map的使用" class="headerlink" title="map的使用"></a>map的使用</h3><h4 id="判断某个键是否存在于map中"><a href="#判断某个键是否存在于map中" class="headerlink" title="判断某个键是否存在于map中"></a>判断某个键是否存在于map中</h4><p>直接代码展示：</p>
+<pre><code class="hljs go"><span class="hljs-comment">//判断某个键是否存在</span>
+p := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>&#123;
+	<span class="hljs-string">&quot;Jack&quot;</span>:  <span class="hljs-number">1</span>,
+	<span class="hljs-string">&quot;Tom&quot;</span>:   <span class="hljs-number">2</span>,
+	<span class="hljs-string">&quot;Susan&quot;</span>: <span class="hljs-number">3</span>,
+&#125;
+value, ok := p[<span class="hljs-string">&quot;Jack&quot;</span>]
+fmt.Println(value, ok) <span class="hljs-comment">//1 true</span>
+value1, ok1 := p[<span class="hljs-string">&quot;Java&quot;</span>]
+fmt.Println(value1, ok1) <span class="hljs-comment">//0 false</span></code></pre>
+<p>如果<code>键(key)</code> 存在于<code>map</code>中，则<code>value</code>返回此<code>键(key)</code>对应的<code>值(value)</code>，<code>ok</code>返回<code>true</code>；否则<code>value</code>返回<code>0值</code>（不一定是数字0），<code>ok</code>返回<code>false</code>；</p>
+<h3 id="map的遍历"><a href="#map的遍历" class="headerlink" title="map的遍历"></a>map的遍历</h3><pre><code class="hljs go">p := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>&#123;
+	<span class="hljs-string">&quot;Jack&quot;</span>:  <span class="hljs-number">1</span>,
+	<span class="hljs-string">&quot;Tom&quot;</span>:   <span class="hljs-number">2</span>,
+	<span class="hljs-string">&quot;Susan&quot;</span>: <span class="hljs-number">3</span>,
+&#125;
+
+<span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> p &#123;
+	fmt.Println(k, v)
+&#125;
+<span class="hljs-comment">//Tom 2</span>
+<span class="hljs-comment">//Susan 3</span>
+<span class="hljs-comment">//Jack 1</span></code></pre>
+<p>要注意的是，因为<code>map</code>本身无序的，所以打印出来的键值对顺序与添加的顺序无关</p>
+<p>当然，也可以只遍历<code>key</code>（不写value即可）,也可以只遍历<code>value</code>（将<code>k</code>替换为<code>_</code>）；</p>
+<h4 id="按照顺序遍历map"><a href="#按照顺序遍历map" class="headerlink" title="按照顺序遍历map"></a>按照顺序遍历map</h4><p>由于map为无序结构，所以按照常规方法遍历得到的也是无序的；如果想map按照固定顺序遍历，需要采取一定手段：如借助于切片的<code>sort</code>包：</p>
+<pre><code class="hljs go"><span class="hljs-comment">//按照固定顺序去遍历map</span>
+<span class="hljs-keyword">var</span> students = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">int</span>]<span class="hljs-keyword">string</span>, <span class="hljs-number">100</span>) <span class="hljs-comment">//创建一个容量为100的map</span>
+
+<span class="hljs-comment">//添加50个数据</span>
+<span class="hljs-keyword">for</span> i := <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">50</span>; i++ &#123;
+	key := rand.Intn(<span class="hljs-number">50</span>)               <span class="hljs-comment">//生成0~50的随机整数</span>
+	value := fmt.Sprintf(<span class="hljs-string">&quot;stu%02d&quot;</span>, i) <span class="hljs-comment">//将i以字符串格式输出</span>
+	students[key] = value              <span class="hljs-comment">//将生成的key与value装进map中</span>
+&#125;
+
+<span class="hljs-comment">// for k, v := range students &#123;</span>
+<span class="hljs-comment">// 	fmt.Println(k, v)</span>
+<span class="hljs-comment">// &#125;</span>
+
+<span class="hljs-comment">//1.将key值取出来存入到切片中</span>
+<span class="hljs-keyword">var</span> s = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">0</span>, <span class="hljs-number">100</span>) <span class="hljs-comment">//创建一个容量为100，大小为0，[]int类型的切片</span>
+<span class="hljs-keyword">for</span> key := <span class="hljs-keyword">range</span> students &#123; <span class="hljs-comment">//从students中取出key并追加到s中</span>
+	s = <span class="hljs-built_in">append</span>(s, key)
+&#125;
+<span class="hljs-comment">// fmt.Println(s)</span>
+<span class="hljs-comment">//2.对切片中的值进行排序</span>
+sort.Ints(s)
+<span class="hljs-comment">// fmt.Println(s)</span>
+<span class="hljs-comment">//3.按照排序之后的key对students进行排序</span>
+<span class="hljs-keyword">for</span> _, key := <span class="hljs-keyword">range</span> s &#123;
+	fmt.Println(key, students[key])
+&#125;</code></pre>
+<h3 id="map中的删除操作"><a href="#map中的删除操作" class="headerlink" title="map中的删除操作"></a>map中的删除操作</h3><p>使用内置的<code>delete()</code>函数</p>
+<pre><code class="hljs go">t := <span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">bool</span>&#123;
+	<span class="hljs-string">&quot;S&quot;</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-string">&quot;T&quot;</span>: <span class="hljs-literal">false</span>,
+	<span class="hljs-string">&quot;P&quot;</span>: <span class="hljs-literal">true</span>,
+	<span class="hljs-string">&quot;Q&quot;</span>: <span class="hljs-literal">false</span>,
+&#125;
+<span class="hljs-comment">//删除&quot;S&quot; 键值对</span>
+<span class="hljs-built_in">delete</span>(t, <span class="hljs-string">&quot;S&quot;</span>)
+fmt.Println(t)
+<span class="hljs-comment">//map[P:true Q:false T:false]</span>
+</code></pre>
+<h3 id="map的切片与切片的map"><a href="#map的切片与切片的map" class="headerlink" title="map的切片与切片的map"></a>map的切片与切片的map</h3><p>切片为数据集合，map为一种数据结构，所以，一种元素类型为map的切片也是存在的；</p>
+<p>不同于其他元素类型的切片，元素类型为<code>map</code>的切片需要有两步初始化，即<code>切片(Slice)</code>初始化和<code>map</code>初始化</p>
+<pre><code class="hljs go"><span class="hljs-comment">//元素类型为map的切片</span>
+<span class="hljs-keyword">var</span> mapSlice = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>, <span class="hljs-number">8</span>, <span class="hljs-number">8</span>) <span class="hljs-comment">//完成切片的初始化，此时默认为nil</span>
+mapSlice[<span class="hljs-number">0</span>] = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>]<span class="hljs-keyword">int</span>, <span class="hljs-number">8</span>)       <span class="hljs-comment">//完成map的初始化</span>
+
+mapSlice[<span class="hljs-number">0</span>][<span class="hljs-string">&quot;Java&quot;</span>] = <span class="hljs-number">100</span> <span class="hljs-comment">//对map添加键值对</span>
+fmt.Println(mapSlice) 	  <span class="hljs-comment">//[map[Java:100] map[] map[] map[] map[] map[] map[] map[]]</span></code></pre>
+<p>与此对应，也存在<strong>值为map的切片</strong></p>
+<pre><code class="hljs go"><span class="hljs-comment">//值为切片的map</span>
+<span class="hljs-keyword">var</span> sliceMap = <span class="hljs-built_in">make</span>(<span class="hljs-keyword">map</span>[<span class="hljs-keyword">string</span>][]<span class="hljs-keyword">int</span>, <span class="hljs-number">8</span>)
+fmt.Println(sliceMap)
+sliceMap[<span class="hljs-string">&quot;中国&quot;</span>] = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">8</span>) <span class="hljs-comment">//切片的初始化</span>
+sliceMap[<span class="hljs-string">&quot;中国&quot;</span>][<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>
+sliceMap[<span class="hljs-string">&quot;中国&quot;</span>][<span class="hljs-number">1</span>] = <span class="hljs-number">200</span>
+
+<span class="hljs-comment">//遍历sliceMap</span>
+<span class="hljs-keyword">for</span> k, v := <span class="hljs-keyword">range</span> sliceMap &#123;
+	fmt.Println(k, v)
+&#125;</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/Go%E8%AF%AD%E8%A8%80/">Go语言</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/02/Go%E8%AF%AD%E8%A8%80-%E5%87%BD%E6%95%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Go语言-函数</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/01/Go%E8%AF%AD%E8%A8%80-%E5%88%87%E7%89%87%E7%BB%83%E4%B9%A0/">
+                        <span class="hidden-mobile">Go语言-切片练习</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

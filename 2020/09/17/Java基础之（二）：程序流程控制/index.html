@@ -1,0 +1,687 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>Java基础之（二）：程序流程控制 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Java基础之（二）：程序流程控制
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2020-09-17 13:01" pubdate>
+        2020年9月17日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.3k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Java基础之（二）：程序流程控制</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月9日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="基本概述"><a href="#基本概述" class="headerlink" title="基本概述"></a>基本概述</h2><h3 id="概念"><a href="#概念" class="headerlink" title="概念"></a>概念</h3><ul>
+<li>流程控制语句是用来控制程序中语句执行顺序的语句，可以把语句合成能完成一定功能的小逻辑模块</li>
+</ul>
+<h3 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>顺序结构：程序从上到下执行，没有跳转和判断</li>
+<li>分支结构：根据条件选择性地执行某段代码</li>
+<li>循环结构：重复地执行某段代码</li>
+</ul>
+<hr>
+<h2 id="分支结构"><a href="#分支结构" class="headerlink" title="分支结构"></a>分支结构</h2><h3 id="if-else结构"><a href="#if-else结构" class="headerlink" title="if-else结构"></a>if-else结构</h3><blockquote>
+<blockquote>
+<p>三种格式一览</p>
+</blockquote>
+<pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;
+  执行代码块
+&#125;</code></pre>
+<pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式)&#123;
+  执行代码块<span class="hljs-number">1</span>
+&#125;<span class="hljs-keyword">else</span>&#123;
+  执行代码块<span class="hljs-number">2</span>
+&#125;</code></pre>
+<pre><code class="hljs java"><span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">1</span>)&#123;
+  执行代码块<span class="hljs-number">1</span>
+&#125;<span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span>(条件表达式<span class="hljs-number">2</span>)&#123;
+  执行代码块<span class="hljs-number">2</span>
+&#125;
+……
+<span class="hljs-keyword">else</span>&#123;
+  执行代码块n
+&#125;</code></pre>
+<p>​    </p>
+</blockquote>
+<h3 id="说明"><a href="#说明" class="headerlink" title="说明"></a>说明</h3><ol>
+<li>实际开发中，else是可选的，可有可无</li>
+<li>针对条件表达式：<ul>
+<li>如果多个表达式之间是“互斥”关系，即无交集，则顺序无所谓‘</li>
+<li>如果多个表达式之间有交集，则需要根据实际情况，考虑清楚应该将哪个结构声明在上面</li>
+<li>如果多个表达式之间有包含关系，通常情况下，范围小的需要声明在范围大的上面，否则范围小的没机会被执行</li>
+<li>if-else结构是可以嵌套使用的</li>
+<li>if-else结构中的执行语句如果只有一行，对应的{}可以省略，但是不建议省略</li>
+<li>else就近原则：于最近的if配对</li>
+</ul>
+</li>
+</ol>
+<h3 id="switch-case结构"><a href="#switch-case结构" class="headerlink" title="switch-case结构"></a>switch-case结构</h3><ol>
+<li><p>结构：</p>
+<ul>
+<li><p>Switch(表达式){</p>
+<p> case 常量1:</p>
+<p>语句1;</p>
+<p>//break;</p>
+<p>case 常量2:</p>
+<p>语句2;</p>
+<p>//break;</p>
+<p>…………</p>
+<p>case 常量n:</p>
+<p>语句n;</p>
+<p>//break;</p>
+<p>default:</p>
+<p>语句;</p>
+<p>//break;</p>
+</li>
+</ul>
+</li>
+<li><p>说明：</p>
+<ul>
+<li>根绝switch表达式中的值，依次匹配各个case中的常量，一旦匹配成功，则进入相应的case结构中，调用其执行语句，当调用完后，仍然会向下执行其他case结构中的执行语句，直到遇到break关键字或者到此switch-case结构末尾结束</li>
+<li>break，可以使用在switch-case结构中，表示一旦执行到此关键字，就跳出switch-case结构</li>
+<li>switch-case结构中的表达式只能是如下六种之一：byte,short,char,int,枚举类型（JDK5.0新增），String类型（JDK7.0新增）</li>
+<li>case之后只能声明常量，不能声明范围</li>
+<li>break关键字是可选的，根据实际开发情况选择加或者不加</li>
+<li>default功能与else相当，也是可选的，而且位置相当灵活</li>
+<li>如果多个switch-case中的执行语句相同，可以考虑合并</li>
+</ul>
+</li>
+</ol>
+<hr>
+<h3 id="if-else与switch-case的区别"><a href="#if-else与switch-case的区别" class="headerlink" title="if-else与switch-case的区别"></a>if-else与switch-case的区别</h3><ol>
+<li>凡是可以使用switch-case结构的，都可转换为if-else，反之不成立</li>
+<li>二者均可的情况下，同时，switch表达式的取值情况不太多，优先使用switch-case</li>
+</ol>
+<hr>
+<h2 id="循环结构"><a href="#循环结构" class="headerlink" title="循环结构"></a>循环结构</h2><h3 id="概述"><a href="#概述" class="headerlink" title="概述"></a>概述</h3><blockquote>
+<p>在某些条件满足的情况下，反复执行特定代码的功能</p>
+</blockquote>
+<h3 id="分类-1"><a href="#分类-1" class="headerlink" title="分类"></a>分类</h3><ul>
+<li>for循环</li>
+<li>while循环</li>
+<li>do-while循环</li>
+</ul>
+<h3 id="循环语句的四个组成部分"><a href="#循环语句的四个组成部分" class="headerlink" title="循环语句的四个组成部分"></a>循环语句的四个组成部分</h3><ul>
+<li>初始化部分（init_statement）</li>
+<li>循环条件部分（test_exp）</li>
+<li>循环体部分（body_statement）</li>
+<li>迭代部分（alter_statement）</li>
+</ul>
+<h3 id="for循环"><a href="#for循环" class="headerlink" title="for循环"></a>for循环</h3><ol>
+<li><p>格式</p>
+<pre><code class="hljs java"><span class="hljs-keyword">for</span>(<span class="hljs-number">1</span>初始化条件;<span class="hljs-number">2</span>循环条件;<span class="hljs-number">4</span>迭代条件)&#123;
+  <span class="hljs-number">3</span>循环体
+&#125;</code></pre></li>
+<li><p>执行过程</p>
+<p>1-2-3-4-2-3-4-2-3-4……2</p>
+</li>
+</ol>
+<h3 id="while循环"><a href="#while循环" class="headerlink" title="while循环"></a>while循环</h3><ol>
+<li><p>结构</p>
+<pre><code class="hljs java"><span class="hljs-number">1</span>初始化条件;
+<span class="hljs-keyword">while</span>(<span class="hljs-number">2</span>循环条件)&#123;
+	<span class="hljs-number">3</span>循环体;
+	<span class="hljs-number">4</span>迭代条件;
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>说明</p>
+<ul>
+<li>写while循环不要忘记写迭代条件，一旦丢了，就可能导致死循环</li>
+<li>for循环可以和while循环相互转换</li>
+<li>区别：for循环和while循环的初始化条件部分的调用范围不同</li>
+</ul>
+</li>
+</ol>
+<h3 id="do-while循环"><a href="#do-while循环" class="headerlink" title="do-while循环"></a>do-while循环</h3><ol>
+<li><p>结构：</p>
+<pre><code class="hljs java"><span class="hljs-number">1</span>初始化条件;
+<span class="hljs-keyword">do</span>&#123;
+  <span class="hljs-number">3</span>循环体;
+  <span class="hljs-number">4</span>迭代条件;
+&#125;<span class="hljs-keyword">while</span>(<span class="hljs-number">2</span>循环条件)</code></pre></li>
+<li><p>执行过程</p>
+<p>1-3-4-2-3-4-2……2</p>
+</li>
+<li><p>说明：do-while循环至少执行一次循环体</p>
+</li>
+</ol>
+<hr>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><h3 id="最简单的死循环"><a href="#最简单的死循环" class="headerlink" title="最简单的死循环"></a>最简单的死循环</h3><ul>
+<li>while(true){</li>
+</ul>
+<p>  }</p>
+<ul>
+<li>for(;;){</li>
+</ul>
+<p>  }</p>
+<h3 id="结束循环的方式"><a href="#结束循环的方式" class="headerlink" title="结束循环的方式"></a>结束循环的方式</h3><ol>
+<li>在循环部分返回false</li>
+<li>在循环体部分执行break</li>
+</ol>
+<h3 id="嵌套循环"><a href="#嵌套循环" class="headerlink" title="嵌套循环"></a>嵌套循环</h3><ol>
+<li>将一个循环结构A声明在另一个循环结构B的循环体中，就构成了嵌套循环</li>
+<li>内层循环遍历一遍，相当于外层循环体执行了一次</li>
+<li>外层循环控制行数，内层循环控制列数</li>
+</ol>
+<h3 id="特殊关键字的使用"><a href="#特殊关键字的使用" class="headerlink" title="特殊关键字的使用"></a>特殊关键字的使用</h3><ul>
+<li>break：在switch-case、循环结构中使用，结束当前循环</li>
+<li>continue：在循环结构中使用，结束当次循环</li>
+<li>相同点：在关键字的后面不能声明执行语句</li>
+<li>如果想结束指定的某一层循环，则再次循环前加标签，然后在break后加标签，指明要结束的标签</li>
+</ul>
+<h3 id="Scanner类的使用："><a href="#Scanner类的使用：" class="headerlink" title="Scanner类的使用："></a>Scanner类的使用：</h3><ol>
+<li><p>作用：从键盘获取输入值</p>
+</li>
+<li><p>具体实现步骤：</p>
+<blockquote>
+<ol>
+<li><p>导包：import java.util.Scanner;</p>
+</li>
+<li><p>Scanner的实例化：Scanner     scan = new Scanner(System.in);</p>
+</li>
+<li><p>调用Scanner类的相关方法，来获取指定类型的变量</p>
+</li>
+</ol>
+</blockquote>
+</li>
+<li><p>注意：需要根据相应的方法，输入指定类型的值。如果输入的数据类型与要求的类型不匹配，会报异常：InputMissionException，导致程序终止</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2020/09/30/%E6%95%B0%E7%BB%84%E6%A6%82%E8%BF%B0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">数组概述</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2020/09/16/Java%E5%9F%BA%E7%A1%80%E4%B9%8B%EF%BC%88%E4%B8%80%EF%BC%89%EF%BC%9A%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95/">
+                        <span class="hidden-mobile">Java基本语法梳理</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,1108 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C-PrimerPlus-Chap06-Day10 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C-PrimerPlus-Chap06-Day10
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-24 16:35" pubdate>
+        2021年2月24日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.8k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C-PrimerPlus-Chap06-Day10</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年3月6日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="Chap-06-分支语句与逻辑运算符"><a href="#Chap-06-分支语句与逻辑运算符" class="headerlink" title="Chap 06 分支语句与逻辑运算符"></a>Chap 06 分支语句与逻辑运算符</h2><h3 id="6-1-if语句"><a href="#6-1-if语句" class="headerlink" title="6.1 if语句"></a>6.1 if语句</h3><p>if语句是分支选择结构，用来帮助程序决定是否执行某个指令；</p>
+<p>if语句有两种模式：if语句和if-else语句；</p>
+<p>其中，if语句语法格式为：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">if</span> (test-condition)
+    statement</code></pre>
+<p>测试条件部分通常为关系表达式；如同循环语句一样，测试条件将被强制转换为bool类型；即非零为true，零为false；</p>
+<p>statement部分既可以是一条语句，也可以是语句块；</p>
+<p>if-else语句语法格式为：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">if</span> (test-conditon)
+    statement1
+<span class="hljs-keyword">else</span> 
+    statement2</code></pre>
+<p>无论是if语句还是if-else语句，它们的整体都被视为一条语句；</p>
+<p>除此之外，还有一个模式为：if-else-if-else语句，其实质是将一个if-else嵌套在另一个if-else中；用来帮助选择三个或三个以上的选项：</p>
+<p>鉴于if-else结构比较好理解，所以这里用一个例子来展示一个具体用法，然后不再赘述：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*此程序通过用户输入来猜数字*/</span>
+
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> num = <span class="hljs-number">18</span>;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a number to find my favorite(0-100):&quot;</span>;
+    <span class="hljs-keyword">int</span> user_in;
+
+    <span class="hljs-keyword">do</span> &#123;
+        <span class="hljs-built_in">cin</span> &gt;&gt; user_in;
+        <span class="hljs-keyword">if</span> (user_in &lt; num)
+        &#123;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Too low,guess again:&quot;</span>;
+        &#125;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (user_in &gt; num)
+        &#123;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Too high,guess again:&quot;</span>;
+        &#125;
+        <span class="hljs-keyword">else</span>
+        &#123;
+           <span class="hljs-built_in">cout</span> &lt;&lt; user_in &lt;&lt; <span class="hljs-string">&quot; is right.&quot;</span>;
+        &#125;
+    &#125; <span class="hljs-keyword">while</span> (user_in != num);
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Enter a number to find my favorite(0-100):50<br>Too high,guess again:25<br>Too high,guess again:12<br>Too low,guess again:16<br>Too low,guess again:17<br>Too low,guess again:18<br>18 is right.</p>
+</blockquote>
+<h3 id="6-2-逻辑表达式"><a href="#6-2-逻辑表达式" class="headerlink" title="6.2 逻辑表达式"></a>6.2 逻辑表达式</h3><p>总共分为三个：<code>OR(||)</code>、<code>AND(&amp;&amp;)</code>、<code>NOT(!)</code>；</p>
+<p>其表示意义分别为：</p>
+<ul>
+<li><strong>||</strong>——两侧表达式只要有一个为true则整个表达式的值为true；</li>
+<li><strong>&amp;&amp;</strong>——两侧表达式只要有一个为false则整个表达式为false；</li>
+<li><strong>!</strong>——对表达式取反操作，表达式为true，则取反后为false；</li>
+</ul>
+<p>这三个逻辑运算符有如下性质：</p>
+<ol>
+<li><code>||</code>和<code>&amp;&amp;</code>被视为一个顺序点，即先修改左侧的值再对右侧的值进行判定；对于<code>||</code>来说，如果左侧表达式为true，则不必对右侧表达式进行判定，结果即为true；对于<code>&amp;&amp;</code>来说，如果左侧表达式为false，则将跳过对右侧表达式的判定，结果即为false；</li>
+<li>运算优先级问题上，<code>||</code>和<code>&amp;&amp;</code>运算符的优先级都低于关系运算符；而<code>!</code>运算符的优先级高于所有的关系运算符和算术运算符；</li>
+<li>为了防止某些计算机无法键入逻辑运算符的符号，C++将<code>or</code>、<code>and</code>和<code>not</code>定义为保留字，这意味着不能使用它们作为变量名等；</li>
+</ol>
+<p>（PS：对于逻辑运算符这一块的内容比较好理解，运用起来也比较容易，为了节省篇幅及时间，我们不再赘述；）</p>
+<h3 id="6-3-字符函数库cctype"><a href="#6-3-字符函数库cctype" class="headerlink" title="6.3 字符函数库cctype"></a>6.3 字符函数库cctype</h3><p>函数库<code>cctype</code>主要提供了一些确定字符是否为数字、字母大小写、标点符号等的函数；这些函数的原型被定义在头文件<code>cctype</code>中；其示例程序如下：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cctype&gt;</span></span>
+
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//统计用户输入的符号数，当用户键入&#x27;@&#x27;程序停止</span>
+
+    <span class="hljs-keyword">int</span> whitspaces = <span class="hljs-number">0</span>;<span class="hljs-comment">//空白</span>
+    <span class="hljs-keyword">int</span> characters = <span class="hljs-number">0</span>;<span class="hljs-comment">//字母</span>
+    <span class="hljs-keyword">int</span> punct = <span class="hljs-number">0</span>;<span class="hljs-comment">//标点符号</span>
+    <span class="hljs-keyword">int</span> digits = <span class="hljs-number">0</span>;<span class="hljs-comment">//数字</span>
+    <span class="hljs-keyword">int</span> others = <span class="hljs-number">0</span>;<span class="hljs-comment">//其他</span>
+
+    <span class="hljs-keyword">char</span> user_in;<span class="hljs-comment">//用户输入</span>
+
+    <span class="hljs-built_in">cin</span>.get(user_in);
+
+    <span class="hljs-keyword">while</span> (user_in != <span class="hljs-string">&#x27;@&#x27;</span>)
+    &#123;
+        <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isalpha</span>(user_in))
+        &#123;
+            characters++;
+        &#125;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isdigit</span>(user_in))
+        &#123;
+            digits++;
+        &#125;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">isspace</span>(user_in))
+        &#123;
+            whitspaces++;
+        &#125;
+        <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (<span class="hljs-built_in">ispunct</span>(user_in))
+        &#123;
+            punct++;
+        &#125;
+        <span class="hljs-keyword">else</span>
+        &#123;
+            others++;
+        &#125;
+
+        <span class="hljs-built_in">cin</span>.get(user_in);<span class="hljs-comment">//获取下次输入</span>
+    &#125;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; characters &lt;&lt; <span class="hljs-string">&quot; characters.\n&quot;</span>
+        &lt;&lt; whitspaces &lt;&lt; <span class="hljs-string">&quot; whitespace.\n&quot;</span>
+        &lt;&lt; punct &lt;&lt; <span class="hljs-string">&quot; puncts.\n&quot;</span>
+        &lt;&lt; digits &lt;&lt; <span class="hljs-string">&quot; digits.\n&quot;</span>
+        &lt;&lt; others &lt;&lt; <span class="hljs-string">&quot; others.\n&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>I love the sun and I love the moon,too.<br>But when I fsleep,I always hope I will be the sun.<br>When I was 24,I still dream of it.I hope I will be<br>best in 2027.”OK,It’s my favorite life.” I hope so.<br>@<br>142 characters.<br>45 whitespace.<br>13 puncts.<br>6 digits.<br>0 others.</p>
+</blockquote>
+<p>为了方便记忆，特提供表格一张：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">函数名称</th>
+<th style="text-align:center">返回值</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">isalnum()</td>
+<td style="text-align:center">如果参数是字母数字，即字母或数字，则返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isalpha()</td>
+<td style="text-align:center">如果参数是字母，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">iscntrl()</td>
+<td style="text-align:center">如果参数是控制字符，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isdigit()</td>
+<td style="text-align:center">如果参数是数字（0-9），该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isgraph()</td>
+<td style="text-align:center">如果参数是除空格之外的打印字符，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">islower()</td>
+<td style="text-align:center">如果参数是小写字母，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isprint()</td>
+<td style="text-align:center">如果参数是打印字符，包括空格，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">ispunct()</td>
+<td style="text-align:center">如果参数是标点符号，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isspace()</td>
+<td style="text-align:center">如果参数是标准空白字符，如空格、进纸、换行符、回车、水平制表符和垂直制表符，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isupper()</td>
+<td style="text-align:center">如果参数是大写字母，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">isxdigit()</td>
+<td style="text-align:center">如果参数是十六进制数字，该函数返回true</td>
+</tr>
+<tr>
+<td style="text-align:center">tolower()</td>
+<td style="text-align:center">如果参数是大写字符，则返回其小写，否则返回参数</td>
+</tr>
+<tr>
+<td style="text-align:center">toupper()</td>
+<td style="text-align:center">如果参数是小写字符，则返回其大写，否则返回参数</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h3 id="6-4-条件运算符"><a href="#6-4-条件运算符" class="headerlink" title="6.4 条件运算符?:"></a>6.4 条件运算符<code>?:</code></h3><p><code>?:</code>条件运算符是C++中唯一一个需要三个操作数的运算符，常用来替代if-else；</p>
+<p>其结构如下：</p>
+<pre><code class="hljs c++">expression1?expression2:expression3</code></pre>
+<p>如果表达式1的结果为true则整个表达式的值为表达式2的值，否则为表达式3的值；</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//输出最大值</span>
+    <span class="hljs-keyword">int</span> a_num;
+    <span class="hljs-keyword">int</span> b_num;
+    <span class="hljs-keyword">int</span> max_num;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter two num:\n&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; a_num &gt;&gt; b_num;
+
+    max_num = (a_num &gt; b_num) ? a_num : b_num;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The max number is &quot;</span> &lt;&lt; max_num &lt;&lt; <span class="hljs-string">&quot;.\n&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Enter two num:<br>2 4<br>The max number is 4.</p>
+</blockquote>
+<p>条件运算符与if-else不同的点是：</p>
+<p>条件表达式生成一个表达式，因此是一个值，可以将其赋给变量或者放到一个更大的表达式中；</p>
+<p>当代码复杂时，运用if-else可以表达的更清晰；</p>
+<h3 id="6-5-switch语句"><a href="#6-5-switch语句" class="headerlink" title="6.5 switch语句"></a>6.5 switch语句</h3><p><code>switch</code>语句在C++中作为一种分支语句，专门用来处理列表形式的选择结构；</p>
+<p>其语法结构为：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">switch</span> (integer-express)
+&#123;
+    <span class="hljs-keyword">case</span> label <span class="hljs-number">1</span>:statement
+    <span class="hljs-keyword">case</span> label <span class="hljs-number">2</span>:statement
+    ......
+    <span class="hljs-keyword">default</span>: statement
+&#125;</code></pre>
+<p>同if-else结构不同，switch语句中的括号内的表达式必须是一个结果为整数值的表达式；另外，每个标签都必须是整数常量表达式；常见的有<code>int</code>、<code>char</code>；当然，也可以是枚举量；</p>
+<p>特别注意的是，在switch语句中，case标签并不是选项之间的界限，这就意味着，程序执行完特定标签并不会跳出switch语句块，而是按顺序执行到底，然后再跳出；如果哦想让程序执行完一组特点语句之后停止，必须使用<code>break</code>关键字；</p>
+<pre><code class="hljs C++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showmenu</span><span class="hljs-params">()</span></span>;<span class="hljs-comment">//函数原型</span>
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">report</span><span class="hljs-params">()</span></span>;
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">comfort</span><span class="hljs-params">()</span></span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    showmenu();
+    <span class="hljs-keyword">int</span> choice;
+    <span class="hljs-built_in">cin</span> &gt;&gt; choice;
+    <span class="hljs-keyword">while</span> (choice != <span class="hljs-number">5</span>) 
+    &#123;
+        <span class="hljs-keyword">switch</span> (choice) 
+        &#123;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">1</span>: <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\a\n&quot;</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">2</span>: report();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">3</span>: <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The boss was in all day.\n&quot;</span>;
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> <span class="hljs-number">4</span>: comfort();
+                <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">default</span>: <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;That&#x27;s not a choice.\n&quot;</span>;
+                <span class="hljs-keyword">break</span>;
+        &#125;
+
+        showmenu();
+        <span class="hljs-built_in">cin</span> &gt;&gt; choice;
+    &#125;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Bye!\n&quot;</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">showmenu</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter 1,2,3,4 or 5:\n&quot;</span>
+        <span class="hljs-string">&quot;1) alarm\n&quot;</span>
+        <span class="hljs-string">&quot;2) report\n&quot;</span>
+        <span class="hljs-string">&quot;3) alibi\n&quot;</span>
+        <span class="hljs-string">&quot;4) comfort\n&quot;</span>
+        <span class="hljs-string">&quot;5) quit\n&quot;</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">report</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s a excellent week for business.\n&quot;</span>
+        <span class="hljs-string">&quot;Sales are up 120%.Expense are down 35%.\n&quot;</span>;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">void</span> <span class="hljs-title">comfort</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;You&#x27;re the finest CEO.\n&quot;</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Please enter 1,2,3,4 or 5:<br>1) alarm<br>2) report<br>3) alibi<br>4) comfort<br>5) quit<br>1</p>
+<p>Please enter 1,2,3,4 or 5:<br>1) alarm<br>2) report<br>3) alibi<br>4) comfort<br>5) quit<br>2<br>It’s a excellent week for business.<br>Sales are up 120%.Expense are down 35%.<br>Please enter 1,2,3,4 or 5:<br>1) alarm<br>2) report<br>3) alibi<br>4) comfort<br>5) quit<br>3<br>The boss was in all day.<br>Please enter 1,2,3,4 or 5:<br>1) alarm<br>2) report<br>3) alibi<br>4) comfort<br>5) quit<br>4<br>You’re the finest CEO.<br>Please enter 1,2,3,4 or 5:<br>1) alarm<br>2) report<br>3) alibi<br>4) comfort<br>5) quit<br>5<br>Bye!</p>
+</blockquote>
+<p>此程序简单展示了switch语句的使用；不只可以使用整数，还可以使用字符类型，当然，原理是一样的；</p>
+<h4 id="switch与枚举"><a href="#switch与枚举" class="headerlink" title="switch与枚举"></a>switch与枚举</h4><p>switch语句可以同枚举量进行结合，将枚举量用作标签；</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">enum</span> &#123;</span>red, blue, green, yellow&#125;;<span class="hljs-comment">//生成0-3 四个数</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a number:&quot;</span>;
+    <span class="hljs-keyword">int</span> code;
+    <span class="hljs-built_in">cin</span> &gt;&gt; code;
+
+    <span class="hljs-keyword">while</span> (code &gt;= red &amp;&amp; code &lt;= yellow)
+    &#123;
+        <span class="hljs-keyword">switch</span> (code) 
+        &#123;
+            <span class="hljs-keyword">case</span> red:<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s red.\n&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> blue:<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s blue.\n&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> green:<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s green.\n&quot;</span>;
+            <span class="hljs-keyword">break</span>;
+            <span class="hljs-keyword">case</span> yellow:<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s yellow.\n&quot;</span>;
+        &#125;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a number:&quot;</span>;
+        <span class="hljs-built_in">cin</span> &gt;&gt; code;
+    &#125;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Bye!\n&quot;</span>;
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Enter a number:1<br>It’s blue.<br>Enter a number:2<br>It’s green.<br>Enter a number:3<br>It’s yellow.<br>Enter a number:4<br>Bye!</p>
+</blockquote>
+<p>cin通常无法识别枚举类型;</p>
+<p>当switch语句将int值和枚举标签进行比较时，将枚举量提升为int；在循环中，也会将枚举量提升为int类型；</p>
+<h4 id="switch与if-else"><a href="#switch与if-else" class="headerlink" title="switch与if-else"></a>switch与if-else</h4><p>总的来说，if-else更适合处理取值范围，而如果选项可以用整数常量表示，那么所谓switch会是一个更好的选择；</p>
+<h3 id="6-6-break和continue"><a href="#6-6-break和continue" class="headerlink" title="6.6 break和continue"></a>6.6 break和continue</h3><p>break和continue都可以用来停止循环，但是二者有不同的地方；</p>
+<p>break是跳出整个循环，而continue是跳过此次循环；</p>
+<h3 id="6-7-读取数字的循环"><a href="#6-7-读取数字的循环" class="headerlink" title="6.7 读取数字的循环"></a>6.7 读取数字的循环</h3><p>在循环中获取数字并允许用户在数组填满之前结束输入或者在用户错误输入之后提示用户然后允许继续输入，如果要编写如上程序需要以下操作：</p>
+<p>比如我们要编写一个程序来获取每天打鱼的重量，每天最多打5条鱼，然后计算平均重量，程序如下：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> Max = <span class="hljs-number">5</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter a number,and the Max is &quot;</span> &lt;&lt; Max &lt;&lt; <span class="hljs-string">&quot;(input &#x27;q&#x27; to stop):\n&quot;</span>;
+
+    <span class="hljs-keyword">double</span> fish[Max];
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fish #1: &quot;</span>;
+    <span class="hljs-comment">//获取数据</span>
+    <span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>;
+    <span class="hljs-keyword">while</span> (i &lt; Max &amp;&amp; <span class="hljs-built_in">cin</span> &gt;&gt; fish[i])
+    &#123;
+        <span class="hljs-keyword">if</span> (++i &lt; Max)
+        &#123;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fish #&quot;</span> &lt;&lt; i+<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;: &quot;</span>;
+        &#125;
+    &#125;
+    <span class="hljs-comment">//计算平均数</span>
+    <span class="hljs-keyword">double</span> total = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)
+    &#123;
+        total += fish[j];
+    &#125;
+    <span class="hljs-comment">//输出数据</span>
+    <span class="hljs-keyword">if</span> (i == <span class="hljs-number">0</span>)
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;No fish\n&quot;</span>;
+    &#125;
+    <span class="hljs-keyword">else</span>
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; total / i &lt;&lt; <span class="hljs-string">&quot; = average weight of &quot;</span>
+            &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot; fish\n&quot;</span>;
+    &#125;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Done.\n&quot;</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>fish #1:24<br> fish #2:34<br> fish #3:45<br> fish #4:33<br> fish #5:q<br> 34 = average weight of 4 fish<br>Done.</p>
+</blockquote>
+<p>可以看到我们用一个while循环来获取用户输入，而允许用户提前结束输入的操作为<code>cin &gt;&gt; fish[i]</code>；这个表达式实际上是一个cin方法调用，该函数返回cin；如果cin位于测试条件中，则将被转换为bool类型；如果输入成功，则转换后的值为true，否则为false；如果表达式为false则循环结束；</p>
+<p>可以简单地理解为如果你输入的不是一个数字，则循环结束；</p>
+<p>那么如果用户错误输入之后想继续输入怎么办？</p>
+<p>这时，程序应该采取3个步骤：</p>
+<ol>
+<li>重置cin以接受新的输入；</li>
+<li>删除错误输入；</li>
+<li>提升用户再输入；</li>
+</ol>
+<p>示例程序如下：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> Max = <span class="hljs-number">6</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">double</span> fish[Max];
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter the weight of fish:\n&quot;</span>;
+    <span class="hljs-comment">//获取数据</span>
+    <span class="hljs-keyword">int</span> i;
+    <span class="hljs-keyword">for</span> (i = <span class="hljs-number">0</span>; i &lt; Max; i++)
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;fish #&quot;</span> &lt;&lt; i+<span class="hljs-number">1</span> &lt;&lt; <span class="hljs-string">&quot;: &quot;</span>;
+        <span class="hljs-keyword">while</span> (!(<span class="hljs-built_in">cin</span> &gt;&gt; fish[i]))
+        &#123;
+            <span class="hljs-built_in">cin</span>.clear();
+            <span class="hljs-keyword">while</span> (<span class="hljs-built_in">cin</span>.get() != <span class="hljs-string">&#x27;\n&#x27;</span>)
+            &#123;
+                <span class="hljs-keyword">continue</span>;
+            &#125;
+            <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter a number: &quot;</span>;
+        &#125;
+    &#125;
+
+    <span class="hljs-comment">//计算平均数</span>
+    <span class="hljs-keyword">double</span> total = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> j = <span class="hljs-number">0</span>; j &lt; i; j++)
+    &#123;
+        total += fish[j];
+    &#125;
+
+    <span class="hljs-comment">//输出数据</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; total / i &lt;&lt; <span class="hljs-string">&quot; = average of weight.\n&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Done.\n&quot;</span>;
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Please enter the weight of fish:</p>
+<p>fish #1:25<br>fish #2:q<br>Please enter a number:23<br>fish #3:45<br>fish #4:67<br>fish #5:65<br>fish #6:must int?<br>Please enter a number:23<br>41.3333 = average of weight.<br>Done.</p>
+</blockquote>
+<p>其中：</p>
+<p>表达式<code>!(cin &gt;&gt; fish[i])</code>对输入进行判定，如果输入符合要求则cin表达式为true，因此将一个值放入到数组中；而如果输入不符合要求，则cin表达式为false，而<code>!(cin &gt;&gt; fish[i])</code>表达式为true，继而进入循环；</p>
+<p><code>cin.clear();</code>方法对输入进行重置，如果省略该语句，那么程序将不能继续进行输入；</p>
+<p><code>cin.get()</code>将获取直至行尾前的所有输入，然后通过<code>continue</code>跳过里层while循环，来达到删除错误输入的目的；</p>
+<h3 id="6-8-简单文件输入-输出"><a href="#6-8-简单文件输入-输出" class="headerlink" title="6.8 简单文件输入/输出"></a>6.8 简单文件输入/输出</h3><p><code>文本I/O</code>是指程序读入文本文件或者输出到文本文件中；</p>
+<p>在使用cin进行输入时，不管目标数据类型是什么，输入一开始都是字符数据——文本数据；然后cin对象负责将文本转换为其他类型；</p>
+<p>例如：</p>
+<pre><code class="hljs c++"><span class="hljs-number">38.5</span> <span class="hljs-number">19.2</span></code></pre>
+<p>假设上述数据是等待输入的输入行；根据目标数据类型的不同有如下不同情况：</p>
+<ul>
+<li>字符类型：则第一个字符<code>3</code>因为其输入类型与目标类型一致——均为字符类型——所以不需要转换；但需要知道，此刻存储在这里的不是数值3，而是字符3的编码；</li>
+<li>int类型：此刻cin将不断读入，直到遇到非数字字符；也就是说，cin将读取3和8，句点被当做输入队列中的下一个字符；cin通过计算得到38，然后将38的二进制编码复制到变量中；</li>
+<li>double类型：cin将不断读取，直到遇到第一个不属于浮点数的字符；在这里，cin读取3、8、句点以及5，然后将空格成为输入队列中的下一个字符；cin计算得到浮点数38.5，然后将其对应的二进制编码复制给变量；</li>
+<li>char数组：在这种情况下，cin将不断读取，直到遇到空白；也就是说，cin将读取3、8、句点以及5，使得空格成为输入队列中的下一个字符，然后将这个4个字符的字符编码存储到数组中，并在末尾加上空字符；这里不需要转换；</li>
+<li>面向行输入的char数组：与上述类似，不同的是，cin将读取到换行符之前；这里同样不需要转换；</li>
+</ul>
+<p>输出与此同理；</p>
+<h4 id="写入文本文件"><a href="#写入文本文件" class="headerlink" title="写入文本文件"></a>写入文本文件</h4><p>需要指出，用于文件输出需要提供头文件<code>fstream</code>——其中定义了用于输出的ofstream类；</p>
+<p>需要声明一个或多个ofstream变量或称对象；</p>
+<p>必须指明命名空间std；</p>
+<p>使用<code>opne()</code>方法将ofstream与文本文件关联起来；</p>
+<p>使用完文件之后，应使用<code>close()</code>方法将其关闭；</p>
+<p>示例如下：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;fstream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">char</span> automobile[<span class="hljs-number">50</span>];
+    <span class="hljs-keyword">int</span> year;
+    <span class="hljs-keyword">double</span> a_price;
+    <span class="hljs-keyword">double</span> b_price;
+
+    ofstream outfile;
+    outfile.open(<span class="hljs-string">&quot;carinfo.txt&quot;</span>);
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the make and model of automobile: &quot;</span>;
+    <span class="hljs-built_in">cin</span>.getline(automobile, <span class="hljs-number">50</span>);
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the model year: &quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; year;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the original asking price: &quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; a_price;
+    b_price = <span class="hljs-number">0.93</span> * a_price;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; fixed;
+    <span class="hljs-built_in">cout</span>.precision(<span class="hljs-number">2</span>);
+    <span class="hljs-built_in">cout</span>.setf(ios_base::showpoint);
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Make and model: &quot;</span> &lt;&lt; automobile &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Year: &quot;</span> &lt;&lt; year &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Was asking $&quot;</span> &lt;&lt; a_price &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Now asking $&quot;</span> &lt;&lt; b_price &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    outfile &lt;&lt; fixed;
+    outfile.precision(<span class="hljs-number">2</span>);
+    outfile.setf(ios_base::showpoint);
+    outfile &lt;&lt; <span class="hljs-string">&quot;Make and model: &quot;</span> &lt;&lt; automobile &lt;&lt; <span class="hljs-built_in">endl</span>;
+    outfile &lt;&lt; <span class="hljs-string">&quot;Year: &quot;</span> &lt;&lt; year &lt;&lt; <span class="hljs-built_in">endl</span>;
+    outfile &lt;&lt; <span class="hljs-string">&quot;Was asking $&quot;</span> &lt;&lt; a_price &lt;&lt; <span class="hljs-built_in">endl</span>;
+    outfile &lt;&lt; <span class="hljs-string">&quot;Now asking $&quot;</span> &lt;&lt; b_price &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    outfile.close();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>程序输出为两份，一份为命令行输出另一份为文本文件输出：</p>
+<blockquote>
+<p>Make and model: Porches Machder<br>Year: 1973</p>
+<p>Was asking $320000.00</p>
+<p>Now asking $297600.00</p>
+</blockquote>
+<p>但其输出内容一致；</p>
+<p>需要指出：在创建好ofstream对象之后便可以像使用cout那样使用它，cout的任何方法都可以被ofstream对象使用；</p>
+<p>另外，方法<code>open()</code>接受一个C-风格字符串作为参数，可以是字面字符串，也可以是存储在数组中的字符串；</p>
+<p>语句<code>outfile.open(&quot;carinfo.txt&quot;);</code>的功能为将文本文件与ofstream对象相关联，如果文件目录中没有此文件，将创建一个该名称的文本文件，如果存在该文件，则<code>open()</code>将首先截断该文件，即将其长度截断到0——丢弃原有的内容，然后将新的输出加入到该文件中；</p>
+<h4 id="读取文本文件"><a href="#读取文本文件" class="headerlink" title="读取文本文件"></a>读取文本文件</h4><p>与写入文本文件对应，读取文本文件同样需要提供头文件：<code>fstream</code>；</p>
+<p>需要创建一个或多个<code>ifstream</code>对象；</p>
+<p>须指明名称空间std；</p>
+<p>使用<code>open()</code>与<code>close()</code>关联文本文件和关闭文本文件；</p>
+<p>示例如下：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;fstream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;cstdlib&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//获取文本文件名</span>
+    <span class="hljs-keyword">char</span> filename[<span class="hljs-number">100</span>];
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the filename: &quot;</span>;
+    <span class="hljs-built_in">cin</span>.getline(filename,<span class="hljs-number">100</span>);
+
+    <span class="hljs-comment">//关联文本文件</span>
+    ifstream infile;
+    infile.open(filename);
+
+    <span class="hljs-comment">//判断是否读取了文本</span>
+    <span class="hljs-keyword">if</span> (!infile.is_open())
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Could not open this file &quot;</span> &lt;&lt; filename &lt;&lt; <span class="hljs-built_in">endl</span>;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Program terminating.\n&quot;</span>;
+        <span class="hljs-built_in">exit</span>(EXIT_FAILURE);
+    &#125;
+
+    <span class="hljs-comment">//统计文本中int类型数值和double类型数值的数量</span>
+    <span class="hljs-keyword">double</span> value;
+    <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0.0</span>;
+    <span class="hljs-keyword">int</span> count = <span class="hljs-number">0</span>;
+
+    infile &gt;&gt; value;
+    <span class="hljs-keyword">while</span> (infile.good())<span class="hljs-comment">//如果成功读取则返回1，失败读取则返回0</span>
+    &#123;
+        ++count;
+        sum += value;
+        infile &gt;&gt; value;
+    &#125;
+    <span class="hljs-comment">//判断是否成功读取了所有数据</span>
+    <span class="hljs-keyword">if</span> (infile.eof())
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;End of file reached.\n&quot;</span>;<span class="hljs-comment">//如果读取到文件末尾则返回true</span>
+    &#125; <span class="hljs-keyword">else</span> <span class="hljs-keyword">if</span> (infile.fail())
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Input terminated by date mismatch.\n&quot;</span>;<span class="hljs-comment">//如果遇到类型不匹配则返回true</span>
+    &#125; <span class="hljs-keyword">else</span>
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Input terminated for unknown reason.\n&quot;</span>;
+    &#125;
+    <span class="hljs-comment">//进行最后输出</span>
+    <span class="hljs-keyword">if</span> (count == <span class="hljs-number">0</span>)
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;No date processed.\n&quot;</span>;
+    &#125; <span class="hljs-keyword">else</span>
+    &#123;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Items read: &quot;</span> &lt;&lt; count &lt;&lt; <span class="hljs-built_in">endl</span>;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Sum: &quot;</span> &lt;&lt; sum &lt;&lt; <span class="hljs-built_in">endl</span>;
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Average: &quot;</span> &lt;&lt; sum / count &lt;&lt; <span class="hljs-built_in">endl</span>;
+    &#125;
+    infile.close();
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+&#125;</code></pre>
+<p>程序输出为：</p>
+<blockquote>
+<p>Enter the filename:D:\cpp_clion\Chap06\infile\scores.txt<br> End of file reached.<br>Items read: 12<br>Sum: 204.5<br>Average: 17.0417</p>
+</blockquote>
+<p>通过上例，有如下要点：</p>
+<ol>
+<li><p><code>is_open()</code>方法用来判断是否成功打开文本文件；如果文件被成功打开，<code>is_open()</code>返回true；</p>
+</li>
+<li><p>函数<code>exit()</code>用来终止程序，其被定义在头文件<code>cstdlib</code>中；</p>
+</li>
+<li><p>声明一个ifstream对象之后便可以像使用cin那样使用它；</p>
+</li>
+<li><p>方法<code>good()</code>指出最后一次读取输入的操作是否成功；</p>
+</li>
+<li><p><code>good()</code> 等价于 <code>!(bad() || eof() || failed())</code>；</p>
+</li>
+<li><p>`infile &gt;&gt; value;</p>
+<pre><code>while (infile.good())
+&#123;
+    .....
+    infile &gt;&gt; value;
+&#125;`
+</code></pre><p>这部分代码可以精简为：</p>
+<pre><code>`while (infile &gt;&gt; value)
+&#123;
+    ......
+&#125;`
+</code></pre><p>表达式<code>infile &gt;&gt; value</code>的结果为<code>infile</code>，在需要一个bool类型的值的情况下，infile的结果为<code>infile.good()</code>；如果要计算该表达式的值，程序必须首先试图将一个值读取到value中；</p>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/03/05/CMU-CSAPP-1-26/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">CMU-CSAPP-1/26</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/22/C-PrimerPlus-Chap05-exercise-Day09/">
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap05-exercise-Day09</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

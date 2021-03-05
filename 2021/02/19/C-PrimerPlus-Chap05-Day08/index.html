@@ -1,0 +1,786 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C++-PrimerPlus-Chap05-Day08 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C++-PrimerPlus-Chap05-Day08
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-19 16:15" pubdate>
+        2021年2月19日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.4k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C++-PrimerPlus-Chap05-Day08</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月21日 上午
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="Chap-05-循环和关系表达式"><a href="#Chap-05-循环和关系表达式" class="headerlink" title="Chap 05 循环和关系表达式"></a>Chap 05 循环和关系表达式</h2><h3 id="5-1-for-循环"><a href="#5-1-for-循环" class="headerlink" title="5.1 for 循环"></a>5.1 for 循环</h3><p>当程序需要执行重复的任务时，则需要使用<code>for</code>循环；</p>
+<h4 id="for循环组成部分"><a href="#for循环组成部分" class="headerlink" title="for循环组成部分"></a>for循环组成部分</h4><p>这里给出一个打印变量值的简短程序：</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++)
+        <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;i = &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot;\n&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>通过上例，我们可以看到，for循环的结构分为初始化（loop initialization）部分、循环测试（loop test）部分、循环更新（loop update）部分以及循环体（loop body）部分；</p>
+<p>其执行步骤为：</p>
+<ol>
+<li>设置初始值；</li>
+<li>执行测试，看看循环是否应当继续进行；</li>
+<li>执行循环操作</li>
+<li>更新用于测试的值；</li>
+</ol>
+<p>其中，初始化、测试和更新构成了for循环的控制部分，用小括号括起，彼此由分号隔开；其中的每部分都是一条语句；当测试部分为true时，循环体就会被执行；</p>
+<p>C++语法将整个for看作一条语句——即使for循环包含多条语句；</p>
+<p>循环只执行一次初始化，程序通常使用该表达式设置为初始值，然后用该变量计算循环周期；测试表达式决定循环体是否被执行，这个表达式通常为关系表达式，但事实上，C++并没有对测试表达式的值进行限制，也就是说，测试表达式可以不仅止于true和false，它也可以是别的值；</p>
+<p>在C++中，0为false，非0为true；C++将对测试表达式的结果进行强转；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">5</span>; i; i--)
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;i = &quot;</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>i = 5<br>i = 4<br>i = 3<br>i = 2<br>i = 1</em></strong></p>
+<p>关系表达式如何得到循环终止值？在引入bool类型之前，如果关系表达式为true，则被判定为1，如果为false，则被判定为0；在引入bool类型之后，关系表达式就判定bool的字面值true和false了；</p>
+<p>这里要提到一个概念：for循环是入口条件（entry-condition）循环；即在每轮循环之前，都将计算测试表达式的值；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//入口条件循环</span>
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i; i++)
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;i不会打印出来！&quot;</span>;</code></pre>
+<p>如上，如果i为0时，程序将不会执行循环体；</p>
+<p>更新表达式在每轮循环结构时执行，它可以是任何有效的C++表达式；还可以是其他控制表达式；</p>
+<h5 id="for循环语句格式"><a href="#for循环语句格式" class="headerlink" title="for循环语句格式"></a>for循环语句格式</h5><p>为了将for循环与函数调用更明显区分开来，在for与括号之间添加空格，而在函数之间不留空格；</p>
+<h5 id="表达式与语句"><a href="#表达式与语句" class="headerlink" title="表达式与语句"></a>表达式与语句</h5><p>在C++中，任何值或任何有效的值和运算符的组合都是表达式；如10是值为10的表达式；28 * 20的560的表达式；在C++中，任何表达式都有值；</p>
+<p>特别注意的是：赋值表达式的值被定义为赋值运算符左侧成员的值；换句话说，赋值运算符是从右向左结合的；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> x = <span class="hljs-number">100</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x &lt; 5 - &quot;</span> &lt;&lt; (x &lt; <span class="hljs-number">5</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x &gt; 5 - &quot;</span> &lt;&lt; (x &gt; <span class="hljs-number">5</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1</span>
+
+<span class="hljs-built_in">cout</span>.setf(ios_base::boolalpha);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x &lt; 5 - &quot;</span> &lt;&lt; (x &lt; <span class="hljs-number">5</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//false</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x &gt; 5 - &quot;</span> &lt;&lt; (x &gt; <span class="hljs-number">5</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//true</span></code></pre>
+<p>通常，cout在bool值出来之前将它们转换为int类型，但<code>cout.setf(ios_base::boolalpha)</code>函数调用了一个标记，该标记命令cout显示true和false，而不是1和0；</p>
+<p>从表达式到语句的转变很容易：只需要添加分号即可；</p>
+<p><code>age = 100</code>是表达式，而<code>age = 100;</code>是语句；</p>
+<p>但是这句话翻过来说却不一定正确，就目前而言，返回语句、声明语句和for语句都不满足“语句=表达式+分号”这种模式；</p>
+<h5 id="表达式的副作用"><a href="#表达式的副作用" class="headerlink" title="表达式的副作用"></a>表达式的副作用</h5><p>当判定一个表达式的值的操作将会改变其内存中数据的值时，我们就说表达式有<strong>副作用（side effect）</strong>；即，修改被赋者的值；</p>
+<p>比如：判定<code>x+15</code>将产生一个新的值，没有改变x的值；而判定<code>++x+15</code>将改变x的值；</p>
+<h4 id="关于阶乘的for循环程序"><a href="#关于阶乘的for循环程序" class="headerlink" title="关于阶乘的for循环程序"></a>关于阶乘的for循环程序</h4><p>程序代码如下：</p>
+<pre><code class="hljs c++">onst <span class="hljs-keyword">int</span> ArSize = <span class="hljs-number">16</span>;<span class="hljs-comment">//外部数据</span>
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> fac[ArSize];<span class="hljs-comment">//使用数组来接收</span>
+
+    fac[<span class="hljs-number">0</span>] = fac[<span class="hljs-number">1</span>] = <span class="hljs-number">1</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">2</span>; i &lt; ArSize; i++)
+        fac[i] = i * fac[i<span class="hljs-number">-1</span>];<span class="hljs-comment">//2! = 2 * 1!</span>
+
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ArSize; i++)
+        <span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-string">&quot;! = &quot;</span> &lt;&lt; fac[i] &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>关于程序主要有以下几点需要注意：</p>
+<ul>
+<li>在函数较多时，定义外部常量是有益的，它使得所有的函数都能访问它；</li>
+<li>for循环可以通过索引来访问数组的成员，以这种方式for循环可以同数组进行协调工作；</li>
+<li><code>i &lt; ArSize</code>与<code>i &lt;= ArSize - 1</code>其表示的范围是一致的，但总体来说，前者比后者要好得多；</li>
+</ul>
+<h4 id="修改步长"><a href="#修改步长" class="headerlink" title="修改步长"></a>修改步长</h4><p>关于for循环的循环更新部分，上述的代码都是+1或者-1来进行更新的，但实际上，我们可以任意决定其更新，称之为<strong>步长</strong>；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> ArSize = <span class="hljs-number">100</span>;
+<span class="hljs-keyword">int</span> step;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the step what you think better:&quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; step;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; ArSize; i += step)
+    <span class="hljs-built_in">cout</span> &lt;&lt; i &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>Enter the step what you think better:15<br>0<br>15<br>30<br>45<br>60<br>75<br>90</em></strong></p>
+<h4 id="for循环访问字符串"><a href="#for循环访问字符串" class="headerlink" title="for循环访问字符串"></a>for循环访问字符串</h4><p>因为如前所言，for循环可以同数据协同工作，那么作为与数组等效的字符串自然也是可以同for循环协同的；</p>
+<p>这里展示了一个将字符串翻转输出的程序：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> str;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a string:&quot;</span>;
+getline(<span class="hljs-built_in">cin</span>,str);
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = str.size() - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--)
+    <span class="hljs-built_in">cout</span> &lt;&lt; str[i];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\nThe program end;\n&quot;</span>;
+
+<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>Enter a string: Flower is beautiful.<br>.lufituaeb si rewolF<br>The program end;</em></strong></p>
+<p>其中，string类的<code>size()</code>获得字符串中的字符数；</p>
+<h4 id="递增运算符（-）与递减运算符（—）"><a href="#递增运算符（-）与递减运算符（—）" class="headerlink" title="递增运算符（++）与递减运算符（—）"></a>递增运算符（++）与递减运算符（—）</h4><p>递增与递减运算符一共有四类：</p>
+<ul>
+<li>前缀递增（++x）</li>
+<li>后缀递增（x++）</li>
+<li>前缀递减（—x）</li>
+<li>后缀递减（x—）</li>
+</ul>
+<p>其对操作数的结果是一样的，但影响时间不同：</p>
+<p>粗略来说：++x意位着先将x+1，然后再进行运算；x++则是先计算然后再+1</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> x, y;
+x = y = <span class="hljs-number">0</span>;
+y = ++x;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x: &quot;</span> &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; y:&quot;</span> &lt;&lt; y &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//x: 1 y:1</span>
+
+x = y = <span class="hljs-number">0</span>;
+y = x++;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;x: &quot;</span> &lt;&lt; x &lt;&lt; <span class="hljs-string">&quot; y:&quot;</span> &lt;&lt; y &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//x: 1 y:0</span></code></pre>
+<p>在这个程序中，++x首先将x+1，然后赋值给y；所以x与y都为1；而x++则是先将x赋值给y，然后x再+1，所以x=1而y=0；</p>
+<p>但是要注意的是：不要在同一条语句对同一个值多次递增或递减；这可能会使得规则变得模糊不清；</p>
+<h4 id="副作用和顺序点"><a href="#副作用和顺序点" class="headerlink" title="副作用和顺序点"></a>副作用和顺序点</h4><p>就递增运算符和递减运算符在C++中的规定而言，有两个概念是需要知道的；</p>
+<p><strong>副作用（side effect）</strong>：指的是计算表达式时，对某些东西进行了修改，比如存储在变量中的值；</p>
+<p><strong>顺序点（sequence point）</strong>：指的是程序执行过程中的一个点，在这里进行下一步之前要确保对所有的副作用进行了评估；</p>
+<p>例如在C++语句中的分号就是一个顺序点，这意味着在程序处理下一条指令之前，赋值运算符、递增递减运算符执行的所有修改都必须完成；</p>
+<h4 id="前缀格式与后缀格式"><a href="#前缀格式与后缀格式" class="headerlink" title="前缀格式与后缀格式"></a>前缀格式与后缀格式</h4><p>通常来说，如果将递增运算符递减运算符只单独作用于一个变量，且该语句为完整表达式时，使用前缀格式和后缀格式没有明显差别；</p>
+<p>因为在顺序点之前，程序将对所有副作用进行评估，即意味着其副作用不会传递到别处；先修改再使用还是先使用再修改都将会在顺序点之前完成；又因为其语句没有额外成分，所以只剩下了副作用；</p>
+<p>但如果细究，前缀格式相较来说效率高于后缀格式；</p>
+<p>对于用户定义类型，前缀格式+1然后返回结果，而后缀格式是先复制一个副本，然后+1，然后将复制的副本返回；</p>
+<h4 id="递增递减运算符和指针"><a href="#递增递减运算符和指针" class="headerlink" title="递增递减运算符和指针"></a>递增递减运算符和指针</h4><p>众所周知，指针是可以进行算术运算的，所以将指针与递增递减运算符叠加将产生复杂的化学反应；</p>
+<p>首先，普及一下优先级与结合性问题：</p>
+<p>前缀递增，前缀递减和解除引用运算符优先级相同，且都从右向左结合；</p>
+<p>后缀递增，后缀递减优先级相同，且比前缀运算符优先级高；遵循从左向右结合的规则；</p>
+<p>所以据此，我们可以有如下几种情况：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//测试递增递减运算符与解除引用运算符协作时的优先级问题</span>
+<span class="hljs-keyword">double</span> arr[<span class="hljs-number">5</span>] &#123;<span class="hljs-number">10.98</span>, <span class="hljs-number">22.98</span>, <span class="hljs-number">30.98</span>, <span class="hljs-number">40.98</span>, <span class="hljs-number">50.98</span>&#125;;
+<span class="hljs-keyword">double</span> *pa = arr;
+
+<span class="hljs-comment">//第一种情况</span>
+<span class="hljs-keyword">double</span> x = *++pa;
+<span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>这种情况下，因为前缀递增运算符和解除引用运算符优先级相同，所以要根据结合性来计算；又因为二者都是从右向左运算，所以要先计算<code>++pa</code>，<code>++pa</code>将指向<code>arr[0]</code>的指针向右移动一个double字节单位，指向<code>arr[1]</code>,然后对其解除引用，得到<code>arr[1]</code>的值；</p>
+<p>验证如下：</p>
+<blockquote>
+<p>22.98<br>22.98</p>
+</blockquote>
+<pre><code class="hljs c++"><span class="hljs-comment">//第二种</span>
+<span class="hljs-keyword">double</span> y = ++*pa;
+<span class="hljs-built_in">cout</span> &lt;&lt; y &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>第二种情况下，首先看到优先级相同，依照结合性首先要对<code>pa</code>解除引用，得到<code>arr[0]</code>的值，然后将<code>arr[0]</code>的值+1，得到结果 <em>11.98</em>；又因为修改的是指针对应的值而非指针本身，所以<code>pa</code>仍然指向<code>arr[0]</code>;</p>
+<p>验证如下：</p>
+<blockquote>
+<p>11.98<br>11.98</p>
+</blockquote>
+<pre><code class="hljs c++"><span class="hljs-comment">//第三种情况</span>
+<span class="hljs-keyword">double</span> m = (*pa)++;
+<span class="hljs-built_in">cout</span> &lt;&lt; m &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>第三种情况下，我们首先看到有括号限制优先级，所有要求我们先解除引用，得到<em>10.98</em>，然后将这个值赋给<code>m</code>，随后再对<code>*pa</code>递增；</p>
+<p>验证如下：</p>
+<blockquote>
+<p>10.98<br>11.98</p>
+</blockquote>
+<pre><code class="hljs c++"><span class="hljs-comment">//第四种情况</span>
+<span class="hljs-keyword">double</span> n = *pa++;
+<span class="hljs-built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; *pa &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>第四种情况下：要首先计算后缀递增部分，即将递增用于<code>pa</code>而非<code>*pa</code>，因而对指针递增；但又因为后缀递增遵循先使用后修改的原则，所以将对旧地址解除引用，在语句结束后，指针将递增；</p>
+<p>验证如下：</p>
+<blockquote>
+<p>10.98<br>22.98</p>
+</blockquote>
+<h4 id="复合语句（语句块）"><a href="#复合语句（语句块）" class="headerlink" title="复合语句（语句块）"></a>复合语句（语句块）</h4><p>for循环如果想要在循环体内编写多条语句就必须将循环体置于花括号之内；这被称为复合语句或代码块；将被视为一条语句；</p>
+<p>如下程序展示了其结构及用法：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">double</span> val;
+    <span class="hljs-keyword">double</span> sum = <span class="hljs-number">0.0</span>;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter 10 value:\n&quot;</span>;
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">10</span>; ++i) &#123;
+        <span class="hljs-built_in">cin</span> &gt;&gt; val;
+        sum += val;
+    &#125;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;\nThe sum of values: &quot;</span> &lt;&lt; sum &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The average of ten values: &quot;</span> &lt;&lt; sum / <span class="hljs-number">5</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>特别注意：多条语句下不支持缩进，如果去掉花括号，程序将只识别for循环控制语句下第一行，其后的部分不作为循环体看待；</p>
+<p>第二点就是：在语句块内声明的变量，其声明周期仅限于所属语句块；</p>
+<p>如果代语句块内和语句块外部有同名变量，程序将如何处理呢？</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> x = <span class="hljs-number">1</span>;
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1</span>
+
+    <span class="hljs-keyword">int</span> x = <span class="hljs-number">100</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//100</span>
+&#125;
+<span class="hljs-built_in">cout</span> &lt;&lt; x &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1</span></code></pre>
+<p>可以看到，在声明位置到内部语句块结束的范围内，新变量将隐藏旧变量；然后旧变量将再次可见；</p>
+<h4 id="逗号运算符"><a href="#逗号运算符" class="headerlink" title="逗号运算符"></a>逗号运算符</h4><p>正如语句块可以将多条语句放到C++只允许放一条语句的地方，逗号运算符对表达式起同样作用；</p>
+<p>例如在for循环的控制部分中的更新部分，通常来说这部分只允许放一个表达式，但通过逗号运算符我们可以把两个表达式合并为一个；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> str;
+<span class="hljs-keyword">char</span> temp;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a string: &quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; str;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">int</span> i = <span class="hljs-number">0</span>,j = str.size() - <span class="hljs-number">1</span>; i &lt; j; i++,j--)
+&#123;
+    temp = str[i];
+    str[i] = str[j];
+    str[j] = temp;
+&#125;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; str &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>Enter a string:block<br>kcolb</em></strong></p>
+<p>可以看到此程序将字符串反转之后输出，在for循环的控制部分，我们将循环更新部分的<code>i++,j--</code>用逗号运算符合并为一个表达式；</p>
+<p>虽然程序的初始部分看起来也像是使用逗号运算符，但其实这是一个声明语句表达式，逗号在这里只是一个列表分隔符，而非逗号运算符；</p>
+<p>逗号运算符除了可以将两个或更多表达式合并为一句，C++还为这个运算符提供了两个更特别的特性；</p>
+<p>其一：它确保计算第一个表达式，然后计算第二个表达式；换言之，逗号运算符是一个顺序点；</p>
+<p>比如：<code>i = 20,j = i + 1</code>，在这个表达式中，将先为<code>i</code>赋值，然后给<code>j</code>赋值；</p>
+<p>其二：C++规定，逗号表达式的值为第二部分的值；</p>
+<p>例如上例的表达式的值为<em>21</em>，因为<code>j = i + 1</code>的表达式的值为21；但又因为逗号运算符的优先级最低，所以在<code>cats = 70,25</code>中，表达式将被解释为<code>(cats = 70),25</code>，即25不起任何作用；但在<code>cats = (70,25)</code>中，表达式的值将为70，因为逗号表达式的值为第二部分的值；</p>
+<p>另外，我们尽管可以在for循环内部声明<code>temp</code>，但这样做会使得for循环的每一轮循环都将创建<code>temp</code>变量，然后在一轮循环结束后，<code>temp</code>又将被抛弃，虽然这样做并没有任何问题，但从效率方面考虑，这样做无形之中会浪费很多执行时间；所以我们更推荐在语句块外声明变量，这样在语句块内部可以一直使用；</p>
+<h4 id="关系表达式"><a href="#关系表达式" class="headerlink" title="关系表达式"></a>关系表达式</h4><p>C++提供了6种关系运算符来对关系表达式进行运算；其结果只能为true或者false；这六种关系运算符为：</p>
+<p><code>&gt;</code> 、<code>&gt;=</code>、<code>==</code> 、<code>!=</code> 、<code>&lt;</code> 、<code>&lt;=</code></p>
+<p>C风格字符串不能使用关系运算符，但string类可以；</p>
+<p>要注意区分关系运算符<code>==</code>和赋值运算符<code>=</code>，如果错误使用，将导致错误；</p>
+<h4 id="C-风格字符串的比较"><a href="#C-风格字符串的比较" class="headerlink" title="C-风格字符串的比较"></a>C-风格字符串的比较</h4><p>不可以使用关系运算符直接进行比较，因为我们说过，C风格字符串本质上是char数组，所以如果直接将关系运算符运用在C风格字符串上，它将比较二者是否存储于相同地址；</p>
+<p>为了针对这个问题，我们将使用<code>strcmp()</code>函数来进行C-风格字符串的比较；</p>
+<p>该函数接收两个字符串地址作为参数，同理也可以是指针、字符串常量或者字符数组名；</p>
+<p>如果两个字符串相同，它将返回0；如果第一个字符串在第二个字符串之前，它将返回负数，否在返回正数；</p>
+<p>因为C风格字符串依靠空字符判断字符串结尾，所以如果两个字符数组的长度不同也是可以比较的；</p>
+<p>如下例：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch1[<span class="hljs-number">15</span>] = <span class="hljs-string">&quot;?ord&quot;</span>;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch = <span class="hljs-string">&#x27;a&#x27;</span>; <span class="hljs-built_in">strcmp</span>(ch1,<span class="hljs-string">&quot;word&quot;</span>); ch++)
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; ch1 &lt;&lt; <span class="hljs-built_in">endl</span>;
+    ch1[<span class="hljs-number">0</span>] = ch;
+&#125;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The ch1 is: &quot;</span> &lt;&lt; ch1 &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>此例将显示一个单词，通过不断修改首字母的方式看是否与<code>&quot;word&quot;</code>相同；</p>
+<p><code>strcmp(ch1,&quot;word&quot;)</code>意为如果字符串不相等则它的值为非零（true），如果字符串相等则它的值为零（false）；</p>
+<p>通常我们可以使用<code>strcmp()</code>来测试C风格字符是否相等或者排列顺序；</p>
+<ul>
+<li>如果str1与str2相等则<code>strcmp(str1,str2) == 0</code>为true；</li>
+<li>如果str1与str2不等，则<code>strcmp(str1,str2) != 0</code>或者<code>strcmp(str1,str2)</code>都为true；</li>
+<li>如果str1在str2前面，则<code>strcmp(str1,str2) &lt; 0</code>为true；</li>
+<li>如果str1在str2后面，则<code>strcmp(str1,str2) &gt; 0</code>为true；</li>
+</ul>
+<p>另外，我们可以对字符变量使用递增递减运算符，因为本质上char为整型；</p>
+<h4 id="string类字符串比较"><a href="#string类字符串比较" class="headerlink" title="string类字符串比较"></a>string类字符串比较</h4><p>事实上，我们使用string类字符串进行比较将更为简单便捷；因为它可以使用关系运算符来进行比较，原因在于类函数重载了这些运算符；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> word = <span class="hljs-string">&quot;?een&quot;</span>;
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">char</span> ch = <span class="hljs-string">&#x27;a&#x27;</span>;word != <span class="hljs-string">&quot;teen&quot;</span>; ch++)
+&#123;
+    <span class="hljs-built_in">cout</span> &lt;&lt; word &lt;&lt; <span class="hljs-built_in">endl</span>;
+    word[<span class="hljs-number">0</span>] = ch;
+&#125;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;When the program end,word is &quot;</span> &lt;&lt; word &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>程序输出为：</p>
+<p><strong><em>?een<br>aeen<br>been<br>ceen<br>deen<br>eeen<br>feen<br>geen<br>heen<br>ieen<br>jeen<br>keen<br>leen<br>meen<br>neen<br>oeen<br>peen<br>qeen<br>reen<br>seen<br>When the program end,word is teen</em></strong></p>
+<p>可以看到，我们不必调用其他函数，只运用重载过了的关系运算符就可以达到同样的目的；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/21/C-PrimerPlus-Chap05-Day09/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap05-Day09</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/19/C-PrimerPlus-Chap04-exercise-Day08/">
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap04-exercise-Day08</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,754 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>Go语言-函数 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Go语言-函数
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-02 15:08" pubdate>
+        2021年2月2日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.9k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Go语言-函数</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月9日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h2><p>函数是组织好的、可重复使用的、用于执行指定任务的代码块</p>
+<h3 id="函数定义"><a href="#函数定义" class="headerlink" title="函数定义"></a>函数定义</h3><p>Go语言中定义函数使用关键字<code>func</code>；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sum</span><span class="hljs-params">(x, y <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123; <span class="hljs-comment">//定义一个函数，</span>
+	<span class="hljs-comment">//参数为两个int类型的变量，返回值为int类型</span>
+	<span class="hljs-keyword">return</span> x + y
+&#125;
+</code></pre>
+<p>注意：</p>
+<ol>
+<li>函数名：由字母、数字、下划线组成；函数名的第一个字母不能是数字；同一个包内，也不可同名</li>
+<li>参数：参数由参数变量和参数类型组成；多个参数之间用<code>,</code>分隔</li>
+<li>返回值：返回值由返回变量和其变量类型组成，也可以只写返回值的类型，多个返回值必须用<code>()</code>包裹，并用<code>,</code>分隔</li>
+<li>函数体：实现功能的代码块</li>
+</ol>
+<h3 id="函数调用"><a href="#函数调用" class="headerlink" title="函数调用"></a>函数调用</h3><p>函数的调用非常简单，只需要<code>函数名()</code>这样的方式即可调用函数</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123; <span class="hljs-comment">//接上例</span>
+	fmt.Println(sum(<span class="hljs-number">8</span>, <span class="hljs-number">9</span>))
+&#125;</code></pre>
+<h3 id="参数"><a href="#参数" class="headerlink" title="参数"></a>参数</h3><h4 id="简写"><a href="#简写" class="headerlink" title="简写"></a>简写</h4><p>函数的参数如果相邻变量的类型相同，则可以简写参数类型</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">addStrings</span><span class="hljs-params">(s1, s2 <span class="hljs-keyword">string</span>)</span></span> &#123;
+	fmt.Println(s1 + s2)
+&#125;</code></pre>
+<p>因为<code>s1</code>与<code>s2</code>同为<code>string</code>类型，所以<code>s1</code>后面的参数类型可以省略；</p>
+<h4 id="可变参数"><a href="#可变参数" class="headerlink" title="可变参数"></a>可变参数</h4><p>可变参数指参数数量不固定，可在参数名后加<code>...</code>来标识；</p>
+<p>可变参数在函数体中是切片类型</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sum</span><span class="hljs-params">(a <span class="hljs-keyword">int</span>, b ...<span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;
+	<span class="hljs-keyword">for</span> _, value := <span class="hljs-keyword">range</span> b &#123;
+		a += value
+	&#125;
+	<span class="hljs-keyword">return</span> a
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	add := sum(<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>) <span class="hljs-comment">//a = 1 b = [2 3 4 5 6 7]</span>
+	fmt.Println(add)                <span class="hljs-comment">//28</span>
+&#125;</code></pre>
+<p>注意：当固定参数和可变参数同时出现，可变参数一定要在最后；也即表明：一个函数声明中最多只能有一个可变参数；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sum</span><span class="hljs-params">(a ...<span class="hljs-keyword">int</span>, b ...<span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;&#125;</code></pre>
+<p>当这样写时，程序会报错：报错信息为：</p>
+<pre><code class="hljs go">&#123;
+	<span class="hljs-string">&quot;message&quot;</span>: <span class="hljs-string">&quot;can only use ... with final parameter in list&quot;</span>,
+	<span class="hljs-string">&quot;source&quot;</span>: <span class="hljs-string">&quot;compiler&quot;</span>,
+&#125;</code></pre>
+<p>最后，Go语言中没有默认参数；</p>
+<h3 id="返回值"><a href="#返回值" class="headerlink" title="返回值"></a>返回值</h3><p>返回值用<code>return</code>；可以不定义返回值，也可以定义了返回值但是不接收；</p>
+<p>返回值可以在构造函数的时候直接声明，如果声明了一个返回值变量，则在函数体内，不需要再次声明，直接使用即可，且<code>return</code>后可以不再加变量名；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">intFloat</span><span class="hljs-params">(p, q <span class="hljs-keyword">float64</span>)</span> <span class="hljs-params">(sum <span class="hljs-keyword">float64</span>)</span></span> &#123;
+	sum = p + q <span class="hljs-comment">//sum可以直接使用</span>
+	<span class="hljs-keyword">return</span>      <span class="hljs-comment">//sum可以不加</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">intFloat2</span><span class="hljs-params">(m, n <span class="hljs-keyword">float64</span>)</span> <span class="hljs-title">float64</span></span> &#123;
+	sum := m + n
+	<span class="hljs-keyword">return</span> sum
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	fmt.Printf(<span class="hljs-string">&quot;直接声明的结果是：%v\n&quot;</span>, intFloat(<span class="hljs-number">3.14</span>, <span class="hljs-number">9.26</span>))
+	<span class="hljs-comment">//直接声明的结果是：12.4</span>
+	fmt.Printf(<span class="hljs-string">&quot;函数体内声明的结果是：%v\n&quot;</span>, intFloat2(<span class="hljs-number">3.14</span>, <span class="hljs-number">9.26</span>))
+	<span class="hljs-comment">//函数体内声明的结果是：12.4</span>
+&#125;</code></pre>
+<p>可以看出，其结果一致，所以此两种方法都可以；</p>
+<h4 id="多个返回值"><a href="#多个返回值" class="headerlink" title="多个返回值"></a>多个返回值</h4><p>函数可定义多个返回值，需用<code>,</code>分隔，并用<code>()</code>包裹；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">isFlag</span><span class="hljs-params">(name <span class="hljs-keyword">string</span>, age <span class="hljs-keyword">int</span>)</span> <span class="hljs-params">(isMarrige, isMale <span class="hljs-keyword">bool</span>)</span></span> &#123; <span class="hljs-comment">//定义多个返回值</span>
+
+	<span class="hljs-keyword">if</span> age &gt; <span class="hljs-number">22</span> &#123;
+		isMarrige = <span class="hljs-literal">true</span>
+	&#125; <span class="hljs-keyword">else</span> &#123;
+		isMarrige = <span class="hljs-literal">false</span>
+	&#125;
+	<span class="hljs-keyword">if</span> name == <span class="hljs-string">&quot;Jack&quot;</span> &#123;
+		isMale = <span class="hljs-literal">true</span>
+	&#125; <span class="hljs-keyword">else</span> &#123;
+		isMale = <span class="hljs-literal">false</span>
+	&#125;
+
+	<span class="hljs-keyword">return</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	fmt.Println(isFlag(<span class="hljs-string">&quot;Jack&quot;</span>, <span class="hljs-number">30</span>)) <span class="hljs-comment">//true true</span>
+&#125;</code></pre>
+<p>另，多个返回值也支持简写；</p>
+<h3 id="defer语句"><a href="#defer语句" class="headerlink" title="defer语句"></a>defer语句</h3><p>Go语言中的<code>defer</code>语句会将其后跟随的语句进行延迟处理；先<code>defer</code>的语句最后执行，最后<code>defer</code>的语句最先执行；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	fmt.Println(<span class="hljs-number">1</span>)
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-number">2</span>)
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-number">3</span>)
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-number">4</span>)
+	fmt.Println(<span class="hljs-number">5</span>)
+	fmt.Println(<span class="hljs-number">6</span>)
+	<span class="hljs-comment">//1 5 6 4 3 2</span>
+&#125;</code></pre>
+<h4 id="执行规则："><a href="#执行规则：" class="headerlink" title="执行规则："></a>执行规则：</h4><ul>
+<li>代码的延迟顺序与最终的执行顺序是反向的。</li>
+<li>延迟调用是在 defer 所在函数结束时进行，函数结束可以是正常返回时，也可以是发生宕机时。</li>
+</ul>
+<p><code>defer</code>语句的特性决定了它能非常方便地处理资源释放问题：比如：资源清理、文件关闭等</p>
+<h3 id="函数进阶"><a href="#函数进阶" class="headerlink" title="函数进阶"></a>函数进阶</h3><h4 id="变量作用域"><a href="#变量作用域" class="headerlink" title="变量作用域"></a>变量作用域</h4><h5 id="全局变量"><a href="#全局变量" class="headerlink" title="全局变量"></a>全局变量</h5><p>声明在函数外面的变量；全局变量只需要在一个源文件中定义，就可以在所有源文件使用；全局变量必须用<code>var</code>声明；如果想要在外部包中使用，全局变量的首字母必须大写；</p>
+<h5 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h5><p>声明在函数内部的变量，作用域只在函数体内；函数的参数与返回值都属于局部变量；</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-keyword">var</span> a <span class="hljs-keyword">int</span> = <span class="hljs-number">23</span> <span class="hljs-comment">//声明全局变量</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+
+	b := <span class="hljs-literal">true</span> <span class="hljs-comment">//声明局部变量</span>
+
+	fmt.Println(a, b)
+	<span class="hljs-keyword">for</span> i := <span class="hljs-number">9</span>; i &gt; <span class="hljs-number">5</span>; i-- &#123; <span class="hljs-comment">//语句块中声明变量</span>
+		fmt.Println(a - i)
+	&#125;
+&#125;</code></pre>
+<p>注意：全局变量与局部变量可以同名，函数中使用时优先考虑局部变量；</p>
+<h5 id="作用域规则"><a href="#作用域规则" class="headerlink" title="作用域规则"></a>作用域规则</h5><ul>
+<li>函数外部访问不到函数内部的变量；如果想要访问，需要用返回值的形式将指定变量返回；</li>
+<li>函数内部可以访问到全局变量；</li>
+<li>语句块中定义的变量只限当前语句块中使用；外部访问不到；</li>
+</ul>
+<h4 id="函数—“一等公民”"><a href="#函数—“一等公民”" class="headerlink" title="函数—“一等公民”"></a>函数—“一等公民”</h4><p>Go语言的函数属于“一等公民”（first-clas），也即：</p>
+<ul>
+<li>函数本身可以作为值传递</li>
+<li>支持匿名函数和闭包</li>
+<li>函数可以满足接口</li>
+</ul>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-keyword">import</span> <span class="hljs-string">&quot;fmt&quot;</span>
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">add</span><span class="hljs-params">(x, y <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;
+	<span class="hljs-keyword">return</span> x + y
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">sub</span><span class="hljs-params">(x, y <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span></span> &#123;
+	<span class="hljs-keyword">return</span> x - y
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">calculate</span><span class="hljs-params">(x, y <span class="hljs-keyword">int</span>, op <span class="hljs-keyword">func</span>(<span class="hljs-keyword">int</span>, <span class="hljs-keyword">int</span>)</span> <span class="hljs-title">int</span>) <span class="hljs-title">int</span></span> &#123;
+	<span class="hljs-keyword">return</span> op(x, y)
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	result1 := calculate(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>, add)
+	fmt.Println(result1) <span class="hljs-comment">//300</span>
+	result2 := calculate(<span class="hljs-number">200</span>, <span class="hljs-number">100</span>, sub)
+	fmt.Println(result2) <span class="hljs-comment">//100</span>
+&#125;</code></pre>
+<p>在这个例子中，<code>add()</code>及<code>sub()</code>两个函数被作为参数传入；<code>calculate()</code>的参数有三个，两个为<code>int</code>类型， 另一个为<code>func()</code>即函数类型；返回一个<code>int</code>；</p>
+<h3 id="匿名函数"><a href="#匿名函数" class="headerlink" title="匿名函数"></a>匿名函数</h3><p><em>匿名函数</em>就是没有函数名的函数，匿名函数多用于实现回调函数和闭包；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+
+	<span class="hljs-comment">//定义匿名函数与使用1</span>
+	sayHello := <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;
+		fmt.Println(<span class="hljs-string">&quot;Hello World~&quot;</span>)
+	&#125;
+	sayHello()
+
+	<span class="hljs-comment">//定义匿名函数与使用2</span>
+	<span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;
+		fmt.Println(<span class="hljs-string">&quot;hello world!&quot;</span>)
+	&#125;() <span class="hljs-comment">//() 表示定义完成立即使用</span>
+&#125;</code></pre>
+<h3 id="闭包"><a href="#闭包" class="headerlink" title="闭包"></a>闭包</h3><p>闭包指的是：一个函数与其相关的引用环境组成的实体；简单来说，<strong>闭包=函数+引用环境</strong>。</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">a</span><span class="hljs-params">()</span> <span class="hljs-title">func</span><span class="hljs-params">()</span></span> &#123; <span class="hljs-comment">//将函数作为返回值</span>
+	name := <span class="hljs-string">&quot;Jack&quot;</span>
+	<span class="hljs-keyword">return</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;
+		say := <span class="hljs-string">&quot;Hello&quot;</span>
+		fmt.Println(say + name)
+	&#125;
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+	<span class="hljs-comment">//闭包就是函数加上外层变量的引用</span>
+	r := a() <span class="hljs-comment">//此时r就是一个闭包</span>
+	r()      <span class="hljs-comment">//相当于执行了a函数内部的匿名函数</span>
+&#125;</code></pre>
+<h3 id="panic-recover"><a href="#panic-recover" class="headerlink" title="panic/recover"></a>panic/recover</h3><p><code>panic</code>是Go语言中的宕机机制。通过对<code>panic</code>的使用即可手动触发宕机</p>
+<pre><code class="hljs go"><span class="hljs-keyword">package</span> main
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+
+	<span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;电脑宕机了&quot;</span>)
+&#125;</code></pre>
+<p>代码运行崩溃并输出：</p>
+<pre><code class="hljs go"><span class="hljs-built_in">panic</span>: 电脑宕机了
+
+goroutine <span class="hljs-number">1</span> [running]:
+main.main()
+        D:/GO/src/github.com/programer<span class="hljs-number">-00</span>/studyGo/day05/panic_recover/main.<span class="hljs-keyword">go</span>:<span class="hljs-number">5</span> +<span class="hljs-number">0x45</span>
+exit status <span class="hljs-number">2</span></code></pre>
+<h4 id="panic与defer"><a href="#panic与defer" class="headerlink" title="panic与defer"></a>panic与defer</h4><p><code>panic()</code>在宕机时，其后面的代码不会被执行；但是在其前面的<code>defer</code>语句依然会起作用：</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123;
+
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-string">&quot;1&quot;</span>)
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-string">&quot;2&quot;</span>)
+	<span class="hljs-keyword">defer</span> fmt.Println(<span class="hljs-string">&quot;3&quot;</span>)
+	<span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;电脑宕机了&quot;</span>)
+&#125;</code></pre>
+<p>输出代码如下：</p>
+<pre><code class="hljs go"><span class="hljs-number">3</span>
+<span class="hljs-number">2</span>
+<span class="hljs-number">1</span>
+<span class="hljs-built_in">panic</span>: 电脑宕机了
+
+goroutine <span class="hljs-number">1</span> [running]:
+main.main()
+        D:/GO/src/github.com/programer<span class="hljs-number">-00</span>/studyGo/day05/panic_recover/main.<span class="hljs-keyword">go</span>:<span class="hljs-number">10</span> +<span class="hljs-number">0x145</span>
+exit status <span class="hljs-number">2</span></code></pre>
+<p>宕机前，<code>defer</code>语句会被优先执行；</p>
+<h4 id="recover"><a href="#recover" class="headerlink" title="recover"></a>recover</h4><p>当程序宕机了，可以试图通过<code>recover</code>来恢复；</p>
+<pre><code class="hljs go"><span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">a</span><span class="hljs-params">()</span></span> &#123;
+	fmt.Println(<span class="hljs-string">&quot;a&quot;</span>)
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">b</span><span class="hljs-params">()</span></span> &#123;
+	<span class="hljs-keyword">defer</span> <span class="hljs-function"><span class="hljs-keyword">func</span><span class="hljs-params">()</span></span> &#123;
+		err := <span class="hljs-built_in">recover</span>()
+		<span class="hljs-keyword">if</span> err != <span class="hljs-literal">nil</span> &#123;
+			fmt.Println(<span class="hljs-string">&quot;func b error&quot;</span>)
+		&#125;
+	&#125;()
+	<span class="hljs-built_in">panic</span>(<span class="hljs-string">&quot;电脑宕机了&quot;</span>)
+	<span class="hljs-comment">// fmt.Println(&quot;b&quot;)</span>
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">c</span><span class="hljs-params">()</span></span> &#123;
+	fmt.Println(<span class="hljs-string">&quot;c&quot;</span>)
+&#125;
+
+<span class="hljs-function"><span class="hljs-keyword">func</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span> &#123; <span class="hljs-comment">//a func b error c</span>
+	a()
+	b()
+	c()
+&#125;
+</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/Go%E8%AF%AD%E8%A8%80/">Go语言</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/02/Go%E8%AF%AD%E8%A8%80-%E6%95%B0%E7%BB%84/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Go语言-数组</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/01/Go%E8%AF%AD%E8%A8%80-map/">
+                        <span class="hidden-mobile">Go语言-map</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

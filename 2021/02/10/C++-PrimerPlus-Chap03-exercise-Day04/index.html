@@ -1,0 +1,741 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C-PrimerPlus-Chap03-exercise-Day04 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C-PrimerPlus-Chap03-exercise-Day04
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-10 03:15" pubdate>
+        2021年2月10日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C-PrimerPlus-Chap03-exercise-Day04</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月10日 早上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="复习题"><a href="#复习题" class="headerlink" title="复习题"></a>复习题</h3><p>略</p>
+<h3 id="编程题"><a href="#编程题" class="headerlink" title="编程题"></a>编程题</h3><ol>
+<li><p>编写一个程序，要求用户使用一个整数指出自己的身高（单位为英寸），然后将身高转换为英尺和英寸。该程序使用下划线表示输入位置。另外使用一个const符号常量表示转换因子；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，要求用户使用一个整数指出</span>
+<span class="hljs-comment">自己的身高（单位为英寸），然后将身高转换为英尺和英寸。</span>
+<span class="hljs-comment">该程序使用下划线表示输入位置。另外使用一个const符号常量表示转换因子；</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//1英尺=12英寸</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> feet = <span class="hljs-number">12</span>;<span class="hljs-comment">//声明一个转换因子 1feet = 12inches</span>
+    <span class="hljs-keyword">int</span> height;<span class="hljs-comment">//user height</span>
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter your height:____\b\b\b\b&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; height;<span class="hljs-comment">//输入为英寸</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your height is &quot;</span> &lt;&lt; height / feet &lt;&lt; <span class="hljs-string">&quot; feet,&quot;</span>;<span class="hljs-comment">//得到英尺</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;and &quot;</span> &lt;&lt; height % feet &lt;&lt; <span class="hljs-string">&quot; inches.&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//得到英寸</span>
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个小程序要求以几英尺几英寸的方式输入其身高，并以磅为单位输入其体重，（使用3个变量来存储这些信息），该程序报告其BMI。（BMI = 体重（千克）/ 身高(米) ^ 2）(1英尺 = 12英寸)（1英寸 = 0.0254米）（1千克 = 2.2磅）（影响因子用符号常量表示）</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个小程序要求以几英尺几英寸的方式输入其身高，并以磅为单位输入其体重，（使用3个变量来存储这些信息），该程序报告其BMI。</span>
+<span class="hljs-comment">（BMI = 体重（千克）/ 身高(米) ^ 2）(1英尺 = 12英寸)（1英寸 = 0.0254米）（1千克 = 2.2磅）（影响因子用符号常量表示）</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">int</span> feet;<span class="hljs-comment">//身高 英尺</span>
+    <span class="hljs-keyword">int</span> inch;<span class="hljs-comment">//身高 英寸</span>
+    <span class="hljs-keyword">int</span> bounds;<span class="hljs-comment">//体重 磅</span>
+
+    <span class="hljs-comment">//声明转换因子</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> feet_to_inches = <span class="hljs-number">12</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> inches_to_meters = <span class="hljs-number">0.0254</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> kilometers_to_bounds = <span class="hljs-number">2.2</span>;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter your height(feet):&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; feet;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Enter your height(inch):&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; inch;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Enter your weight(bounds):&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; bounds;
+
+    <span class="hljs-keyword">double</span> bmi;<span class="hljs-comment">//声明BMI</span>
+    bmi = (bounds / kilometers_to_bounds) / ((feet * feet_to_inches * inches_to_meters) * (feet * feet_to_inches * inches_to_meters));
+    
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your BMI is: &quot;</span> &lt;&lt; bmi &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个程序，要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。（1度=60分，1分= 60秒，以符号常量表示；对于输入的值应独立存储）</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，</span>
+<span class="hljs-comment">要求用户以度、分、秒的方式输入一个纬度，然后以度为单位显示该纬度。</span>
+<span class="hljs-comment">（1度=60分，1分= 60秒，以符号常量表示；对于输入的值应独立存储）</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//声明符号常量</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> degree_to_minutes = <span class="hljs-number">60</span>; <span class="hljs-comment">//度到分钟</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> minutes_to_seconds = <span class="hljs-number">60</span>; <span class="hljs-comment">//分钟到秒</span>
+
+    <span class="hljs-comment">//声明接收变量</span>
+    <span class="hljs-keyword">double</span> dergree;
+    <span class="hljs-keyword">double</span> minutes;
+    <span class="hljs-keyword">double</span> seconds;
+    <span class="hljs-keyword">double</span> attitude;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt;<span class="hljs-string">&quot;Enter the degree:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; dergree;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt;<span class="hljs-string">&quot;Enter the minutes:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; minutes;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Enter the seconds:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; seconds;
+
+    <span class="hljs-keyword">double</span> minutes_degrees =  minutes / degree_to_minutes ;
+    <span class="hljs-keyword">double</span> seconds_degrees =  seconds / minutes_to_seconds / degree_to_minutes;
+    attitude = dergree + minutes_degrees + seconds_degrees;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your attitude is &quot;</span> &lt;&lt; attitude &lt;&lt; <span class="hljs-string">&quot; degrees.&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个程序，要求用户以整数方式输入描述（使用long或long long存储），然后以天、小时、分、秒表示；其换算用符号常量表示；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，要求用户以整数方式输入秒数（使用long或long long存储），然后以天、小时、分、秒表示；其换算用符号常量表示；</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//声明符号常量</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> day_hour = <span class="hljs-number">24</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> hour_minutes = <span class="hljs-number">60</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> minutes_seconds = <span class="hljs-number">60</span>;
+
+    <span class="hljs-keyword">long</span> user_input_seconds;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please enter the seconds:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; user_input_seconds;
+
+    <span class="hljs-keyword">int</span> day = user_input_seconds / minutes_seconds / hour_minutes / day_hour;
+    <span class="hljs-keyword">int</span> hour = (user_input_seconds - (day * day_hour * hour_minutes * minutes_seconds)) / minutes_seconds / hour_minutes;
+    <span class="hljs-keyword">int</span> minutes = (user_input_seconds - ((day * day_hour * hour_minutes * minutes_seconds) + (hour * hour_minutes * minutes_seconds))) / minutes_seconds;
+    <span class="hljs-keyword">int</span> seconds = user_input_seconds % minutes_seconds;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The &quot;</span> &lt;&lt; user_input_seconds &lt;&lt; <span class="hljs-string">&quot; seconds&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; equal to &quot;</span> &lt;&lt; day &lt;&lt; <span class="hljs-string">&quot; days and &quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; hour &lt;&lt; <span class="hljs-string">&quot; hours and&quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; minutes &lt;&lt; <span class="hljs-string">&quot; minutes &quot;</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;and &quot;</span> &lt;&lt; seconds &lt;&lt; <span class="hljs-string">&quot; seconds.&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个程序，要求用户输入驱车里程（英里）和汽油消耗（加仑），然后指出汽车耗油量为一加仑的里程；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，要求用户输入驱车里程（英里）和汽油消耗（加仑），然后指出汽车耗油量为一加仑的里程；</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//定义用户输入</span>
+    <span class="hljs-keyword">double</span> miles;
+    <span class="hljs-keyword">double</span> gallons;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter your travelled distace:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; miles;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Enter your gasoline consumption:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; gallons;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Your driveing distance per gallons is &quot;</span> &lt;&lt; miles / gallons &lt;&lt; <span class="hljs-string">&quot; miles.&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个程序，要求用户输入全球当前的人口和美国当前的人口（或者其他国家），然后指出其占比比例；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，要求用户输入全球当前的人口和美国当前的人口（或者其他国家），然后指出其占比比例；</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">double</span> global_people;
+    <span class="hljs-keyword">double</span> country_people;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Please input the global population:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; global_people;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Please input the country population:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; country_people;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The account is &quot;</span> &lt;&lt; (country_people / global_people) * <span class="hljs-number">100</span> &lt;&lt; <span class="hljs-string">&quot;\%.&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-comment">/*</span>
+<span class="hljs-comment">    Please input the global population:6898758899</span>
+<span class="hljs-comment">    Please input the country population:310783781</span>
+<span class="hljs-comment">    The account is 4.50492%.</span>
+<span class="hljs-comment">    */</span>
+&#125;</code></pre>
+</li>
+</ol>
+<ol>
+<li><p>编写一个程序，要求用户按欧洲风格输入汽车的耗油量（每百公里耗油（升）），然后将其转换为美国风格（每加仑多少英里）；（100公里 = 62.14英里；1加仑=3.785升）</p>
+<pre><code class="hljs c++"><span class="hljs-comment">/*</span>
+<span class="hljs-comment">编写一个程序，要求用户按欧洲风格输入</span>
+<span class="hljs-comment">汽车的耗油量（每百公里耗油（升）），然后将其转换为美国风格（每加仑多少英里）；</span>
+<span class="hljs-comment">（100公里 = 62.14英里；1加仑=3.785升）</span>
+<span class="hljs-comment">*/</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//定义符号常量</span>
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> kilometers_miles = <span class="hljs-number">62.14</span>;
+    <span class="hljs-keyword">const</span> <span class="hljs-keyword">double</span> gallons_liters = <span class="hljs-number">3.785</span>;
+
+    <span class="hljs-comment">//接收用户输入</span>
+    <span class="hljs-keyword">double</span> gas_consum;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter your gasoline consumption(Euro Style-How much liters per 1 hundred kilometers):&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; gas_consum;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-keyword">double</span> gasllons = gas_consum / gallons_liters;<span class="hljs-comment">//得到换算成加仑耗油量</span>
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your gas consumption(American Style-How much miles per gallon):&quot;</span> &lt;&lt; kilometers_miles / gasllons &lt;&lt; <span class="hljs-string">&quot; miles/gallons&quot;</span>;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+    <span class="hljs-comment">/*</span>
+<span class="hljs-comment">    Enter your gasoline consumption(Euro Style-How much liters per 1 hundred kilometers):20</span>
+<span class="hljs-comment">    Your gas consumption(American Style-How much miles per gallon):11.76 miles/gallons</span>
+<span class="hljs-comment">    */</span>
+
+&#125;</code></pre>
+</li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/10/C-PrimerPlus-Chap04-Day04/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap04-Day04</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/09/hexo%E5%8D%9A%E5%AE%A2err-TypeError-cannot-read-the-footnote-of-undefined/">
+                        <span class="hidden-mobile">hexo博客err:TypeError:cannot read the 'footnote' of undefined</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,553 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>汇编语言_基于X86处理器-Chap01-基本概念-Day01 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                汇编语言_基于X86处理器-Chap01-基本概念-Day01
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-13 13:18" pubdate>
+        2021年2月13日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">汇编语言_基于X86处理器-Chap01-基本概念-Day01</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月13日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="Chap-01-基本概念"><a href="#Chap-01-基本概念" class="headerlink" title="Chap 01 基本概念"></a>Chap 01 基本概念</h2><h3 id="1-1-汇编世界"><a href="#1-1-汇编世界" class="headerlink" title="1.1 汇编世界"></a>1.1 汇编世界</h3><h4 id="汇编器与链接器"><a href="#汇编器与链接器" class="headerlink" title="汇编器与链接器"></a>汇编器与链接器</h4><p><code>汇编器（assembler）</code>是一种工具程序，用于将汇编语言源程序转换为机器语言；</p>
+<p><code>链接器（linker）</code>也是一个工具程序，它负责把汇编语言生成的单个文件组合成一个可执行程序；</p>
+<p><code>调试器（debugger）</code>是一个工具程序，使程序员可以在程序运行时，单步执行程序并检查寄存器和内存状态；</p>
+<h4 id="汇编语言与机器语言"><a href="#汇编语言与机器语言" class="headerlink" title="汇编语言与机器语言"></a>汇编语言与机器语言</h4><p><code>机器语言（machine language）</code>是一种专门设计成能被计算机处理器理解的数字语言；</p>
+<p><code>汇编语言（assembly language）</code>则是包含助记符的书写语句；</p>
+<p>汇编语言于机器语言是一一对应的关系，一条汇编语言指令对应一条机器语言指令；</p>
+<h4 id="高级语言与汇编语言"><a href="#高级语言与汇编语言" class="headerlink" title="高级语言与汇编语言"></a>高级语言与汇编语言</h4><p>高级语言建构在汇编语言之上，与汇编语言和机器语言是一对多的对应关系；每条高级语言指令对应多条汇编语言指令或机器语言指令；</p>
+<h4 id="汇编语言的不可移植性"><a href="#汇编语言的不可移植性" class="headerlink" title="汇编语言的不可移植性"></a>汇编语言的不可移植性</h4><p><code>可移植性（portable）</code>是指一种语言的源程序可以在各种各样的计算机系统中编译和运行；</p>
+<p>汇编语言是不可移植的，因为它是为特定处理器系列设计的，目前广泛使用的有多种不同的汇编语言，每一种都基于一个处理器系列；</p>
+<h4 id="汇编语言的规则性"><a href="#汇编语言的规则性" class="headerlink" title="汇编语言的规则性"></a>汇编语言的规则性</h4><p>与高级语言不同，汇编语言的规则很少，汇编程序员可以很容易绕过高级语言的限制性特性，可以访问所有的内存地址，对应的代价就是：汇编语言程序员需要花费大量时间进行调试；</p>
+<h3 id="1-2-虚拟机"><a href="#1-2-虚拟机" class="headerlink" title="1.2 虚拟机"></a>1.2 虚拟机</h3><h4 id="虚拟机"><a href="#虚拟机" class="headerlink" title="虚拟机"></a>虚拟机</h4><p>假设<code>L0</code>是一种机器语言，<code>L1</code>是在其基础之上建构的一种更易于使用的语言；如果用L1编写程序，实现的方式有两种：</p>
+<ol>
+<li>解释（Interpretation）：运行L1程序，它的每一条指令都由一个L0编写的程序进行译码和执行；L1程序可以立即执行，只要提前对每条语句译码即可；</li>
+<li>翻译（Translation）：由一个专门设计的L0程序将整个L1程序转换为L0程序，然后即可在计算机硬件上执行；</li>
+</ol>
+<p>在此基础之上，我们来理解虚拟机的概念：</p>
+<p><code>虚拟机</code>通俗地讲就是模拟一些物理或虚拟计算机功能的应用程序；</p>
+<p>假设有虚拟机VM1，可以执行L1语言编写的指令；虚拟机VM0可以执行L0语言编写的指令；只要不把VM1当做真实计算机予以实现，那么VM1写出的程序就会被翻译、解释为VM0程序，并在VM0上执行；</p>
+<p>其中，VM1与VM0的差异不能过大，否则编译或解释的时间就会非常多；如果VM1程序不能够很好地支持程序员开发，则可以设计一门更易于理解的虚拟机VM2，这个过程可以无限重复，直至VMn可以足够方便、足够强大</p>
+<p>比较有代表性的例子是：Java虚拟机；</p>
+<h4 id="虚拟机层次架构"><a href="#虚拟机层次架构" class="headerlink" title="虚拟机层次架构"></a>虚拟机层次架构</h4><p>如果将实际机器与语言对应，Level2对应VM2，Level1对应VM1，则Level1为计算机数字逻辑硬件表示；Level2对应<code>指令集架构（ISA，Instruction Set Architecture）</code>；Level3对应汇编语言，Level4对应高级语言；</p>
+<p>其中，指令集架构为计算机芯片制造商在处理器内部设计的一个指令集，用来实现基本操作，这个指令集也被称为机器语言；</p>
+<p>汇编语言提供了一个翻译层，在执行之前，汇编语言将全部翻译为机器语言；</p>
+<p>高级语言功能强大，被翻译为多条汇编语言指令；</p>
+<h3 id="数据表示"><a href="#数据表示" class="headerlink" title="数据表示"></a>数据表示</h3><p>计算机常见的数据表示：二进制、八进制、十进制、十六机制</p>
+<p>其中，<code>基数</code>是指可以给单一数字分配的最大符号数；比如二进制，其基数为2，因为它只能给单一数字分配两个数字，即0和1；</p>
+<h4 id="二进制整数"><a href="#二进制整数" class="headerlink" title="二进制整数"></a>二进制整数</h4><p>用二进制整数表示电子电路的状态再合适不过，二进制以两个数字为基础，每一个二进制数字称为<strong>位（bit）</strong>；</p>
+<p>位自右向左，右边的位称为<strong>最低有效位（least Significant bit，LSB）</strong>，左边的位称<strong>最高有效位（Most Significant bit，MSB）</strong>；</p>
+<p>二进制整数分为<strong>有符号整数（分为正数和负数）</strong>和<strong>无符号整数（默认为正数，包括0）</strong>；</p>
+<h5 id="无符号二进制整数"><a href="#无符号二进制整数" class="headerlink" title="无符号二进制整数"></a>无符号二进制整数</h5><p>从LSB即最低有效位开始，无符号二进制整数中的每一位代表的是2的加一次幂；比如从最右边开始数，分别代表$2^0$、$2^1$、$2^2$…..一直到最高有效位；</p>
+<h5 id="无符号二进制整数与十进制数的转换"><a href="#无符号二进制整数与十进制数的转换" class="headerlink" title="无符号二进制整数与十进制数的转换"></a>无符号二进制整数与十进制数的转换</h5><p>可以用<strong>加权记位数法（weighted positional notation）</strong>，即将无符号二进制整数的每一位与该位的权重相乘，然后将所有乘积相加；比如：无符号二进制整数 00001001，其转换为十进制数为：</p>
+<script type="math/tex; mode=display">(1*2^3) + (1*2^0) = 8 + 1 = 9</script><p>计算该值时，剔除了数字等于0的位；</p>
+<h5 id="无符号十进制整数到二进制数的转换"><a href="#无符号十进制整数到二进制数的转换" class="headerlink" title="无符号十进制整数到二进制数的转换"></a>无符号十进制整数到二进制数的转换</h5><p>方法就是不断除2，并将每个余数记录下来；最后将余数逆序连接：比如无符号十进制整数33转换成二进制数为：</p>
+<script type="math/tex; mode=display">33/2 商16余1</script><script type="math/tex; mode=display">16/2 商8余0</script><script type="math/tex; mode=display">8/2 商4余0</script><script type="math/tex; mode=display">4/2 商2余0</script><script type="math/tex; mode=display">2/2 商1余0</script><script type="math/tex; mode=display">1/2 商0余1</script><p>最后将余数逆序连接得到：100001，又因为计算机总是按照8的倍数组织二进制数，所有在其左边增加2个0得到：00100001；</p>
+<h5 id="如何判断无符号十进制数转换成二进制有多少位"><a href="#如何判断无符号十进制数转换成二进制有多少位" class="headerlink" title="如何判断无符号十进制数转换成二进制有多少位"></a>如何判断无符号十进制数转换成二进制有多少位</h5><p>设无符号十进制值为n，其对应的二进制数的位数为b，则有公式$b = (\log_2n)$，最后的结果向上取整；</p>
+<p>比如当n=33时：</p>
+<p>$b = (\log_233)$ 计算机算出b = 5.0444，向上取整得6；所以即无符号十进制数 33转换成二进制数时的位数为6；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-Assembly/">汇编语言(Assembly)</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/13/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9CTop-Down-Chap01-Day01/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">计算机网络Top-Down-Chap01-Day01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/12/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-%E9%9B%86%E5%90%88%E8%AE%BA%E4%B8%8E%E5%9B%BE%E8%AE%BA-Chap01-1%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/">
+                        <span class="hidden-mobile">离散数学-集合论与图论-Chap01.1预备知识</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

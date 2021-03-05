@@ -1,0 +1,661 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C-PrimerPlus-Chap03-Day03 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C-PrimerPlus-Chap03-Day03
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-07 12:33" pubdate>
+        2021年2月7日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.6k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C-PrimerPlus-Chap03-Day03</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月9日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="Chap03-处理数据"><a href="#Chap03-处理数据" class="headerlink" title="Chap03 处理数据"></a>Chap03 处理数据</h2><h3 id="3-1-简单变量"><a href="#3-1-简单变量" class="headerlink" title="3.1 简单变量"></a>3.1 简单变量</h3><p>程序将信息存储在计算机中，主要记录三个属性：</p>
+<ul>
+<li><code>地址</code></li>
+<li><code>值</code></li>
+<li><code>类型</code></li>
+</ul>
+<p>其过程为：程序找到一块可以存储的内存，然后用<code>变量名(或其他标识符)</code>标记，并将<code>值</code>赋给<code>内存单元</code>；然后就可以访问了；</p>
+<h4 id="变量名"><a href="#变量名" class="headerlink" title="变量名"></a>变量名</h4><p>C++命名规则：</p>
+<ul>
+<li>名称中只能使用字母、数字和下划线；</li>
+<li>名称的第一个字符不能是数字；</li>
+<li>区分大小写；</li>
+<li>不能用C++关键字；</li>
+<li>以两个下划线或下划线和大写字母打头的的名称将被保留给实现使用；以一个下划线打头的名称将被保留给实现使用，用作全局标识符；</li>
+<li>C++对于名称长度没有限制；</li>
+</ul>
+<h4 id="整型"><a href="#整型" class="headerlink" title="整型"></a>整型</h4><p>即没有小数部分的数字；C++中的基本类型有：</p>
+<ul>
+<li><code>char</code></li>
+<li><code>`short</code></li>
+<li><code>int</code></li>
+<li><code>long</code></li>
+<li><code>long long</code>(C++11新增)</li>
+</ul>
+<p>其中，<code>char</code>最常用来表示字符，而非数字；</p>
+<p>C++没有将整型的宽度定死，而是提供了一种更为灵活的机制：</p>
+<ol>
+<li><code>short</code>至少16位；</li>
+<li><code>int</code>至少和<code>short</code>一样长；</li>
+<li><code>long</code>至少32位，且至少与<code>int</code>一样长；</li>
+<li><code>long long</code>至少64位，且至少与<code>long</code>一样长；</li>
+</ol>
+<p>通常来说，字节指的是8位内存单元，而C++中，字节由至少能够容纳其实现的基本字符集的相邻位组成，即可能取值的数目必须等于或超过字符数目；如在ASCII中，C++字节通常包含8位，而在Unicode中，有些实现可能使用16位甚至32位的字节；</p>
+<h4 id="sizeof"><a href="#sizeof" class="headerlink" title="sizeof"></a>sizeof</h4><p>C++中内置了<code>sizeof</code>运算符用来返回类型或变量的长度，单位为字节；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//通过sizeof运算符，返回类型或变量的长度，单位为byte</span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-meta">#<span class="hljs-meta-keyword">include</span><span class="hljs-meta-string">&lt;climits&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+	<span class="hljs-keyword">int</span> n_int = INT_MAX;
+	<span class="hljs-keyword">short</span> n_short = SHRT_MAX;
+	<span class="hljs-keyword">long</span> n_long = LONG_MAX;
+	<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> n_llong = LLONG_MAX;
+
+	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(<span class="hljs-keyword">int</span>) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//4</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span> n_short &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//2</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span> n_long &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//4</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span> n_llong &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//8</span>
+
+	<span class="hljs-built_in">cout</span> &lt;&lt; n_int &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//2147483647</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; n_short &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//32767</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; n_long &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//2147483647</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; n_llong &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//9223372036854775807</span>
+
+	<span class="hljs-built_in">cout</span> &lt;&lt; CHAR_BIT &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//8</span>
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>其中，<code>INT_MAX</code>表示<code>int</code>的最大取值，其被包含在头文件<code>climits</code>中；<code>CHAT_BIT</code>用来表示字节的位数；</p>
+<p>头文件<code>climits</code>定义了符号常量来表示对类型的限制，其包含如下语句行：</p>
+<p><code>#define INT_MAX 32767</code></p>
+<p><code>#define</code>与<code>#include</code>同为预处理器编译指令，其工作方式为：在程序中寻找<code>INT_MAX</code>，并将其替换为<code>32767</code>，程序在完成替换后被编译；预处理器寻找独立的标记，跳过嵌入的单词；</p>
+<p>注意：在设计那些可用于C和C++的程序时，头文件必须使用<code>#define</code>；</p>
+<h4 id="初始化方式"><a href="#初始化方式" class="headerlink" title="初始化方式"></a>初始化方式</h4><p>初始化其实就是将变量赋值的过程；C++的初始化方式有很多，下面我们来逐一介绍：</p>
+<ol>
+<li><p>标准赋值</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//1</span>
+<span class="hljs-keyword">int</span> a0;
+a0 = <span class="hljs-number">13</span>;
+<span class="hljs-comment">//2</span>
+<span class="hljs-keyword">int</span> a = <span class="hljs-number">123</span>;</code></pre></li>
+<li><p>用已知值的变量去初始化</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">int</span> b = a;</code></pre></li>
+<li><p>用已知值的表达式初始化</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> a = <span class="hljs-number">123</span>;
+<span class="hljs-keyword">int</span> b = a;
+<span class="hljs-keyword">int</span> c = a + b;</code></pre></li>
+<li><p>小括号初始化</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">short</span> <span class="hljs-title">d</span><span class="hljs-params">(<span class="hljs-number">322</span>)</span></span>;</code></pre></li>
+<li><p>大括号赋值</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">long</span> e = &#123; <span class="hljs-number">1999</span> &#125;;
+<span class="hljs-keyword">long</span> f&#123; <span class="hljs-number">1222</span> &#125;;
+<span class="hljs-comment">//也可以大括号里不写值，将初始化为0</span>
+<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> g = &#123;&#125;;
+<span class="hljs-keyword">long</span> <span class="hljs-keyword">long</span> h&#123;&#125;;</code></pre>
+<p>大括号初始化用于数组和结构，在C++98中，也可以用于单值变量；之后在C++11中使用更为广泛；</p>
+</li>
+</ol>
+<h4 id="无符号整型"><a href="#无符号整型" class="headerlink" title="无符号整型"></a>无符号整型</h4><p>上面介绍的<code>short</code>、<code>int</code>、<code>long</code>、<code>long long</code>都是有符号类型，即其值包含负数部分，而相应地也有无符号类型；运用<code>unsigned</code>关键字可以创建无符号类型变量；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> revert = <span class="hljs-number">65536</span>;
+<span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">short</span> uncles = <span class="hljs-number">65535</span>;</code></pre>
+<p>要注意的是，无论是有符号类型还是符号类型，一旦超过最大值或者低于最小值，它就会重置，超过最大值就会变成最小值，低于最小值就会变成最大值；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">unsigned</span> <span class="hljs-keyword">int</span> revert = UINT_MAX; <span class="hljs-comment">//设置为int的最大值</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; revert &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//4294967295</span>
+revert += <span class="hljs-number">1</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; revert &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//0</span></code></pre>
+<pre><code class="hljs c++"><span class="hljs-keyword">short</span> zero = SHRT_MIN; <span class="hljs-comment">//设置为short的最小值</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; zero &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//-32768</span>
+zero -= <span class="hljs-number">1</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; zero &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//32767</span></code></pre>
+<p>在如此多的整型之中，应当如何选择呢？通常，<code>int</code>被设计成<code>自然长度</code>，即计算机处理起来效率最高的长度，如无其他特殊情况，应当选用<code>int</code>；</p>
+<h4 id="进制表示"><a href="#进制表示" class="headerlink" title="进制表示"></a>进制表示</h4><p>默认情况下，<code>cout</code>以十进制显示整数，无论其怎样书写：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> chest = <span class="hljs-number">25</span>; <span class="hljs-comment">//十进制</span>
+<span class="hljs-keyword">int</span> chest2 = <span class="hljs-number">025</span>; <span class="hljs-comment">//八进制</span>
+<span class="hljs-keyword">int</span> chest3 = <span class="hljs-number">0x25</span>; <span class="hljs-comment">//十六进制</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; chest &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//25</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; chest2 &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//21</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; chest3 &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//37</span></code></pre>
+<p>但是如果程序中确实要如实表示相应进制的数字，则应该使用控制符<code>dec</code>、<code>hex</code>、<code>oct</code>；由头文件<code>iostream</code>所提供；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> chest = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">int</span> chest2 = <span class="hljs-number">42</span>;
+<span class="hljs-keyword">int</span> chest3 = <span class="hljs-number">42</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;十进制表示：&quot;</span> &lt;&lt; chest &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//42</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;八进制表示：&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; oct;
+<span class="hljs-built_in">cout</span> &lt;&lt; chest2 &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//52</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;十六进制表示：&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; hex;
+<span class="hljs-built_in">cout</span> &lt;&lt; chest3 &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//2a</span></code></pre>
+<p>要注意的是：在修改格式之前，之前的格式一直有效，这也就是说，如果你将进制改为十六进制，之后的数字都会以十六进制呈现，除非你再次改回十进制；</p>
+<h4 id="常量存储"><a href="#常量存储" class="headerlink" title="常量存储"></a>常量存储</h4><p>在C++中，在未指定的情况下，除非特殊情况，否则将存储为<code>int</code>类型；</p>
+<p>如果要指定类型，则需要添加后缀；</p>
+<ul>
+<li>u/U ——表示<code>unsigned int</code></li>
+<li>l/L —— 表示<code>long</code></li>
+<li>ul/UL——表示<code>unsigned long</code></li>
+<li>ll/LL —— 表示<code>long long</code> （C++11提供）</li>
+<li>ull/ULL——表示<code>unsigned long long</code></li>
+</ul>
+<p>C++对于后缀的格式没有明确要求，顺序、大小写可以任意写；</p>
+<h4 id="char类型"><a href="#char类型" class="headerlink" title="char类型"></a>char类型</h4><p><code>char</code>类型是专门为存储字符（如字母和数字）而设计的；现在更多用于存储字母；它可以表示目标计算机系统中的所有基本符号；<code>char</code>类型是一种特殊的整型；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> character;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the character:&quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; character;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;It&#x27;s your character:&quot;</span> &lt;&lt; character &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+<span class="hljs-comment">//Enter the character:M</span>
+<span class="hljs-comment">//It&#x27;s your character:M</span></code></pre>
+<p>在这个程序中，其工作过程为：</p>
+<p><code>cin</code>将键盘输入的<code>M</code>转换为77；输出时，<code>cout</code>将77转换为所显示的字符<code>M</code>；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/08/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F-day01/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">深入理解计算机系统-day01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/06/C++-PrimerPlus-Chap02-exercise-Day02/">
+                        <span class="hidden-mobile">C-PrimerPlus-Chap02_exercise-Day02</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

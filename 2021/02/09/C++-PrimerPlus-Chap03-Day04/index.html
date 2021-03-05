@@ -1,0 +1,715 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C-PrimerPlus-Chap03-Day04 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C-PrimerPlus-Chap03-Day04
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-09 01:01" pubdate>
+        2021年2月9日 凌晨
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      3.5k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C-PrimerPlus-Chap03-Day04</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月10日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h4 id="成员函数cout-put"><a href="#成员函数cout-put" class="headerlink" title="成员函数cout.put()"></a>成员函数<code>cout.put()</code></h4><p><code>成员函数</code>是重要的C++ OOP概念；<code>类</code>定义了如何表示和控制数据，<code>成员函数</code>归类所有，描述了操纵<code>类</code>数据的方法；</p>
+<p>在这里，<code>cout.put()</code>的意思是：通过<code>类对象cout</code>来使用函数<code>put()</code>；<code>.</code>被称作<code>成员运算符</code>；</p>
+<p><code>cout.put()</code>提供了一种显示字符的方法，其用法为：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span>.put(<span class="hljs-string">&#x27;$&#x27;</span>);	 <span class="hljs-comment">//$</span></code></pre>
+<p><code>cout.put()</code>的出现是由于C++早期无法正常显示字符常量，为了解决这个问题而设计的；自C++Release2.0之后，<code>cout</code>也可以直接输出字符；</p>
+<h4 id="转义序列"><a href="#转义序列" class="headerlink" title="转义序列"></a>转义序列</h4><p>如果想要表示单个字符，通常是用<code>单引号&#39;&#39;</code>扩起，有些情况下需要输出有特殊含义字符，就要用到<code>转义序列</code>；</p>
+<ul>
+<li><code>\n</code>——换行符</li>
+<li><code>\t</code>——水平制表符</li>
+<li><code>\a</code>——响铃</li>
+<li><code>\b</code>——退格</li>
+<li><code>v</code>——垂直制表符</li>
+<li><code>\r</code>——回车</li>
+<li><code>\\</code>——反斜杠</li>
+<li><code>\?</code>——问号</li>
+<li><code>\&#39;</code>——单引号</li>
+<li><code>\&quot;</code>——双引号</li>
+</ul>
+<p>关于换行符，有两种版本：一种是字符格式：<code>&#39;\n&#39;</code>，另一种是字符串格式：<code>&quot;\n&quot;</code>，其功能是一致的；</p>
+<p><code>转义序列</code>还可以用八进制或十六进制编码表示；将这些编码用<code>&#39;&#39;</code>括起来，可以得到相应的字符常量；</p>
+<p>在二者都可以使用的时候，应该优先选择<code>字符转义序列</code>，原因在于<code>数字转义序列</code>与一定的编码方式相关，而符号则适用于任何编码方式，可读性也更强；</p>
+<h4 id="通用字符名"><a href="#通用字符名" class="headerlink" title="通用字符名"></a>通用字符名</h4><p>C++实现支持一个基本的<code>源字符集</code>，即可用来编写源代码的字符集；同时还支持一个<code>执行字符集</code>，其包括程序在执行期间可处理的字符；更进一步地，C++标准还允许实现提供<code>扩展源字符集</code>和<code>扩展执行字符集</code>，C++的这种机制称作：<code>通用字符名（universal character name）</code>；</p>
+<p><code>通用字符名</code>以<code>\u</code>或<code>\U</code>表示，其表示的是字符的<code>ISO 10646码点</code>——可以理解为多文本语言编码的标准化；<code>\u</code>后接8个十六进制位，<code>\U</code>后接16个十六进制位；</p>
+<p>如果所用实现支持扩展字符，则可以在标识符中使用通用字符名：</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+	<span class="hljs-keyword">int</span> k\u00F6rper;<span class="hljs-comment">//俄文字母</span>
+	<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;let them eat a g\u00E2teau.\n&quot;</span>;
+
+	<span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<h4 id="char的符号"><a href="#char的符号" class="headerlink" title="char的符号"></a>char的符号</h4><p><code>char</code>类型默认情况下，既不是有符号的，也不是无符号的，是否有符号由C++实现决定；如果想要指定<code>char</code>的符号，则可以显式声明为<code>signed char xxx;</code>或<code>unsigned char xxx</code>；</p>
+<p>如果将<code>char</code>用作数值类型，则有必要声明指定类型，<code>signed char</code>类型范围为<code>-128~127</code>，<code>unsigned char</code>类型范围为<code>0~255</code>；如果用<code>char</code>存储ASCII码，则无论有无符号，都可以；</p>
+<h4 id="wchar-t"><a href="#wchar-t" class="headerlink" title="wchar_t"></a>wchar_t</h4><p>程序需要处理的字符集可能无法用一个8位的字节表示，如中文、日文，对于这种情况，C++提供两种方案：</p>
+<ol>
+<li>如果其基本实现字符集为大型字符集，则编译器厂商可以将<code>char</code>定义为一个16位的字节或更长；</li>
+<li>一种实现包含两种字符集，小型<code>基本字符集</code>和较大<code>扩展字符集</code>，而这种较大的扩展字符集就用<code>wchar_t</code>来表示；、</li>
+</ol>
+<p><code>wchar_t</code>类型是一种<code>宽字符类型</code>，也是一种<code>整数类型</code>，它有足够的空间可以表示系统最大的扩展字符集；其与另一种底层类型的长度、属性相同；它的实现依赖于系统，在这种系统上可能为<code>unsigned short</code>，则在那种系统上可能为<code>int</code>；</p>
+<p>特别注意的是：<code>wchar_t</code>无法用<code>cout</code>和<code>cin</code>输入输出，因为<code>cout、cin</code>将输出输出视为<code>char</code>类型的流，无法承载<code>wchar_t</code>的输入输出；为此，<code>iostream</code>的新版本中提供了<code>wcin</code>和<code>wcout</code>用于处理<code>wchar_t</code>流；</p>
+<p>除此以外，还可以通过<code>前缀L</code>表示宽字符常量和字符串；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">wchar_t</span> ch = <span class="hljs-string">L&#x27;P&#x27;</span>;<span class="hljs-comment">//宽字符的表示</span>
+wcout &lt;&lt; ch &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">L&quot;P&quot;</span>;</code></pre>
+<h4 id="char16-t和char32-t"><a href="#char16-t和char32-t" class="headerlink" title="char16_t和char32_t"></a>char16_t和char32_t</h4><p>随着<code>Unicode</code>的不断广泛使用，<code>wchar_t</code>逐渐不能满足需求，为此，C++11新增了两种类型：<code>char16_t</code>和<code>char32_t</code>；</p>
+<p>其中，<code>char16_t</code>长16位，无符号，使用前缀<code>u</code>表示，与<code>\u00F6</code>形式的<code>通用字符名</code>匹配；</p>
+<p><code>char32_t</code>长32位，无符号，使用前缀<code>U</code>表示，与<code>\U0000222B</code>形式的<code>通用字符名</code>匹配；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char16_t</span> ch1 = <span class="hljs-string">u&#x27;1&#x27;</span>;
+char32_t ch2 = U&#x27;\U0000222B&#x27;;
+<span class="hljs-built_in">cout</span> &lt;&lt; ch1 &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; ch2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//49 8747</span></code></pre>
+<h4 id="bool"><a href="#bool" class="headerlink" title="bool"></a>bool</h4><p><code>bool</code>类型是C++的一项新类型——对C++来说；</p>
+<p>C++将非零值解释为<code>true</code>，把零值解释为<code>false</code>，通常通过预定义的字面值<code>true</code>、<code>false</code>来表示：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">bool</span> isReady = <span class="hljs-literal">true</span>; <span class="hljs-comment">//bool类型的声明</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; isReady; <span class="hljs-comment">//1</span></code></pre>
+<p>要注意的是：如上输出会输出1，而不是<code>true</code>；</p>
+<p>字面值<code>true</code>、<code>false</code>还可以通过提升转换为<code>int</code>类型：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> c = <span class="hljs-literal">true</span>; <span class="hljs-comment">//相当与声明 c = 1</span>
+<span class="hljs-keyword">int</span> d = <span class="hljs-literal">false</span>;<span class="hljs-comment">//相当于声明 d = 0</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; c &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; d &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//1 0</span></code></pre>
+<p>同样地，任何数字值和指针值都可以被隐式转换为bool值，任何非零值都被转换为<code>true</code>，零值被转换为<code>false</code>：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">bool</span> start = <span class="hljs-number">-100</span>;
+<span class="hljs-keyword">bool</span> end = <span class="hljs-number">0</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; start &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; end &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//1 0</span></code></pre>
+<hr>
+<h3 id="3-2-const限定符"><a href="#3-2-const限定符" class="headerlink" title="3.2 const限定符"></a>3.2 const限定符</h3><p> 通常来说，声明一个常量的方式有两种：<code>#define</code>和限定符<code>const</code>；</p>
+<p><code>#define</code>是一个预处理器指令，其声明将其后跟随的字符常量转换成固定的数字，在程序源代码被编译之前进行全文搜索并替换：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">define</span> INT_MAX = 65536</span></code></pre>
+<p>如上，预处理器将在全文搜索<code>INT_MAX</code>并替换为65536；</p>
+<p>与<code>#define</code>不同，<code>const</code>是一个限定符，这是一种更好的方式去声明并初始化字符常量：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> MONTHS = <span class="hljs-number">12</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; MONTHS;</code></pre>
+<p>字符常量一旦被声明之后将不被允许修改；所以，字符常量声明的时候必初始化，如果将声明和初始化分开，将导致结果的不确定：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> year;
+year = <span class="hljs-number">1998</span>; 
+<span class="hljs-comment">//“year” : 如果不是外部的，则必须初始化常量对象</span>
+<span class="hljs-comment">//“year” : 不能给常量赋值</span></code></pre>
+<p><code>const</code>较<code>#define</code>先进的地方在于：<code>const</code>可以将定义限制在C++作用域内，如函数或文件中；其二，<code>const</code>可以指定声明类型；</p>
+<hr>
+<h3 id="3-3-浮点数"><a href="#3-3-浮点数" class="headerlink" title="3.3 浮点数"></a>3.3 浮点数</h3><p><code>浮点数</code>是C++的第二组基本类型，其表带小数部分的数字；</p>
+<p>计算机将<code>浮点数</code>分为两部分存储：其一为<code>基准值</code>部分，如<code>34.145</code>，其基准值为<code>0.34145</code>（不固定，也可以将3.4145看作基准值）；第二部分为<code>缩放因子</code>，如<code>34.145</code>，其缩放因子为100（根据基准值而来，如果3.4145看作基准值，则缩放因子为10）；缩放因子的作用是移动小数点的位置，<code>浮点数</code>因此得名；</p>
+<h4 id="浮点数的表示"><a href="#浮点数的表示" class="headerlink" title="浮点数的表示"></a>浮点数的表示</h4><p>通常来说，浮点数有两种表示方法：</p>
+<h5 id="标准小数点表示法"><a href="#标准小数点表示法" class="headerlink" title="标准小数点表示法"></a>标准小数点表示法</h5><p>即：<code>3.1415</code>、<code>214.5236</code>、<code>999.0</code>等</p>
+<p>即使小数部分为0，小数点也确保该数字以浮点数格式表示；</p>
+<h5 id="E表示法（科学计数法）"><a href="#E表示法（科学计数法）" class="headerlink" title="E表示法（科学计数法）"></a>E表示法（科学计数法）</h5><p>即<code>7E5</code>、<code>9.11e-31</code>等等；<code>e</code>前面的部分称之为<code>尾数</code>，<code>e</code>后面的部分称之为<code>指数</code>；指数为负时，表示的不是乘法，而是除法；比如<code>7E5</code>表示的是<code>7*10^5</code>，而<code>9.11e-31</code>表示的是<code>9.11 * 10^-31</code>或者<code>9.11 / 10^31</code>；</p>
+<p>通俗的记忆就是：<code>d.dddE+n</code>指的就是将小数点向右移动n位；<code>d.dddE-n</code>指的就是将小数点向左移动n位；</p>
+<h4 id="浮点类型"><a href="#浮点类型" class="headerlink" title="浮点类型"></a>浮点类型</h4><p>根据可以表示的有效数位和允许的指数最小范围来描述，浮点类型被分为三种，即<code>float</code>、<code>double</code>、<code>long double</code>；</p>
+<h5 id="有效位（significant-figure）"><a href="#有效位（significant-figure）" class="headerlink" title="有效位（significant figure）"></a>有效位（significant figure）</h5><p>即数字中有意义的位；和小数点的位置无关；</p>
+<p>如：<code>14179</code> 有效位为5；<code>14000</code> 有效位为2；  <code>1.4179</code> 有效位为5；</p>
+<p>通常来说，C++中，<code>float</code>有效位为32位，<code>double</code>为64位，<code>long double</code>为80、96或128位；</p>
+<p>以下例子展示了本系统中<code>float</code>和<code>double</code>类型的精度：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span>.setf(ios_base::fixed, ios_base::floatfield);
+<span class="hljs-keyword">float</span> tub = <span class="hljs-number">10.0</span> / <span class="hljs-number">3.0</span>;
+<span class="hljs-keyword">double</span> mint = <span class="hljs-number">10.0</span> / <span class="hljs-number">3.0</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">float</span> million = <span class="hljs-number">1.0e6</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;tub = &quot;</span> &lt;&lt; tub &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">// 3.333333</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;tub * 1million = &quot;</span> &lt;&lt; tub * million &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//tub * 1million = 3333333.250000</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;mint = &quot;</span> &lt;&lt; mint &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//mint = 3.333333</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;mint * 1minllion = &quot;</span> &lt;&lt; mint * million &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//mint * 1minllion = 3333333.333333</span></code></pre>
+<p>可以直观看到，<code>tub</code>在乘以<code>100w</code>后，从第7个3之后，数值便有了误差，与之对比的<code>double</code>则没有误差；</p>
+<h5 id="浮点型的默认值"><a href="#浮点型的默认值" class="headerlink" title="浮点型的默认值"></a>浮点型的默认值</h5><p>浮点型常量默认存储为<code>double</code>类型，如果想要指定类型：<code>float</code>则使用后缀<code>f或者F</code>，<code>long double</code>则使用<code>l或者L</code>；</p>
+<hr>
+<h3 id="3-4-C-算术运算符"><a href="#3-4-C-算术运算符" class="headerlink" title="3.4 C++算术运算符"></a>3.4 C++算术运算符</h3><p>C++提供了五种基本算术运算符：<code>+</code>、<code>-</code>、<code>*</code>、<code>/</code>、<code>%</code>；</p>
+<p>其中注意：求模运算符<code>%</code>的<code>操作数（即符号两边的数）</code>只能是整型，用于浮点型将导致编译错误； </p>
+<h4 id="运算符优先级与结合性"><a href="#运算符优先级与结合性" class="headerlink" title="运算符优先级与结合性"></a>运算符优先级与结合性</h4><p>优先级就是先算谁的问题；结合性就是先从哪算的问题；各大网站都能找到资料，在此不再赘述；</p>
+<p>如果不确定自己的代码，请用<code>()</code>；</p>
+<h4 id="关于除法"><a href="#关于除法" class="headerlink" title="关于除法"></a>关于除法</h4><p>整数相除，结果为整数，且结果向下取整；</p>
+<p>浮点数相除，结果为浮点数；如果同为<code>double</code>类型，则结果为<code>double</code>类型，如果同为<code>float</code>类型，则结果为<code>float</code>类型；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span>.setf(ios_base::fixed, ios_base::floatfield);
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;整数相除：&quot;</span> &lt;&lt; <span class="hljs-number">9</span> / <span class="hljs-number">5</span> &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//整数相除：1</span>
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;浮点数相除：&quot;</span> &lt;&lt; <span class="hljs-number">9.0</span> / <span class="hljs-number">5.0</span> &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//浮点数相除：1.800000</span>
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;float类型相除：&quot;</span> &lt;&lt; <span class="hljs-number">9.0f</span> / <span class="hljs-number">5.0f</span> &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//float类型相除：1.800000</span>
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;float和double类型相除：&quot;</span> &lt;&lt; <span class="hljs-number">1e7</span>f / <span class="hljs-number">9.0</span> &lt;&lt; <span class="hljs-built_in">endl</span>; 
+<span class="hljs-comment">//float和double类型相除：1111111.111111	</span></code></pre>
+<p>扩展小知识：这里的<code>/</code>运算符其实就是<code>运算符重载</code>的一个例子，即相同符号进行多种运算（int、float、double）；这是OOP的重要属性之一；</p>
+<h4 id="关于求模"><a href="#关于求模" class="headerlink" title="关于求模"></a>关于求模</h4><p>所谓<code>求模</code>其实就是求余数运算；什么叫余数？就是10 / 4商2余2的余；前文有说过，求模运算符的操作数必须都为整数，否则编译器会报错：</p>
+<pre><code class="hljs c++">	<span class="hljs-keyword">float</span> xia = <span class="hljs-number">10.0</span>;
+   <span class="hljs-keyword">float</span> hua = <span class="hljs-number">4.0</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; xia % hua &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//error: invalid operands of types &#x27;float&#x27; and &#x27;float&#x27; to binary &#x27;operator%&#x27;</span>
+<span class="hljs-comment">//cout &lt;&lt; xia % hua &lt;&lt; endl;</span>
+   <span class="hljs-comment">//        ~~~~^~~~~</span></code></pre>
+<h4 id="类型转换"><a href="#类型转换" class="headerlink" title="类型转换"></a>类型转换</h4><p>C++的类型众多，也给计算机造成潜在风险，为了处理这种情况，C++自动执行类型转换，分为三种情况：</p>
+<ol>
+<li>将一种算术类型的值赋给另一种算术类型的变量时，C++将对值进行转换；</li>
+<li>表达式中包含不同类型时，C++将对值进行转换；</li>
+<li>将参数传递给函数时，C++将对值进行转换；</li>
+</ol>
+<h5 id="初始化与赋值进行的转换"><a href="#初始化与赋值进行的转换" class="headerlink" title="初始化与赋值进行的转换"></a>初始化与赋值进行的转换</h5><p>C++允许将一种类型的值赋给另一种类型的变量，值将被转换为接收变量的类型：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">short</span> x = <span class="hljs-number">200</span>;
+<span class="hljs-keyword">long</span> v;
+v = x; <span class="hljs-comment">//short类型被赋值给long类型，值为long类型</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; v;</code></pre>
+<p>在这种情况下，小取值范围的类型赋值给大取值范围类型通常不会发生什么，而将大取值范围类型赋值给小取值范围类型则结果不一定都是好的；</p>
+<ul>
+<li>较大浮点类型赋值给较小浮点类型：精度降低，有可能超出范围，结果不确定</li>
+<li>浮点类型赋值给整数类型：小数部分丢失，有可能超出范围，结果不确定</li>
+<li>较大整型赋值给较小整型：有可能超出范围，通常只复制右边的字节</li>
+</ul>
+<pre><code class="hljs c++"><span class="hljs-keyword">double</span> p = <span class="hljs-number">3.1415926</span>;
+<span class="hljs-keyword">float</span> q; 
+q = p;<span class="hljs-comment">//double赋值给float</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; q &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//3.14159</span>
+
+<span class="hljs-keyword">double</span> m = <span class="hljs-number">3.1415926</span>;
+<span class="hljs-keyword">int</span> n; 
+n = m;<span class="hljs-comment">//double赋值给int</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; n &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//3</span>
+
+<span class="hljs-keyword">long</span> x = <span class="hljs-number">3141592657589</span>;
+<span class="hljs-keyword">int</span> y; 
+y = x;<span class="hljs-comment">//double赋值给float</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; y &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">/*</span>
+<span class="hljs-comment">warning: overflow in conversion from &#x27;long long int&#x27; to </span>
+<span class="hljs-comment">&#x27;long int&#x27; changes value from &#x27;3141592657589&#x27; to &#x27;1971564213&#x27; [-Woverflow]</span>
+<span class="hljs-comment">*/</span></code></pre>
+<h5 id="以-方式初始化时进行的转换"><a href="#以-方式初始化时进行的转换" class="headerlink" title="以{}方式初始化时进行的转换"></a>以<code>&#123;&#125;</code>方式初始化时进行的转换</h5><p>C++11将<code>&#123;&#125;</code>初始化方式称为<code>列表初始化（list-initialization）</code>，列表初始化不允许<code>缩窄（narrowing）</code>，即变量的类型肯无法表示赋给它的值；编译器必须知道值能否被类型完整接收，否则将会不通过；</p>
+<h5 id="自动类型提升和强制类型提升"><a href="#自动类型提升和强制类型提升" class="headerlink" title="自动类型提升和强制类型提升"></a>自动类型提升和强制类型提升</h5><p>当同一个表达式中包含两种不同的算术类型时，C++将执行自动类型转换：</p>
+<ul>
+<li>整型提升（integral promotion）：</li>
+</ul>
+<ol>
+<li>C++将<code>bool</code>、<code>char</code>、<code>unsigned char</code>、<code>signed char</code>和<code>short</code>值转换为<code>int</code>；</li>
+</ol>
+<pre><code class="hljs c++"><span class="hljs-keyword">bool</span> b1 = <span class="hljs-literal">true</span>;
+   <span class="hljs-keyword">char</span> ch = <span class="hljs-string">&#x27;M&#x27;</span>;
+   <span class="hljs-built_in">cout</span> &lt;&lt; b1 + ch &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//78 1 + 77 = 78</span></code></pre>
+<ol>
+<li>如果<code>short</code>比<code>int</code>短，则<code>unsigned short</code>转换为<code>int</code>；如果两种类型长度相当，<code>unsigned short</code> 转换为<code>unsigned int</code>；</li>
+<li><code>wchar_t</code>被提升为<code>int</code>、<code>unsigned int</code>、<code>long</code>或<code>unsigned long</code>中第一个宽度足够存储<code>wchar_t</code>取值范围的值；</li>
+</ol>
+<ul>
+<li><p>表达式中转换</p>
+<p>将不同类型进行算术运算时，C++编译器通过查询校验表来确定算术表达式中执行的转换；</p>
+</li>
+</ul>
+<p>强制类型转换</p>
+<p>强制类型转换的设计有两个原因：</p>
+<ol>
+<li>可能有一些值被存储为double类型，但要得到一个</li>
+</ol>
+<p>C++支持强制类型转换机制来显式地进行类型转换；有两种方式：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">long</span> thron;
+   <span class="hljs-keyword">int</span>(thron); <span class="hljs-comment">//方式1</span>
+   (<span class="hljs-keyword">int</span>)thron; <span class="hljs-comment">//方式2</span></code></pre>
+<p>方式1来自C语言，方式2是纯粹的C++；</p>
+<p><strong>注意：强制类型转换不会修改变量本身，而是创建一个新的、指定类型的变量，以供在表达式中使用！</strong></p>
+<h4 id="auto声明"><a href="#auto声明" class="headerlink" title="auto声明"></a><code>auto</code>声明</h4><p><code>auto</code>是C++11重新定义的一个新工具，让编译器能够根据初始值的类型推断变量的类型；称作<code>自动类型推断</code>；</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//声明一个int类型变量</span>
+<span class="hljs-keyword">auto</span> i1 = <span class="hljs-number">100</span>;<span class="hljs-comment">//i1为int类型</span></code></pre>
+<p>但<code>auto</code>并非为这种情况而设计，<code>auto</code>被用来处理复杂模型，如<code>STL</code>中的类型；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/09/hexo%E5%8D%9A%E5%AE%A2err-TypeError-cannot-read-the-footnote-of-undefined/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">hexo博客err:TypeError:cannot read the 'footnote' of undefined</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/08/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F-day01/">
+                        <span class="hidden-mobile">深入理解计算机系统-day01</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

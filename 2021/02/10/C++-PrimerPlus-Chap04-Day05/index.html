@@ -1,0 +1,843 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C-PrimerPlus-Chap04-Day05 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C-PrimerPlus-Chap04-Day05
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-10 23:56" pubdate>
+        2021年2月10日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      4.3k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C-PrimerPlus-Chap04-Day05</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月15日 上午
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="4-2-字符串"><a href="#4-2-字符串" class="headerlink" title="4.2  字符串"></a>4.2  字符串</h3><p><code>字符串</code>是存储在内存的连续字节中的一系列字符；</p>
+<p>C++处理字符串有两种方式：</p>
+<ul>
+<li>C-风格字符串（C-style string）</li>
+<li>string类库</li>
+</ul>
+<h4 id="C-风格字符串"><a href="#C-风格字符串" class="headerlink" title="C-风格字符串"></a>C-风格字符串</h4><p>首先介绍C-风格字符串：</p>
+<p>其思路是将字符串存储在char数组中，其中每个字符都是数组中的一个元素；</p>
+<p>C-风格字符串最大的特点在于：以<code>空字符（null character）</code>结尾；空字符即’\0’；</p>
+<p>举个例子：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch0[] = &#123;<span class="hljs-string">&#x27;I&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;m&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;C&#x27;</span>,<span class="hljs-string">&#x27;+&#x27;</span>,<span class="hljs-string">&#x27;+&#x27;</span>,<span class="hljs-string">&#x27;P&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;y&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;.&#x27;</span>,<span class="hljs-string">&#x27;\0&#x27;</span>&#125;;
+<span class="hljs-built_in">cout</span> &lt;&lt; ch0 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//I am a C++Player.//ch0[18]//字符串</span>
+<span class="hljs-keyword">char</span> ch1[] = &#123;<span class="hljs-string">&#x27;I&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;m&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>, <span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27; &#x27;</span>,<span class="hljs-string">&#x27;C&#x27;</span>,<span class="hljs-string">&#x27;+&#x27;</span>,<span class="hljs-string">&#x27;+&#x27;</span>,<span class="hljs-string">&#x27;P&#x27;</span>,<span class="hljs-string">&#x27;l&#x27;</span>,<span class="hljs-string">&#x27;a&#x27;</span>,<span class="hljs-string">&#x27;y&#x27;</span>,<span class="hljs-string">&#x27;e&#x27;</span>,<span class="hljs-string">&#x27;r&#x27;</span>,<span class="hljs-string">&#x27;.&#x27;</span>&#125;;
+<span class="hljs-built_in">cout</span> &lt;&lt; ch1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//I am a C++Player.//ch1[17]//字符数组</span></code></pre>
+<p>上面初始化字符串的方法显得冗长而且麻烦，相较之下，C++提供一种更好的将字符数组初始化为字符串的方法：</p>
+<p>就是利用<code>双引号(&quot;&quot;)</code>；这种字符串称之为<code>字符串常量（string constant）</code>或者<code>字符串字面值（string literal）</code>；</p>
+<pre><code class="hljs c++">	<span class="hljs-keyword">char</span> ch2[] = <span class="hljs-string">&quot;I am a C++Player.&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; ch2 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//I am a C++Player.</span></code></pre>
+<p>特别注意：利用这种方式处理的字符串仍然包括空字符，只是不必显式地包括；C++在将键盘输入的字符串读入字符数组时，将自动添加空字符；</p>
+<p>另外，为了确保字符数组能够完美地接收字符串，最好让编译器计算数组元素数目，即不在<code>[]</code>中写明元素个数；</p>
+<h4 id="字符串常量VS字符常量"><a href="#字符串常量VS字符常量" class="headerlink" title="字符串常量VS字符常量"></a>字符串常量VS字符常量</h4><p>字符串常量迥然不同于字符常量；先来举个例子：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> c1 = <span class="hljs-string">&#x27;S&#x27;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; c1 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-keyword">char</span> c2[] = <span class="hljs-string">&quot;S&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; c2 &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>首先，字符常量’S’在声明的时候实际上是将其ASCII码赋给<code>c1</code>，即在ASCII系统上，’S’只是83的另一种写法；</p>
+<p>而字符串常量”S”表示的是两个字符——S和\0——组成的字符串；而这两者更深此次的不同在于：”S”实际上表示的是字符串所在的<code>内存地址</code>，也因此二者的声明方式有很大不同；</p>
+<h4 id="字符串常量拼接"><a href="#字符串常量拼接" class="headerlink" title="字符串常量拼接"></a>字符串常量拼接</h4><p>C++在处理字符串常量或字符串字面值时，任何两个由空白（空格，制表符以及换行符）分隔的字符串常量都将自动拼接成一个；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;I love&quot;</span> <span class="hljs-string">&quot;C++.\n&quot;</span>;   <span class="hljs-comment">//I loveC++.</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;I love&quot;</span>    <span class="hljs-string">&quot;C++.\n&quot;</span>;<span class="hljs-comment">//I loveC++.</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;I love&quot;</span>
+           <span class="hljs-string">&quot;C++.\n&quot;</span>;            <span class="hljs-comment">//I loveC++.</span></code></pre>
+<h4 id="在数组中使用字符串"><a href="#在数组中使用字符串" class="headerlink" title="在数组中使用字符串"></a>在数组中使用字符串</h4><p>C++中最常用的两种将字符串存储到数组的方法：</p>
+<h4 id="数组初始化为字符串常量或者将键盘、文件输入读入到数组中"><a href="#数组初始化为字符串常量或者将键盘、文件输入读入到数组中" class="headerlink" title="数组初始化为字符串常量或者将键盘、文件输入读入到数组中"></a>数组初始化为字符串常量或者将键盘、文件输入读入到数组中</h4><pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">15</span>;
+<span class="hljs-keyword">char</span> name1[size] = <span class="hljs-string">&quot;C++Boy&quot;</span>;<span class="hljs-comment">//数组初始化为字符串常量</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; name1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//C++Boy</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(name1) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//6</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(name1) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//15</span>
+
+<span class="hljs-keyword">char</span> name2[size];
+<span class="hljs-built_in">cin</span> &gt;&gt; name2;<span class="hljs-comment">//将键盘输入读入到数组中</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; name2 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//C++Girl</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(name2) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//7</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(name2) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//15</span>
+
+name1[<span class="hljs-number">3</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; name1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//C++</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(name1) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//3</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(name1) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//15</span></code></pre>
+<p>这里用代码展示了这两种常规方法，其中<code>sizeof()</code>函数是算整个数组的长度，而<code>strlen()</code>则是计算字符串的长度，不包含空字符，在头文件<code>cstring</code>中定义；</p>
+<p>由于字符串被存储到数组中，因此可以用索引访问具体字符；</p>
+<p>特别注意的是：一旦将字符串的某个字符设置为空字符，则字符串在此处结束，其后的字符将被忽略；</p>
+<p>提示：用字符常量指定数组长度在后期修改时更方便；</p>
+<p>字符串输入的缺陷</p>
+<p>当创建一个字符数组用来存储字符串时，可能会面临两个麻烦：</p>
+<p>当输入字符串中有空白（空格、制表符、换行符）时，<code>cin</code>将自动添加空字符，这也就意味着，<code>cin</code>在获取字符数组输入时，只读取一个单词；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">15</span>;
+
+<span class="hljs-keyword">char</span> name[size];
+<span class="hljs-keyword">char</span> food[size];
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your name:&quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; name; <span class="hljs-comment">//C++Boy</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Your favorite food:&quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; food; <span class="hljs-comment">//DongBei jiaozi</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span> &lt;&lt; <span class="hljs-string">&quot;Your name is &quot;</span> &lt;&lt; name &lt;&lt; <span class="hljs-string">&quot; and your favorite food is &quot;</span> &lt;&lt; food &lt;&lt; <span class="hljs-string">&quot;.&quot;</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//Your name is C++Boy and your favorite food is DongBei.</span></code></pre>
+<p>原因解析：当<code>cin</code>在读取输入时，以空白作为字符串的结束位置，并自动添加空字符，将第一个单词存储到数组中，然后再读取第二个单词，遇到空白，添加空字符，然后将第二个单词读入到数组中；因为第一个单词后有空字符，导致第二个单词被编译器忽略，最后输出的只有一个单词；</p>
+<p>第二个麻烦则是如果限定了数组长度，则存储超过范围的字符时，因为c++ 不侦测数组越界错误，所以程序仍然可以正常输出，但其潜在的风险大过了表面的平和：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//c++ 不侦测数组越界错误.</span>
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">8</span>;
+
+   <span class="hljs-keyword">char</span> name[size];
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your name is:&quot;</span>;
+   <span class="hljs-built_in">cin</span> &gt;&gt; name;<span class="hljs-comment">//LinuxTorvalds</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//LinuxTorvalds</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(name) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//13</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(name) &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//8</span></code></pre>
+<h4 id="面向行输入"><a href="#面向行输入" class="headerlink" title="面向行输入"></a>面向行输入</h4><p>鉴于<code>cin</code>本身的缺陷，<code>istream</code>中的类提供了一些面向行的类成员函数<code>getline()</code>以及<code>get()</code>；这两个函数都读取一行输入，直到到达换行符；随后，<code>getline()</code>将丢弃换行符，<code>get()</code>将换行符保留在输出序列中；</p>
+<h5 id="getline"><a href="#getline" class="headerlink" title="getline()"></a>getline()</h5><ul>
+<li><p>getline()函数读取整行，通过回车键输入的换行符来结束输入；</p>
+</li>
+<li><p>getline()函数有两个参数，第一个为存储输入的数组名称，第二为所要读取的字符数；这个字符数要在参数的基础上减1，因为它要给空字符 \0 留出位置来；</p>
+</li>
+<li><p>getline()函数不保留换行符；</p>
+</li>
+<li>其原理为：当程序调用getline()时，等待用户键入，用户键入后，<code>cin.getline()</code>读取用户输入以及用户按下回车键而生成的换行符，并将换行符替换为空字符；</li>
+</ul>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">50</span>;
+
+   <span class="hljs-keyword">char</span> doing[size];
+   <span class="hljs-keyword">char</span> like[size];
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;What are you doing?\n&quot;</span>;
+   <span class="hljs-built_in">cin</span>.getline(doing,size);
+   <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Well,Do you like it?\n&quot;</span>;
+   <span class="hljs-built_in">cin</span>.getline(like,size);
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; doing &lt;&lt; like &lt;&lt; <span class="hljs-built_in">endl</span>;
+   <span class="hljs-comment">//I am doing my homework.No,I dont like it at all.</span></code></pre>
+<p>getline()函数可以合并使用，效果如上：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cin</span>.getline(doing,size).getline(like,size);</code></pre>
+<h5 id="get"><a href="#get" class="headerlink" title="get()"></a>get()</h5><p>get()函数也读取整行，参数录入也与getline()一样，但get()函数并不丢弃换行符，而是将其保留在输入行列中；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">const</span> <span class="hljs-keyword">int</span> size = <span class="hljs-number">50</span>;
+
+   <span class="hljs-keyword">char</span> get1[size];
+   <span class="hljs-keyword">char</span> get2[size];
+
+   <span class="hljs-built_in">cin</span>.get(get1,<span class="hljs-number">5</span>);<span class="hljs-comment">//123</span>
+   <span class="hljs-built_in">cin</span>.get(get2,<span class="hljs-number">5</span>);
+
+   <span class="hljs-built_in">cout</span> &lt;&lt; get1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//123</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; get2 &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>在这个例子中，当键盘输入完get1时，程序自动结束，并未接收get2；</p>
+<p>其原因在于：当我们第一次键入时，我们键入123，然后按回车，get自动捕获换行符，然后结束第一次输入；但是，第一次输入的换行符却没有丢弃，仍然保留在输入队列中，当第二次调用get函数时，get接收到第一次未丢弃的换行符，认为已经到达行尾，于是结束录入；在没有帮助的情况下，get无法跨过换行符；</p>
+<p>解决这个问题的办法有两个：</p>
+<ol>
+<li>在两次调用之间用不带参数的get()函数隔开；get()函数自动读取下一个字符，包括换行符；</li>
+</ol>
+<pre><code class="hljs c++"><span class="hljs-built_in">cin</span>.get(get1,<span class="hljs-number">5</span>);
+<span class="hljs-built_in">cin</span>.get();
+<span class="hljs-built_in">cin</span>.get(get2,<span class="hljs-number">5</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; get1 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; get2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">/*123</span>
+<span class="hljs-comment">456</span>
+<span class="hljs-comment">123</span>
+<span class="hljs-comment">456*/</span></code></pre>
+<ol>
+<li>使用get()的方式将两个类成员函数拼接函数（合并）；因为<code>cin.get(get1)</code>返回一个cin对象，该对象仍然可以调用成员函数；</li>
+</ol>
+<pre><code class="hljs c++"><span class="hljs-built_in">cin</span>.get(get1,<span class="hljs-number">5</span>).get();
+<span class="hljs-built_in">cin</span>.get(get2,<span class="hljs-number">5</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; get1 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; get2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">/*123</span>
+<span class="hljs-comment">456</span>
+<span class="hljs-comment">123</span>
+<span class="hljs-comment">456*/</span></code></pre>
+<p>推荐使用get而非getline：</p>
+<p>首先，老式实现没有getline，其次，get函数更有助与排查错误；当不确定无法输入的原因是已经读取完整行还是数组满了的时候，只要查看一下下一个输入字符，如果是换行符，则说明已经读取完整行，否则说明该行还有其他输入；</p>
+<h4 id="混合输入数字及面向行的字符串"><a href="#混合输入数字及面向行的字符串" class="headerlink" title="混合输入数字及面向行的字符串"></a>混合输入数字及面向行的字符串</h4><p>当一串代码中的键盘输入既有cin又有getline时，要注意避免无法输入的问题：</p>
+<p>当cin读入一个数字，它将遗留一个回车键生成的换行符在输入队列中，getline在读取输入时，会首先看到之前留下来的换行符，于是getline误认为这是一个空行，并返回给数组一个空字符串；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;What&#x27;s the year now?\n&quot;</span>;
+<span class="hljs-keyword">int</span> year;
+<span class="hljs-built_in">cin</span> &gt;&gt; year;
+
+<span class="hljs-keyword">char</span> name[<span class="hljs-number">50</span>];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;What&#x27;s your name?\n&quot;</span>;
+<span class="hljs-built_in">cin</span>.getline(name,<span class="hljs-number">50</span>);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Your name:&quot;</span> &lt;&lt; name &lt;&lt; <span class="hljs-string">&quot; and the year is &quot;</span> &lt;&lt; year &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//Your name: and the year is 1998</span></code></pre>
+<p>可以看到用户没有输入name的机会，getline直接读入了换行符并结束读取；</p>
+<p>解决这个问题有几种方法：</p>
+<ol>
+<li><p>使用get接收换行符并丢弃</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> name[<span class="hljs-number">50</span>];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;What&#x27;s your name?\n&quot;</span>;
+<span class="hljs-built_in">cin</span>.get();
+<span class="hljs-built_in">cin</span>.getline(name,<span class="hljs-number">50</span>);</code></pre></li>
+<li><p>使用get函数接收一个char参数；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> name[<span class="hljs-number">50</span>];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;What&#x27;s your name?\n&quot;</span>;
+<span class="hljs-keyword">char</span> ch;
+<span class="hljs-built_in">cin</span>.get(ch);
+<span class="hljs-built_in">cin</span>.getline(name,<span class="hljs-number">50</span>);</code></pre></li>
+<li><p>利用cin &gt;&gt; year返回cin对象，将调用拼接起来：</p>
+<pre><code class="hljs c++">(<span class="hljs-built_in">cin</span> &gt;&gt; year).get();</code></pre>
+<p>按照这种方式处理便能避免这种情况；</p>
+</li>
+</ol>
+<hr>
+<h3 id="4-3-string类简介"><a href="#4-3-string类简介" class="headerlink" title="4.3 string类简介"></a>4.3 string类简介</h3><p>C++98标准添加了<code>string</code>类，扩展了C++库；</p>
+<h4 id="字符数组与string对象"><a href="#字符数组与string对象" class="headerlink" title="字符数组与string对象"></a>字符数组与string对象</h4><p>string类型变量（或对象）其基本使用与char字符数组有相同，有不同；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> charr1[<span class="hljs-number">20</span>];
+<span class="hljs-keyword">char</span> charr2[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;Django.&quot;</span>;
+
+<span class="hljs-built_in">string</span> s1;
+<span class="hljs-built_in">string</span> s2 = <span class="hljs-string">&quot;Buzzize.&quot;</span>;
+
+<span class="hljs-keyword">char</span> ch1[] = &#123;<span class="hljs-string">&quot;Le Chapon Dodu&quot;</span>&#125;;
+<span class="hljs-keyword">char</span> ch2[] &#123;<span class="hljs-string">&quot;The elegent lion&quot;</span>&#125;;
+<span class="hljs-built_in">string</span> s3 = &#123;<span class="hljs-string">&quot;The bread bowl&quot;</span>&#125;;
+<span class="hljs-built_in">string</span> s4 &#123;<span class="hljs-string">&quot;Hacker red hat&quot;</span>&#125;;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;You will input the strings to the charr1:&quot;</span>;
+<span class="hljs-built_in">cin</span>.get(charr1,<span class="hljs-number">15</span>).get();<span class="hljs-comment">//:Hexssss </span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;You will input the strings to the s1:&quot;</span>;
+<span class="hljs-built_in">cin</span> &gt;&gt; s1;<span class="hljs-comment">//carzyboot </span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;charr1:&quot;</span> &lt;&lt; charr1 &lt;&lt; <span class="hljs-string">&quot;    charr2:&quot;</span> &lt;&lt; charr2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//charr1:Hexssss    charr2:Django.</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;s1:&quot;</span> &lt;&lt; s1 &lt;&lt; <span class="hljs-string">&quot;    s2:&quot;</span> &lt;&lt; s2 &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//s1:carzyboot    s2:Buzzize.</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The third letter in the two strings is:\n&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; s1[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-string">&quot;      &quot;</span> &lt;&lt; charr1[<span class="hljs-number">2</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//r      x</span></code></pre>
+<p>根据此例，我们可以看到字符数组与string对象的异同：</p>
+<p>同：</p>
+<ul>
+<li>可以使用C-风格字符串初始化string对象；</li>
+<li>允许列表初始化C-风格字符串和string对象；</li>
+<li>可以使用cin将键盘输入存储到string对象中；</li>
+<li>可以使用cout来显示string对象；</li>
+<li>可以使用数组表示法来访问存储在string对象中的字符；</li>
+</ul>
+<p>异：</p>
+<ul>
+<li><p>可以将string对象声明为简单变量，而不是数组；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> str1;
+<span class="hljs-built_in">string</span> str2 = <span class="hljs-string">&quot;Django&quot;</span>;</code></pre></li>
+<li><p>类设计可以让程序自动处理string的大小；比如，声明一个长度为0的string对象，当读入到键盘输入时，程序会自动将string对象调整到适合的长度；</p>
+</li>
+<li><p>理论上看，char数组是一组用于存储一个字符串的char存储单元，而string类变量是一个表示字符串的实体；</p>
+</li>
+</ul>
+<h4 id="赋值、拼接与追加"><a href="#赋值、拼接与追加" class="headerlink" title="赋值、拼接与追加"></a>赋值、拼接与追加</h4><p>string对象不同于char数组，可以将一个string对象赋值给另一个string对象</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;Django&quot;</span>;
+<span class="hljs-built_in">string</span> s2;
+s2 = s1;
+<span class="hljs-built_in">cout</span> &lt;&lt; s2;<span class="hljs-comment">//Django</span></code></pre>
+<p>string对象使得字符串合并更快捷方便，只要使用运算符+：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> str1 = <span class="hljs-string">&quot;Wuliwuli&quot;</span>;
+<span class="hljs-built_in">string</span> str2 = <span class="hljs-string">&quot;Lalalala&quot;</span>;
+<span class="hljs-built_in">string</span> str3;
+str3 = str1 + str2;
+<span class="hljs-built_in">cout</span> &lt;&lt; str3;<span class="hljs-comment">//DjangoWuliwuliLalalala</span></code></pre>
+<p>string对象还支持将一个字符串追加到另一个字符串的末尾：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> str1 = <span class="hljs-string">&quot;Wuliwuli&quot;</span>;
+<span class="hljs-built_in">string</span> str2 = <span class="hljs-string">&quot;Lalalala&quot;</span>;
+str1 += str2; 
+<span class="hljs-built_in">cout</span> &lt;&lt; str1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//WuliwuliLalalala</span></code></pre>
+<h4 id="关于C-风格字符串的一些函数"><a href="#关于C-风格字符串的一些函数" class="headerlink" title="关于C-风格字符串的一些函数"></a>关于C-风格字符串的一些函数</h4><p>在C++新增string之前，程序员也需要完成字符串赋值等工作；在C-风格字符串中，完成这些工作需要借助C语言库，头文件cstring提供了了这些函数；</p>
+<ul>
+<li><p>strcpy() 这个函数将字符串复制到字符数组中</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> charr[<span class="hljs-number">20</span>];
+<span class="hljs-keyword">char</span> charr2[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;Wulidjango&quot;</span>;
+<span class="hljs-built_in">strcpy</span>(charr,charr2);<span class="hljs-comment">//将charr2赋给charr</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; charr &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//Wulidjango</span></code></pre></li>
+<li><p>strcat() 这个函数将字符串附加到字符数组末尾：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch1[<span class="hljs-number">10</span>] = <span class="hljs-string">&quot;Djccc&quot;</span>;
+<span class="hljs-keyword">char</span> cha2[<span class="hljs-number">10</span>] = <span class="hljs-string">&quot;45333&quot;</span>;
+<span class="hljs-built_in">strcat</span>(ch1,cha2);<span class="hljs-comment">//将cha2追加到ch1中</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; ch1 &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//Djccc45333</span></code></pre></li>
+<li><p>str.size()函数负责返回string对象的字符数，与strlen()功能类似：</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">string</span> s1 = <span class="hljs-string">&quot;Wuliwuli&quot;</span>;
+<span class="hljs-keyword">char</span> c1[<span class="hljs-number">15</span>] = <span class="hljs-string">&quot;Lalalala&quot;</span>;
+  
+<span class="hljs-keyword">int</span> string_nums = s1.size();
+<span class="hljs-keyword">int</span> char_nums = <span class="hljs-built_in">strlen</span>(c1);
+  
+<span class="hljs-built_in">cout</span> &lt;&lt; string_nums &lt;&lt; <span class="hljs-string">&quot; &quot;</span> &lt;&lt; char_nums;
+<span class="hljs-comment">//8 8</span></code></pre>
+</li>
+</ul>
+<p>相比较之下，string对象的语法通常更为简单，尤其是执行较为复杂的操作时；</p>
+<h4 id="string类I-O"><a href="#string类I-O" class="headerlink" title="string类I/O"></a>string类I/O</h4><p>除了cin之外，string类也可以使用getline进行数据录入，但用法与char数组不同；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> ch[<span class="hljs-number">20</span>];
+<span class="hljs-built_in">string</span> str;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Before inputting the length:&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;ch:&quot;</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(ch) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//ch:1</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;str:&quot;</span> &lt;&lt; str.size() &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//str:0</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a line of text:\n&quot;</span>;
+<span class="hljs-built_in">cin</span>.getline(ch,<span class="hljs-number">20</span>);<span class="hljs-comment">//peanut butter</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter a line of text:\n&quot;</span>;
+getline(<span class="hljs-built_in">cin</span>,str);<span class="hljs-comment">//blueberry jam</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;After inputting the length:&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;ch:&quot;</span> &lt;&lt; <span class="hljs-built_in">strlen</span>(ch) &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//ch:13</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;str:&quot;</span> &lt;&lt; str.size() &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//str:13</span></code></pre>
+<p>通过上述程序，我们可以清楚看到，在getline的用法上，char数组与string类迥然不同：</p>
+<p>char数组调用getline()函数通过cin来调用，这即是说：getline()是cin对象的一个成员函数，由于cin是一个istream对象，所以也可以讲函数getline()是istream的一个类方法；在这里，getline()接收两个参数，第一个参数为目标数组，第二个为参数数组长度，char数组通过这样一个方式来确保数组读入不越界；</p>
+<p>而string类在使用getline()函数时，没有通过cin，这表明这个getline()不是类方法；它通过cin来确定从哪里开始输入；而且，它没有指出字符串长度，因为string对象可以通过字符串的长度自动调整自己的大小；</p>
+<p>从这里，我们可以得出一个问题：为什么一个是istream的类方法，另一个不是呢？</p>
+<p>其实，在引入string类很久以前，C++就有istream类；因此istream类的设计考虑到double、int等基本C++数据结构，但没有考虑string类型；所以在istream中，有处理基本数据类型的类方法，但没有string对象的类方法；</p>
+<h4 id="其他形式的字符串字面值"><a href="#其他形式的字符串字面值" class="headerlink" title="其他形式的字符串字面值"></a>其他形式的字符串字面值</h4><p>除了char类型之外，wchar_t、char16_t以及char32_t同样可以创建这些类型的数组和这些类型的字符串字面值；</p>
+<p>其中，wchar_t用前缀L标注，char16_t用前缀u标注，char32_t用前缀U标注：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//wchar_t</span>
+<span class="hljs-keyword">wchar_t</span> titi[] = <span class="hljs-string">L&quot;Chief&quot;</span>; <span class="hljs-comment">//wchar_t string</span>
+
+<span class="hljs-comment">//char16_t</span>
+<span class="hljs-keyword">char16_t</span> nam[] = <span class="hljs-string">u&quot;Feloria&quot;</span>;<span class="hljs-comment">//char16_t</span>
+
+<span class="hljs-comment">//char32_t</span>
+<span class="hljs-keyword">char32_t</span> age[] = <span class="hljs-string">U&quot;Ultra age&quot;</span>;<span class="hljs-comment">//char32_t</span></code></pre>
+<p>除此之外，C++11还新增了一种类型，原始字符串——它可以表示字符本身；比如\n表示的不是换行符而是反斜杠和字符n；由于原始字符串可以在字符串中使用<code>&quot;&quot;</code>，所以，原始字符串使用<code>&quot;( )&quot;</code>来表示字符串的开始和结束，称为定界符，并且使用字母R来标识原始字符串：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//raw string</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">R&quot;(Jim &quot;king&quot; Tutt uses &quot;\n&quot; instead of endl.)&quot;</span> &lt;&lt; <span class="hljs-string">&#x27;\n&#x27;</span>;
+<span class="hljs-comment">//Jim &quot;king&quot; Tutt uses &quot;\n&quot; instead of endl.</span></code></pre>
+<p>如果用标准字符串字面值编写这串代码，将会无比繁琐复杂；</p>
+<p>特别注意的是，如果在输入原始字符串时按下回车， 不仅会移到下一行，还将在原始字符串中添加回车字符；</p>
+<p>这里给出一个用原始字符串打印超级玛丽的例子：</p>
+<pre><code class="hljs c++">    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">R&quot;(                ********</span>
+<span class="hljs-string">               ************</span>
+<span class="hljs-string">               ####....#.</span>
+<span class="hljs-string">             #..###.....##....</span>
+<span class="hljs-string">             ###.......######              ###            ###</span>
+<span class="hljs-string">                ...........               #...#          #...#</span>
+<span class="hljs-string">               ##*#######                 #.#.#          #.#.#</span>
+<span class="hljs-string">            ####*******######             #.#.#          #.#.#</span>
+<span class="hljs-string">           ...#***.****.*###....          #...#          #...#</span>
+<span class="hljs-string">           ....**********##.....           ###            ###</span>
+<span class="hljs-string">           ....****    *****....</span>
+<span class="hljs-string">             ####        ####</span>
+<span class="hljs-string">           ######        ######</span>
+<span class="hljs-string">##############################################################</span>
+<span class="hljs-string">#...#......#.##...#......#.##...#......#.##------------------#</span>
+<span class="hljs-string">###########################################------------------#</span>
+<span class="hljs-string">#..#....#....##..#....#....##..#....#....#####################</span>
+<span class="hljs-string">##########################################    #----------#</span>
+<span class="hljs-string">#.....#......##.....#......##.....#......#    #----------#</span>
+<span class="hljs-string">##########################################    #----------#</span>
+<span class="hljs-string">#.#..#....#..##.#..#....#..##.#..#....#..#    #----------#</span>
+<span class="hljs-string">##########################################    ############ )&quot;</span>;</code></pre>
+<p>因为原始字符串以<code>&quot;()&quot;</code>作为开始和结束的标志，那么如果想在字符串中使用小括号（）又该怎么办呢？</p>
+<p>原始字符串中支持自定义定界符，即在表示开始的”和(之间加入任意数量的基本字符，除空格、左右括号、斜杠、和控制字符（如制表符，换行符）以外；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">R&quot;*( (What&#x27;s this?) she asked.)*&quot;</span>;
+<span class="hljs-comment">// (What&#x27;s this?) she asked.</span></code></pre>
+<p>当然，原始字符串也可以和wchar_t等类型合并使用，即混合前缀输入：RL或LR，以标识不同类型的原始字符串；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/12/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6-%E9%9B%86%E5%90%88%E8%AE%BA%E4%B8%8E%E5%9B%BE%E8%AE%BA-Chap01-1%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">离散数学-集合论与图论-Chap01.1预备知识</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/10/%E6%B7%B1%E5%85%A5%E7%90%86%E8%A7%A3%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%B3%BB%E7%BB%9F-day02/">
+                        <span class="hidden-mobile">深入理解计算机系统-day02</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

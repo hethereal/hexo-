@@ -1,0 +1,590 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>计算机网络Top-Down-Chap01-Day02 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                计算机网络Top-Down-Chap01-Day02
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-15 17:00" pubdate>
+        2021年2月15日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      2k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">计算机网络Top-Down-Chap01-Day02</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月15日 晚上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h4 id="接入网"><a href="#接入网" class="headerlink" title="接入网"></a>接入网</h4><ul>
+<li><strong>边缘路由器（edge router）</strong>——由端系统到如何其他远程端系统的路径上的第一台路由器；</li>
+<li><strong>接入网</strong>——将端系统物理连接到其边缘路由器的网络；</li>
+</ul>
+<h5 id="家庭接入：DSL、电缆、FTTH、拨号和卫星"><a href="#家庭接入：DSL、电缆、FTTH、拨号和卫星" class="headerlink" title="家庭接入：DSL、电缆、FTTH、拨号和卫星"></a>家庭接入：DSL、电缆、FTTH、拨号和卫星</h5><ol>
+<li><p><strong>DSL（Digital Subscriber Line，数字用户线）</strong>：宽带住宅接入方式；</p>
+<ul>
+<li><p>住户通常从提供本地电话接入的本地电话公司处获得DSL接入；因此，当使用DSL时，本地电话公司即为ISP；</p>
+</li>
+<li><p>每个用户的<strong>DSL调制解调器</strong>使用现有的电话线（双铜绞线）与位于电话公司的<strong>本地中心局（CO）</strong>中的<strong>数字用户线接入复用器（DSLAM）</strong>交换数据；</p>
+</li>
+<li>家庭电话线同时承载了数据和传统的电话信号，使用不同的频率进行编码；（0-4kHZ、4kHZ-50kHZ、50kHZ-1MHZ），其技术为频分复用技术；</li>
+<li>在用户端，一个分配器把到达家庭的数据信号与电话信号隔开，并把数据信号转发给DSL调制解调器；在电话一侧，在本地中心局中，DSLAM把数据和电话信号隔开，并把数据送入因特网；</li>
+<li>DSL标准定义了多个传输速率；因为上行传输速率与下行传输速率并不相等，因此这种接入被称为是不对称的；</li>
+</ul>
+</li>
+<li><p><strong>电缆因特网接入（cable Internet access）</strong></p>
+<ul>
+<li>利用有线电视公司现有的有线电视基础设施；</li>
+<li>光缆将电缆头端连接到地区枢纽，然后使用传统的同轴电缆到达各家各户；</li>
+<li>因为应用了光纤和同轴电缆，所以这个系统经常被称为混合光纤同轴（Hybrid Fiber Coax，HFC）系统；</li>
+<li>电缆因特网接入需要电缆调制解调器，通过以太网端口连接到家庭PC；在电缆头端，电缆调制解调器端接系统（Cable Modem Termination System，CMTS）负责将来自下行家庭中的电缆调制解调器发送的模拟信号转换回数字形式；电缆调制解调器将HFC网络划分为上行和下行两个信道，通常也是不对称的；</li>
+<li>电缆因特网接入的一个重要特征是共享广播媒体，通俗地讲，就是用户传输速率受其他用户影响较大；当有极少用户活跃，则每个用户都可以以全部的下行速率接收Web网页；</li>
+</ul>
+</li>
+<li><p>光纤到户（Fiber To The Home,FTTH）：</p>
+<ul>
+<li><p>FTTH概念简单，即从本地中心局直接到家庭提供一条光纤路径；</p>
+</li>
+<li><p>从本地中心局到家庭有几种光纤分布方案：</p>
+<p>直接光纤——从本地中心局到每户设置一根光纤</p>
+<p>有源光纤网路（Active Optical Network，AON）——本质上是交换以太网</p>
+<p>无源光纤网络（Passive Optical Network，PON）——基于Verizon的FIOS服务；每个家庭具有一个光纤网络端接器（Optical Network Termination，ONT），由专门的光纤连接到邻近的分配器（splitter）；该分配器将许多家庭（&lt;=100）集结到一根共享光纤，该光纤再连接到本地电话公司的中心局中的光纤线路端接器（Optical Line Termination，OLT）；该OLT提供光电信号转换，经过本地电话公司路由器与因特网相连；家庭端，则有一台家庭路由器与ONT相连</p>
+</li>
+<li><p>FTTH有潜力提供每秒千兆bit范围的因特网接入速率；</p>
+</li>
+</ul>
+</li>
+<li><p>卫星及拨号</p>
+<ul>
+<li>在无法提供DSL，电缆和FTTH的地方使用；</li>
+<li>接入速率一般比较慢；卫星接入通常以超过1Mbps的传输速率接入，拨号接入则仅有56kbps；</li>
+</ul>
+</li>
+</ol>
+<h5 id="企业（和家庭）接入：以太网和WIFI"><a href="#企业（和家庭）接入：以太网和WIFI" class="headerlink" title="企业（和家庭）接入：以太网和WIFI"></a>企业（和家庭）接入：以太网和WIFI</h5><p>在公司和大学校园以及越来越多的家庭中环境中，使用局域网（LAN）将端系统连接到边缘路由器；</p>
+<p>以太网为目前为止最为流行的接入技术；</p>
+<p>以太网用户使用双铜绞线与一台以太网交换机相连，以太网交换机再与因特网相连；以太网接入通常提供100Mbps甚至1Gbps接入速率；</p>
+<p>无线LAN环境中，基于IEEE 802.11技术的无线LAN接入，更通俗地称为WiFi；</p>
+<p>以太网和WIFi接入网最初是设置在企业（公司或大学）环境中的，但它们进来已经成为家庭网络中相当常见的部件；</p>
+<h5 id="广域无线接入：3G和LTE"><a href="#广域无线接入：3G和LTE" class="headerlink" title="广域无线接入：3G和LTE"></a>广域无线接入：3G和LTE</h5><p>移动设备应用了与蜂窝移动电话相同的无线基础设施，通过蜂窝网提供商的运营的基站来发送和接收分组；第三代广域接入技术即3G，提供超过1Mbps的速率；</p>
+<p>LTE（Long-Term Evolution）来源于3G技术，能够取得超过100Mbps的速率；</p>
+<h4 id="物理媒体"><a href="#物理媒体" class="headerlink" title="物理媒体"></a>物理媒体</h4><p>通过一系列发射器-接收器对，通过跨越一种<strong>物理媒体（physical medium）</strong>传播电磁波或光脉冲来传输数据；</p>
+<h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><p>目前的物理媒体分为两种类型：<strong>导引型媒体（guided media）</strong>和<strong>非导引型媒体（unguided media）</strong>；</p>
+<p>导引型媒体：电波沿着固体媒体前行，如光缆、双铜绞线或同轴电缆；</p>
+<p>非导引性媒体：电波在空气或外层空间传播，如无线局域网或数字卫星频道；</p>
+<h5 id="双铜绞线"><a href="#双铜绞线" class="headerlink" title="双铜绞线"></a>双铜绞线</h5><p>最便宜且最常用的导引型传输媒体；由两根绝缘铜线组成，每根大约1mm粗，以规则的螺旋状排列；这两根线被绞合起来，以减少邻近类似的双绞线的电气干扰；</p>
+<p>一对电线构成了一个通信链路；</p>
+<p><strong>无屏蔽双绞线（Unshielded Twisted Pair,UTP）</strong>常用在建筑物内的计算机网路中，即局域网（LAN）中；</p>
+<h5 id="同轴电缆"><a href="#同轴电缆" class="headerlink" title="同轴电缆"></a>同轴电缆</h5><p>与双绞线类似，同轴电缆由两个铜导体组成，这两个导体同心；借助于这种结构及特殊的绝缘体和保护层，同轴电缆可以达到较高速率；</p>
+<p>同轴电缆在电缆电视系统中相当普遍；</p>
+<p>同轴电缆可以作为导引型共享媒体（shared medium）；</p>
+<h5 id="光纤"><a href="#光纤" class="headerlink" title="光纤"></a>光纤</h5><p>光纤是一种细而柔软、能够导引光脉冲的媒体；每个脉冲表示以一个比特；</p>
+<p>一根光纤能够支持极高的比特速率，高达数十甚至数百Gbps，不受电磁干扰，信号衰减极低，使得光纤称为长途导引型传输媒体，特别是跨海电路；</p>
+<p>然后高成本的光设备限制了光纤再短途传输中的应用；</p>
+<h5 id="陆地无线电信道"><a href="#陆地无线电信道" class="headerlink" title="陆地无线电信道"></a>陆地无线电信道</h5><p>无线电信道承载电磁频谱中的信号。不需要安装物理链路，并具有穿透墙壁、提供与移动用户的连接以及长距离承载信号的能力；</p>
+<p>极大依赖于传播环境和信号传输的距离；</p>
+<p>环境上的考虑主要取决于路径损耗、遮挡衰落、多径衰落以及干扰；</p>
+<p>大致划分三类：一类运行在很短距离（1m到2m）；另一类运行在局域，通常跨越数十到几百米；第三类运行在广域，跨越数万米；</p>
+<h5 id="卫星无线电信道"><a href="#卫星无线电信道" class="headerlink" title="卫星无线电信道"></a>卫星无线电信道</h5><p>一颗通信卫星连接地球上的两个或多个微波发射器/接收器，它们被称为地面站；</p>
+<p>卫星在一个频段上接收信号，使用一个转发器再生信号，然后在另一个频率上发射信号；</p>
+<p>通信中常使用两种卫星：<strong>同步卫星（geostationary satellite）</strong>和<strong>近地轨道卫星（Low-Earth Orbiting，LEO）</strong>；</p>
+<p>同步卫星永久停留在地球上方的相同点上；</p>
+<p>近地轨道卫星放置在非常靠近地球的位置上，它们围绕地球旋转，并且可以相互通信，也可以与地面站通信；</p>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/">计算机网络</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/16/C-PrimerPlus-Chap04-Day06/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap04-Day06</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/15/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E4%B8%8E%E8%AE%BE%E8%AE%A1-%E7%A1%AC%E4%BB%B6-%E8%BD%AF%E4%BB%B6%E6%8E%A5%E5%8F%A3RISC-V%E7%89%88-Chap01%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%BD%E8%B1%A1%E5%8F%8A%E7%9B%B8%E5%85%B3%E6%8A%80%E6%9C%AF-Day01/">
+                        <span class="hidden-mobile">计算机组成与设计_硬件/软件接口RISC-V版-Chap01计算机抽象及相关技术-Day01</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

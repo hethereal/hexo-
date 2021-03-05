@@ -1,0 +1,608 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>Go语言-切片 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                Go语言-切片
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-01-31 15:22" pubdate>
+        2021年1月31日 下午
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.4k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">Go语言-切片</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月9日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="切片"><a href="#切片" class="headerlink" title="切片"></a>切片</h2><p>切片（Slice）是一个拥有相同类型元素的可变长度序列，他是基于数组类型做的一层封装，支持自动扩容。</p>
+<p>内部结构分为：<code>地址</code>、<code>大小</code>、<code>容量</code>。一般用于快速地操作一块数据集合</p>
+<p>切片是引用类型。与数组的值类型不同。</p>
+<p><code>值类型</code>是将自身拷贝一份进行数据传递，备份值改变不会影响自身值</p>
+<p><code>引用类型</code>是将自己的内存地址传递，也就意味着一旦改变——无论是本身还是其他——都会改变数据的值</p>
+<h3 id="切片的声明与初始化"><a href="#切片的声明与初始化" class="headerlink" title="切片的声明与初始化"></a>切片的声明与初始化</h3><p>声明方式1：直接声明</p>
+<pre><code class="hljs go"><span class="hljs-comment">//切片声明与初始化</span>
+<span class="hljs-keyword">var</span> a = []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125; <span class="hljs-comment">//切片</span>
+fmt.Println(a)
+fmt.Printf(<span class="hljs-string">&quot;a的类型为：%T&quot;</span>, a)
+<span class="hljs-keyword">var</span> b = [<span class="hljs-number">4</span>]<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125; <span class="hljs-comment">//数组</span>
+fmt.Println(b)
+fmt.Printf(<span class="hljs-string">&quot;b的类型为：%T&quot;</span>, b)</code></pre>
+<p>声明方式2：</p>
+<p>既然切片是由数组而来，那么其声明与初始化也可以由数组转换：</p>
+<pre><code class="hljs go"><span class="hljs-comment">//声明方式2：从数组得到切片</span>
+<span class="hljs-keyword">var</span> c = [<span class="hljs-number">3</span>]<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;
+<span class="hljs-keyword">var</span> d = c[:]
+fmt.Printf(<span class="hljs-string">&quot;d的类型为：%T,d的值为：%v&quot;</span>, d, d)</code></pre>
+<p>冒号<code>:</code>的左右分别填入数组的索引值，左右都不填代表全部；要注意的是，冒号的左右分别是：<strong>左闭右开</strong>，即右边的值取不到。</p>
+<h3 id="切片的大小与容量"><a href="#切片的大小与容量" class="headerlink" title="切片的大小与容量"></a>切片的大小与容量</h3><p>切片的<code>大小</code>表示的是当前元素的数量</p>
+<p>切片的<code>容量</code>表示的是底层数组的最大长度</p>
+<pre><code class="hljs go"><span class="hljs-comment">//切片的大小与容量</span>
+p := [...]<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">2</span>, <span class="hljs-number">34</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>, <span class="hljs-number">7</span>, <span class="hljs-number">8</span>&#125;
+q := p[<span class="hljs-number">1</span>:<span class="hljs-number">5</span>]
+fmt.Printf(<span class="hljs-string">&quot;切片q的大小为：%d\n&quot;</span>, <span class="hljs-built_in">len</span>(q)) <span class="hljs-comment">//切片q的大小为：4</span>
+fmt.Printf(<span class="hljs-string">&quot;切片q的容量为：%d\n&quot;</span>, <span class="hljs-built_in">cap</span>(q)) <span class="hljs-comment">//切片q的容量为：6</span></code></pre>
+<p>注意：<strong>切片的<code>容量</code>是从切片的开始直到底层数组的结束，而不是底层数组的全部</strong>！！</p>
+<p>直接声明的切片，其底层数组即是其本身</p>
+<pre><code class="hljs go">m := []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">54</span>, <span class="hljs-number">5</span>&#125;
+fmt.Printf(<span class="hljs-string">&quot;切片m的大小为：%d\n&quot;</span>, <span class="hljs-built_in">len</span>(m)) <span class="hljs-comment">//切片m的大小为：6</span>
+fmt.Printf(<span class="hljs-string">&quot;切片m的容量为：%d\n&quot;</span>, <span class="hljs-built_in">cap</span>(m)) <span class="hljs-comment">//切片m的容量为：6</span></code></pre>
+<h3 id="切片的扩容"><a href="#切片的扩容" class="headerlink" title="切片的扩容"></a>切片的扩容</h3><p>运用关键字<code>append</code>来追加；代码展示如下：</p>
+<pre><code class="hljs go">a := []<span class="hljs-keyword">int</span>&#123;&#125; <span class="hljs-comment">//空切片</span>
+fmt.Printf(<span class="hljs-string">&quot;a:%v len:%d cap:%d ptr:%p\n&quot;</span>, a, <span class="hljs-built_in">len</span>(a), <span class="hljs-built_in">cap</span>(a), a)
+<span class="hljs-comment">//输出:a:[] len:0 cap:0 ptr:0xa7c578</span>
+a = <span class="hljs-built_in">append</span>(a, <span class="hljs-number">1</span>) <span class="hljs-comment">//将1作为元素传入</span>
+fmt.Printf(<span class="hljs-string">&quot;a:%v len:%d cap:%d ptr:%p\n&quot;</span>, a, <span class="hljs-built_in">len</span>(a), <span class="hljs-built_in">cap</span>(a), a)
+<span class="hljs-comment">//输出:a:[1] len:1 cap:1 ptr:0xc0000120b8</span>
+a = <span class="hljs-built_in">append</span>(a, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>)
+fmt.Printf(<span class="hljs-string">&quot;a:%v len:%d cap:%d ptr:%p\n&quot;</span>, a, <span class="hljs-built_in">len</span>(a), <span class="hljs-built_in">cap</span>(a), a)
+<span class="hljs-comment">//a:[1 2 3 4 5] len:5 cap:6 ptr:0xc00000c2d0</span>
+a = <span class="hljs-built_in">append</span>(a, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>)
+fmt.Printf(<span class="hljs-string">&quot;a:%v len:%d cap:%d ptr:%p\n&quot;</span>, a, <span class="hljs-built_in">len</span>(a), <span class="hljs-built_in">cap</span>(a), a)
+<span class="hljs-comment">//a:[1 2 3 4 5 5 6] len:7 cap:12 ptr:0xc00001a120</span></code></pre>
+<p>追加策略为：</p>
+<ul>
+<li><p>如果切片<code>大小(len())</code>小于1024个，扩容为原来的1倍，即<code>cap = cap + cap * 1</code>；</p>
+</li>
+<li><p>如果切片<code>大小(len())</code>大于1024个，扩容为原来的1.25倍，即<code>cap = cap + cap * 1.25</code>；</p>
+</li>
+<li><p>如果想要扩充的数量为现在容量的2倍，则扩容后的容量为起始值加上扩充的数量；如果扩容后的数量为奇数，则向上追加一个变为偶数；（切片容量总为偶数）</p>
+</li>
+</ul>
+<h3 id="切片的复制"><a href="#切片的复制" class="headerlink" title="切片的复制"></a>切片的复制</h3><p>因为切片不同于数组，切片为<code>引用类型</code>，所以不能用简单的赋值操作进行复制</p>
+<p>如果直接赋值进行复制，结果如下：</p>
+<pre><code class="hljs go"><span class="hljs-comment">//切片的复制</span>
+<span class="hljs-comment">//切片为引用类型</span>
+a := []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;
+b := a <span class="hljs-comment">//直接赋值</span>
+fmt.Println(b)
+b[<span class="hljs-number">0</span>] = <span class="hljs-number">100</span>
+fmt.Println(a) <span class="hljs-comment">//[100,2,3]</span>
+fmt.Println(b) <span class="hljs-comment">//[100,2,3]</span></code></pre>
+<p>所以，如果不想影响本身，那么切片不能直接进行复制，需要借助于<code>copy</code>.</p>
+<pre><code class="hljs go">a := []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;
+c := []<span class="hljs-keyword">int</span>&#123;&#125;
+<span class="hljs-built_in">copy</span>(c, a) <span class="hljs-comment">//深拷贝</span>
+fmt.Println(c) <span class="hljs-comment">//[]</span></code></pre>
+<p>此时的<code>c</code>依旧为空的原因是：没有申请内存空间；需要借助<code>make()</code>函数进行内存空间申请</p>
+<pre><code class="hljs go">a := []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;
+c := []<span class="hljs-keyword">int</span>&#123;&#125;
+c = <span class="hljs-built_in">make</span>([]<span class="hljs-keyword">int</span>, <span class="hljs-number">3</span>, <span class="hljs-number">3</span>) <span class="hljs-comment">//申请一块[]int类型，长度为3，容量为3的内存空间</span>
+<span class="hljs-built_in">copy</span>(c, a)            <span class="hljs-comment">//深拷贝</span>
+fmt.Println(c)        <span class="hljs-comment">//[1,2,3]</span></code></pre>
+<p>此时，复制结果准确</p>
+<h3 id="切片删除元素操作"><a href="#切片删除元素操作" class="headerlink" title="切片删除元素操作"></a>切片删除元素操作</h3><p>Go语言中并没有<strong>删除切片元素</strong>的专用方法，需要借助切片本身的特性来删除元素</p>
+<pre><code class="hljs go">a := []<span class="hljs-keyword">int</span>&#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>, <span class="hljs-number">4</span>, <span class="hljs-number">5</span>, <span class="hljs-number">6</span>, <span class="hljs-number">7</span>&#125;
+a = <span class="hljs-built_in">append</span>(a[:<span class="hljs-number">3</span>], a[<span class="hljs-number">4</span>:]...) <span class="hljs-comment">//删除元素4</span>
+fmt.Println(a)</code></pre>
+<p>通过<code>append</code>来删除特定某项元素的原理是：</p>
+<p>将切片按照想要删除的元素为节点分为前后两个部分，前部分作为容器来接收后部分，前后两部分将制定元素留在外面，通过这样的办法来达到删除元素的目的</p>
+<p>但是Go语言不支持将<strong>切片的切片</strong>直接追加，所以需要在后面加<code>...</code>（内置），意为将<strong>切片的切片</strong>分为一个个元素分别追加</p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><ol>
+<li>切片的<code>地址</code>是第一个<code>元素</code>指向的内存空间；其<code>地址</code>改变只有两种情况<ul>
+<li>切片的首元素改变</li>
+<li>容量扩容——原来的内存空间不够用了，重新申请一块，导致内存改变</li>
+</ul>
+</li>
+<li>切片的<code>容量</code>是跟底层<code>数组</code>息息相关的；当切片再切的时候，其<code>容量</code>从切片的切片的第一个元素开始算；</li>
+<li><code>make</code>是用来给引用类型做初始化的（申请内存空间），对应地，用来给值类型做初始化用<code>new</code> </li>
+</ol>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/Go%E8%AF%AD%E8%A8%80/">Go语言</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/01/Go%E8%AF%AD%E8%A8%80-%E5%88%87%E7%89%87%E7%BB%83%E4%B9%A0/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">Go语言-切片练习</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/01/30/Go%E8%AF%AD%E8%A8%80-%E5%A4%9A%E7%BB%B4%E6%95%B0%E7%BB%84/">
+                        <span class="hidden-mobile">Go语言-多维数组</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

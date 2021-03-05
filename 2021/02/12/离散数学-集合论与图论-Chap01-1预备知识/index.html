@@ -1,0 +1,665 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>离散数学-集合论与图论-Chap01.1预备知识 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                离散数学-集合论与图论-Chap01.1预备知识
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-12 21:07" pubdate>
+        2021年2月12日 晚上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      1.2k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">离散数学-集合论与图论-Chap01.1预备知识</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月13日 凌晨
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h2 id="Chap01-集合"><a href="#Chap01-集合" class="headerlink" title="Chap01 集合"></a>Chap01 集合</h2><h3 id="课程概览"><a href="#课程概览" class="headerlink" title="课程概览"></a>课程概览</h3><h4 id="集合论"><a href="#集合论" class="headerlink" title="集合论"></a>集合论</h4><h5 id="研究对象"><a href="#研究对象" class="headerlink" title="研究对象"></a>研究对象</h5><p>集合、关系、函数、自然数、基数；</p>
+<h5 id="研究思想"><a href="#研究思想" class="headerlink" title="研究思想"></a>研究思想</h5><p>以逻辑为基础、以集合为工具、表示和构造各种数学对象</p>
+<h5 id="研究内容"><a href="#研究内容" class="headerlink" title="研究内容"></a>研究内容</h5><ul>
+<li>集合的基本概念：集合之间的关系、运算、恒等式</li>
+<li>二元关系：表示、性质、函数、等价关系、序关系</li>
+<li>自然数：皮亚诺系统、自然数的运算、性质</li>
+<li>基数：有穷集与无穷集、基数的比较</li>
+<li>序数：良序、超限归纳法</li>
+</ul>
+<h4 id="图论"><a href="#图论" class="headerlink" title="图论"></a>图论</h4><h5 id="研究对象-1"><a href="#研究对象-1" class="headerlink" title="研究对象"></a>研究对象</h5><p>由顶点和边构成的图</p>
+<h5 id="研究思想-1"><a href="#研究思想-1" class="headerlink" title="研究思想"></a>研究思想</h5><p>以集合论为基础、以图为工具、为各种二元关系建立模型</p>
+<p>研究内容</p>
+<ul>
+<li>图的基本概念：连通性、矩阵表示、带权图</li>
+<li>欧拉图、哈密顿图：边和顶点的遍历</li>
+<li>树：表示层级关系组织</li>
+<li>平面图：判定、表示、性质</li>
+<li>图的着色：各种调度问题的模型</li>
+<li>独立集、支配集、覆盖集、匹配：各种应用问题</li>
+</ul>
+<h3 id="命题逻辑预备知识"><a href="#命题逻辑预备知识" class="headerlink" title="命题逻辑预备知识"></a>命题逻辑预备知识</h3><h4 id="命题公式"><a href="#命题公式" class="headerlink" title="命题公式"></a>命题公式</h4><h5 id="联结词"><a href="#联结词" class="headerlink" title="联结词"></a>联结词</h5><ul>
+<li><p><code>p</code>、<code>q</code>、<code>r</code>、<code>...</code>表示<code>原子命题</code>(或<code>简单命题</code>)<br>1表示命题的真值为真，0表示命题的真值为假</p>
+</li>
+<li><p>$\urcorner$ 称为<code>否定联结词</code>；$\urcorner$p称为p的否定式；</p>
+<p>当p为0时，$\urcorner$p为1；当p为1时，$\urcorner$p为0；</p>
+</li>
+<li><p>$\wedge$称为<code>合取联结词</code>；p$\wedge$q称为p与q的合取式；</p>
+<p>即p与q同为1时，p$\wedge$q为1，否则为0；</p>
+</li>
+<li><p>$\vee$称为<code>析取联结词</code>；p$\vee$q称为p与q的析取式；</p>
+<p>只有p、q同为0时，p$\vee$q才为0，否则为1；</p>
+</li>
+<li><p>$\rightarrow$称为<code>蕴含联结词</code>；p$\rightarrow$q称为p与q 的蕴含式</p>
+<p>其意为：若p则q；</p>
+<p>|  p   |  q   | p$\rightarrow$q |<br>| :—: | :—: | :——————-: |<br>|  0   |  0   |        1        |<br>|  0   |  1   |        1        |<br>|  1   |  0   |        0        |<br>|  1   |  1   |        1        |</p>
+<p>表示一个推理过程，由p得出q；与实际情况不一定能吻合；</p>
+<p>可以理解为<code>p&lt;=q</code>，如果<code>p&gt;q</code>则为假，其余为真；</p>
+</li>
+<li><p>$\leftrightarrow$称为<code>等价联结词</code>；p$\leftrightarrow$q称为p与q的等价式；</p>
+<p>只有当p、q同为0或同为1时，p$\leftrightarrow$q才为真，否则为假；</p>
+</li>
+</ul>
+<h5 id="命题公式-1"><a href="#命题公式-1" class="headerlink" title="命题公式"></a>命题公式</h5><ol>
+<li>单个命题<code>变元（或常元）</code>是命题公式；（pqr和01）</li>
+<li>若A是命题公式，则 $\urcorner$A 也是；</li>
+<li>若A，B是命题公式，则（A$\wedge$B），（A$\vee$B），（A$\rightarrow$B），（A$\leftrightarrow$B）也是；</li>
+<li>只有<strong>有限次</strong>应用形成的符号串才是；（命题公式是由长度的）</li>
+</ol>
+<p>没有联结词的称为<code>简单命题</code>，有联结词的称为<code>复合命题</code>；</p>
+<h5 id="联结词的优先级"><a href="#联结词的优先级" class="headerlink" title="联结词的优先级"></a>联结词的优先级</h5><p>​     $\urcorner$ &gt; $\wedge$ = $\vee$ &gt; $\rightarrow$ = $\leftrightarrow$ </p>
+<h5 id="真值表："><a href="#真值表：" class="headerlink" title="真值表："></a>真值表：</h5><div class="table-container">
+<table>
+<thead>
+<tr>
+<th style="text-align:center">p</th>
+<th style="text-align:center">q</th>
+<th style="text-align:center">p$\rightarrow$q</th>
+<th style="text-align:center">p$\wedge$$\urcorner$q</th>
+<th style="text-align:center">p$\wedge$(p$\vee$q)$\leftrightarrow$q</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">1</td>
+<td style="text-align:center">0</td>
+<td style="text-align:center">1</td>
+</tr>
+<tr>
+<td style="text-align:center">赋值</td>
+<td style="text-align:center">赋值</td>
+<td style="text-align:center">可满足式</td>
+<td style="text-align:center">矛盾式（永假式）</td>
+<td style="text-align:center">重言式（永真式）</td>
+</tr>
+</tbody>
+</table>
+</div>
+<ul>
+<li>赋值：对变元取值；</li>
+<li>可满足式：至少有一行赋值使得结果为真；</li>
+<li>矛盾式（永假式）：所有赋值的结果均为假；</li>
+<li>重言式（永真式）：所有赋值的结果均为真；</li>
+</ul>
+<p>其中，这三种分类不是相互排斥的；可满足式与矛盾式相互排斥，任意一种公式不是可满足式就是矛盾式；重言式是一种特殊的可满足式；</p>
+<h4 id="等值演算"><a href="#等值演算" class="headerlink" title="等值演算"></a>等值演算</h4><h5 id="等值式：A-leftrightarrow-B"><a href="#等值式：A-leftrightarrow-B" class="headerlink" title="等值式：A$\leftrightarrow$B"></a>等值式：A$\leftrightarrow$B</h5><blockquote>
+<p>(p$\rightarrow$q)  $\leftrightarrow$ ($\urcorner$p$\vee$q)</p>
+</blockquote>
+<h5 id="基本-等值式"><a href="#基本-等值式" class="headerlink" title="基本 等值式"></a>基本 等值式</h5><ol>
+<li><p>幂等律：A$\leftrightarrow$A$\vee$A，A$\leftrightarrow$A$\wedge$A</p>
+</li>
+<li><p>交换律：A$\vee$B$\leftrightarrow$B$\vee$A，A$\wedge$B$\leftrightarrow$B$\wedge$A</p>
+</li>
+<li><p>结合律：（A$\vee$B）$\vee$C $\leftrightarrow$ A$\vee$（B$\vee$C），（A$\wedge$B）$\wedge$C $\leftrightarrow$ A$\wedge$（B$\wedge$C）</p>
+</li>
+<li><p>分配律：A$\vee$（B$\wedge$C） $\leftrightarrow$ （A$\vee$B）$\wedge$ （A$\vee$C），A$\wedge$（B$\vee$C）$\leftrightarrow$ （A$\wedge$B）$\vee$ （A$\wedge$C）</p>
+</li>
+<li><p>德·摩根律：$\urcorner$（A$\vee$B）$\leftrightarrow$ $\urcorner$A$\wedge<script type="math/tex">\urcorner$B，$\urcorner$（A$\wedge$B）$\leftrightarrow$ $\urcorner$A$\vee</script>\urcorner$B</p>
+<p>验证：真值表</p>
+<p>|  p   |  q   | $\urcorner$（A$\vee$B） | $\urcorner$A$\wedge$$\urcorner$B |<br>| :—: | :—: | :——————————-: | :———————————————: |<br>|  0   |  0   |            1            |                1                 |<br>|  0   |  1   |            0            |                0                 |<br>|  1   |  0   |            0            |                0                 |<br>|  1   |  1   |            0            |                0                 |</p>
+</li>
+<li><p>吸收律：A$\vee$（A$\wedge$B）$\leftrightarrow$ A，A$\wedge$（A$\vee$B）$\leftrightarrow$ A</p>
+</li>
+<li><p>零律：A$\vee$1 $\leftrightarrow$ 1，A$\wedge$0$\leftrightarrow$0 （互为对偶）</p>
+<p>1是或的零元；0是与的零元；</p>
+</li>
+<li><p>同一律：A$\vee$0$\leftrightarrow$A，A$\wedge$1$\leftrightarrow$A （互为对偶）</p>
+<p>1是与的单位元；0是或的单位元；</p>
+</li>
+<li><p>排中律：A$\vee$$\urcorner$A$\leftrightarrow$1 （有争议）（与矛盾律构成互为对偶）</p>
+</li>
+<li><p>矛盾律：A$\wedge$$\urcorner$A$\leftrightarrow$0  </p>
+<p>PS：<code>对偶原理</code>：$\vee$-$\wedge$互换，0和1互换</p>
+</li>
+<li><p>双重否定律：$\urcorner$$\urcorner$A$\leftrightarrow$A</p>
+</li>
+<li><p>蕴涵等值式：A$\rightarrow$B$\leftrightarrow$$\urcorner$A$\vee$B</p>
+</li>
+<li><p>等价等值式：A$\leftrightarrow$B $\leftrightarrow$ （A$\rightarrow$B）$\wedge$（B$\rightarrow$A）</p>
+</li>
+<li><p>等价否定等值式：（A$\leftrightarrow$B） $\leftrightarrow$ （$\urcorner$A$\leftrightarrow$$\urcorner$B）</p>
+</li>
+<li><p>假言易位：（A$\rightarrow$B） $\leftrightarrow$ （$\urcorner$B$\rightarrow$ $\urcorner$A）</p>
+</li>
+<li><p>归谬论：（A$\rightarrow$B）$\wedge$（A$\rightarrow$$\urcorner$B）$\leftrightarrow$ $\urcorner$A</p>
+</li>
+</ol>
+<h5 id="等值演算-1"><a href="#等值演算-1" class="headerlink" title="等值演算"></a>等值演算</h5>
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/%E7%A6%BB%E6%95%A3%E6%95%B0%E5%AD%A6/">离散数学</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/13/%E6%B1%87%E7%BC%96%E8%AF%AD%E8%A8%80-%E5%9F%BA%E4%BA%8EX86%E5%A4%84%E7%90%86%E5%99%A8-Chap01-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5-Day01/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">汇编语言_基于X86处理器-Chap01-基本概念-Day01</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/10/C++-PrimerPlus-Chap04-Day05/">
+                        <span class="hidden-mobile">C-PrimerPlus-Chap04-Day05</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>

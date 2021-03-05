@@ -1,0 +1,955 @@
+
+
+<!DOCTYPE html>
+<html lang="zh-CN" data-default-color-scheme=&#34;auto&#34;>
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" href="https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/favicon-32x32.png">
+  <meta name="viewport"
+        content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, shrink-to-fit=no">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  
+  <meta name="theme-color" content="#2f4154">
+  <meta name="description" content="">
+  <meta name="author" content="码鱼">
+  <meta name="keywords" content="Java Go Javascript HTML CSS SpringBoot">
+  <title>C++-PrimerPlus-Chap04-Day07 - CoderFish-码鱼</title>
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/css/bootstrap.min.css" />
+
+
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/github-markdown-css/4.0.0/github-markdown.min.css" />
+  <link  rel="stylesheet" href="/Plato-Ideal.github.io/lib/hint/hint.min.css" />
+
+  
+    
+    
+      
+      <link  rel="stylesheet" href="https://cdn.staticfile.org/highlight.js/10.0.0/styles/github-gist.min.css" />
+    
+  
+
+  
+
+
+<!-- 主题依赖的图标库，不要自行修改 -->
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1749284_pf9vaxs7x7b.css">
+
+
+
+<link rel="stylesheet" href="//at.alicdn.com/t/font_1736178_kmeydafke9r.css">
+
+
+<link  rel="stylesheet" href="/Plato-Ideal.github.io/css/main.css" />
+
+<!-- 自定义样式保持在最底部 -->
+
+
+  <script  src="/Plato-Ideal.github.io/js/utils.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/color-schema.js" ></script>
+<meta name="generator" content="Hexo 5.3.0"></head>
+
+
+<body>
+  <header style="height: 70vh;">
+    <nav id="navbar" class="navbar fixed-top  navbar-expand-lg navbar-dark scrolling-navbar">
+  <div class="container">
+    <a class="navbar-brand"
+       href="/Plato-Ideal.github.io/">&nbsp;<strong>CoderFish'Blog</strong>&nbsp;</a>
+
+    <button id="navbar-toggler-btn" class="navbar-toggler" type="button" data-toggle="collapse"
+            data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <div class="animated-icon"><span></span><span></span><span></span></div>
+    </button>
+
+    <!-- Collapsible content -->
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav ml-auto text-center">
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/">
+                <i class="iconfont icon-home-fill"></i>
+                首页
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/archives/">
+                <i class="iconfont icon-archive-fill"></i>
+                归档
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/categories/">
+                <i class="iconfont icon-category-fill"></i>
+                分类
+              </a>
+            </li>
+          
+        
+          
+          
+          
+          
+            <li class="nav-item">
+              <a class="nav-link" href="/Plato-Ideal.github.io/about/">
+                <i class="iconfont icon-user-fill"></i>
+                关于
+              </a>
+            </li>
+          
+        
+        
+        
+          <li class="nav-item" id="color-toggle-btn">
+            <a class="nav-link" href="javascript:">&nbsp;<i
+                class="iconfont icon-dark" id="color-toggle-icon"></i>&nbsp;</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</nav>
+
+    <div class="banner intro-2" id="background" parallax=true
+         style="background: url('https://plato-ideal-image.oss-cn-hangzhou.aliyuncs.com/img/default.jpeg') no-repeat center center;
+           background-size: cover;">
+      <div class="full-bg-img">
+        <div class="mask flex-center" style="background-color: rgba(0, 0, 0, 0.3)">
+          <div class="container page-header text-center fade-in-up">
+            <span class="h2" id="subtitle">
+              
+                C++-PrimerPlus-Chap04-Day07
+              
+            </span>
+
+            
+              <div class="mt-3">
+  
+  
+    <span class="post-meta">
+      <i class="iconfont icon-date-fill" aria-hidden="true"></i>
+      <time datetime="2021-02-16 08:26" pubdate>
+        2021年2月16日 早上
+      </time>
+    </span>
+  
+</div>
+
+<div class="mt-1">
+  
+    
+    <span class="post-meta mr-2">
+      <i class="iconfont icon-chart"></i>
+      7.4k 字
+    </span>
+  
+
+  
+
+  
+  
+    
+      <!-- 不蒜子统计文章PV -->
+      <span id="busuanzi_container_page_pv" style="display: none">
+        <i class="iconfont icon-eye" aria-hidden="true"></i>
+        <span id="busuanzi_value_page_pv"></span> 次
+      </span>
+    
+  
+</div>
+
+            
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    
+      
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="d-none d-lg-block col-lg-2"></div>
+    <div class="col-lg-8 nopadding-md">
+      <div class="container nopadding-md" id="board-ctn">
+        <div class="py-5" id="board">
+          <article class="post-content mx-auto" id="post">
+            <!-- SEO header -->
+            <h1 style="display: none">C++-PrimerPlus-Chap04-Day07</h1>
+            
+              <p class="note note-info">
+                
+                  本文最后更新于：2021年2月19日 早上
+                
+              </p>
+            
+            <div class="markdown-body" id="post-body">
+              <h3 id="4-6枚举"><a href="#4-6枚举" class="headerlink" title="4.6枚举"></a>4.6枚举</h3><p>C++中提供了定义符号常量的另一种方法，即<code>enum</code>工具；它允许用户自定义类型，但必须遵守严格的规则；</p>
+<h4 id="枚举定义与创建"><a href="#枚举定义与创建" class="headerlink" title="枚举定义与创建"></a>枚举定义与创建</h4><p>枚举的使用分为两步：首先要定义枚举描述，然后依照描述去对创建变量：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//定义了一个name类型的枚举</span>
+<span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">name</span> &#123;</span>Tom, Jeessry, Blued, Vivian, Jacica&#125;;<span class="hljs-comment">//枚举量enumerator</span>
+
+name man;<span class="hljs-comment">//名称为man的name类型</span>
+man = Tom;
+<span class="hljs-built_in">cout</span> &lt;&lt; man;<span class="hljs-comment">//0 </span></code></pre>
+<p>在这里，我们首先创建了一个<code>name</code>类型，称为<strong>枚举</strong>；它包含五个<strong>枚举量（enumerator）</strong>——Tom、Jessry、Blued、Vivian和Jacica；</p>
+<p>默认情况下，将整数赋给枚举量，第一个枚举量的值为0，第二个为1，然后以此类推；</p>
+<p>在不进行强制转换的前提下，只能使用定义枚举时的枚举量，否则编译器会报错：</p>
+<pre><code class="hljs c++">name women;
+women = <span class="hljs-number">200</span>;<span class="hljs-comment">//枚举中未定义的值</span></code></pre>
+<p>报错信息为：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">// &quot;message&quot;: &quot;不能将 \&quot;int\&quot; 类型的值分配到 \&quot;name\&quot; 类型的实体&quot;,</span>
+<span class="hljs-comment">// &quot;source&quot;: &quot;C/C++&quot;,</span></code></pre>
+<h4 id="枚举量的类型转换"><a href="#枚举量的类型转换" class="headerlink" title="枚举量的类型转换"></a>枚举量的类型转换</h4><p>因为枚举量是整型，所以可被提升为<code>int</code>；但int不能自动转换为枚举类型；</p>
+<pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">name</span> &#123;</span>Tom, Jeessry, Blued, Vivian, Jacica&#125;;
+
+name bily;
+
+bily = Blued;<span class="hljs-comment">//合法的</span>
+<span class="hljs-comment">//bily = 3;//不合法的</span>
+<span class="hljs-comment">//bily = Blued + Vivian;//不合法的</span>
+
+<span class="hljs-keyword">int</span> women_name;
+women_name = Vivian + Jacica;<span class="hljs-comment">//合法的</span></code></pre>
+<p>如上，将<code>Blued</code>赋给<code>bily</code>为合法的，因为定义<code>name</code>时包含<code>Blued</code>，但将3赋给<code>bily</code>，则不合法，虽然代表3的为<code>Vivian</code>也包含在<code>name</code>中，但<code>Blued</code>为int类型，而Vivian则为name类型，无法进行转换；</p>
+<p>尽管没有为枚举本身定义算术运算，但仍可以在算术表达式中使用枚举；那为什么<code>Blued + Vivian</code>会不合法呢？是因为在算术表达式中，枚举将被转换为整数，所以<code>Blued + Vivian</code>将被转换为2 + 3，所以结果类型为int，而<code>bily</code>为name类型，所以赋值失败；</p>
+<p>那么如何将int类型赋给枚举变量呢？</p>
+<p>则可以通过强制类型转换来实现：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> boy_name = <span class="hljs-number">4</span>;
+bily = name(boy_name);
+<span class="hljs-built_in">cout</span> &lt;&lt; bily;<span class="hljs-comment">//4</span></code></pre>
+<h4 id="设置枚举量的值"><a href="#设置枚举量的值" class="headerlink" title="设置枚举量的值"></a>设置枚举量的值</h4><p>可以使用赋值运算符来显式设置枚举量的值：</p>
+<pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">name</span> &#123;</span>Tom = <span class="hljs-number">1</span>, Jeessry = <span class="hljs-number">2</span>, Blued = <span class="hljs-number">3</span>, Vivian = <span class="hljs-number">4</span>, Jacica = <span class="hljs-number">5</span>&#125;;</code></pre>
+<p>特别注意：枚举量的值只能被指定为整数；早期C++只能赋给枚举变量以int类型，现在long及long long都可以；</p>
+<p>如果有需要，可以只定义其中一部分的值，枚举量的规则是：后面没有被初始化的值总比前面一位大1；</p>
+<pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">name</span> &#123;</span>Tom, Jeessry = <span class="hljs-number">0</span>, Blued, Vivian = <span class="hljs-number">1</span>, Jacica&#125;;</code></pre>
+<p>这种情况下，<code>Tom</code>为0，<code>Blued</code>为1，<code>Jacica</code>为2；</p>
+<h4 id="枚举的取值范围"><a href="#枚举的取值范围" class="headerlink" title="枚举的取值范围"></a>枚举的取值范围</h4><p>关于枚举的取值范围书上这样说：</p>
+<blockquote>
+<p>在对枚举变量赋值的时候，可以通过强制类型转换将定义外合法值赋给它；</p>
+<p>这个合法值的取值范围为：</p>
+<ul>
+<li>上限：找到大于这个最大值的、最小的2的幂，将其-1；</li>
+<li>下限：找到小于这个最小值的、最大的2的幂，将其+1；如果最小值不小于0，则下限直接为0；</li>
+</ul>
+</blockquote>
+<p>但根据我的实验：现在的C++版本对取值范围貌似并未作规范，比如我定义了这样一个枚举：</p>
+<pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">enum</span> <span class="hljs-title">name</span> &#123;</span>Tom = <span class="hljs-number">-1</span>, Jeessry = <span class="hljs-number">0</span>, Blued = <span class="hljs-number">64</span>, Vivian, Jacica&#125;;</code></pre>
+<p>但其上限既不是64也不是128，下限也非-2，我试验了众多值，发现即使是<code>LONG_MAX</code>和<code>LONG_MIN</code>，即long的最大值和最小值也依然可以正常输出：</p>
+<pre><code class="hljs c++">   <span class="hljs-keyword">int</span> max_num = name(LONG_MAX);
+   <span class="hljs-built_in">cout</span> &lt;&lt; max_num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//2147483648</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; LONG_MAX &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//2147483648</span>
+   <span class="hljs-keyword">int</span> min_num = name(LONG_MIN);
+<span class="hljs-built_in">cout</span> &lt;&lt; min_num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//-2147483648</span>
+   <span class="hljs-built_in">cout</span> &lt;&lt; LONG_MIN &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//-2147483648</span></code></pre>
+<p>直到取<code>LLONG_MAX</code>和<code>LLONG_MIN</code>，即long long的最大最小值时，程序才出现异常：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> max_num = name(LLONG_MAX);
+<span class="hljs-built_in">cout</span> &lt;&lt; max_num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//-1</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; LLONG_MAX &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//9223372036854775807</span>
+<span class="hljs-keyword">int</span> min_num = name(LLONG_MIN);
+<span class="hljs-built_in">cout</span> &lt;&lt; min_num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; LLONG_MIN &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//-9223372036854775808</span></code></pre>
+<p>对此产生的疑问促使我查阅了官方文档，在枚举的介绍中未找到关于枚举值的取值范围的介绍，由此我断定：C++中对于枚举值的取值范围并未作明确规定，大致范围应该在<code>LONG_MAX</code>和<code>LONG_MIN</code>之间；</p>
+<p>如有错误，请联系我更正；</p>
+<hr>
+<h3 id="4-7-指针和自由存储空间"><a href="#4-7-指针和自由存储空间" class="headerlink" title="4.7 指针和自由存储空间"></a>4.7 指针和自由存储空间</h3><h4 id="概要"><a href="#概要" class="headerlink" title="概要"></a>概要</h4><p>计算机存储数据时必须跟踪的3种属性为：</p>
+<ul>
+<li>存储信息的位置</li>
+<li>存储信息的值</li>
+<li>存储信息的类型</li>
+</ul>
+<p>而跟踪这三种属性可以通过定义一个简单变量来实现；另一种方法则是以<strong>指针（pointer）</strong>为基础；指针是一个存储地址的变量；使用地址运算符——<code>&amp;</code>——可以获得变量地址；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> test_val_int = <span class="hljs-number">3</span>;
+<span class="hljs-keyword">double</span> test_val_double = <span class="hljs-number">4.5</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;test_val_int:&quot;</span> &lt;&lt; test_val_int &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//3</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;test_val_int address:&quot;</span> &lt;&lt; &amp;test_val_int &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61febc</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;test_val_double:&quot;</span> &lt;&lt; test_val_double &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//4.5</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;test_val_double address:&quot;</span> &lt;&lt; &amp;test_val_double &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61feb0</span></code></pre>
+<p>传统的处理存储数据的策略是将值视为指定的量而将地址视为派生量；新策略正好相反，将地址视为指定的量而将值视为派生量；指针用于存储变量的地址，因此，指针名表示的就是地址；</p>
+<p><code>*</code>——被称为<strong>间接值（indirect value）运算符</strong>或<strong>解除引用（dereferencing）运算符</strong>；是乘法运算符还是解除引用运算符取决于上下文；</p>
+<p>因此，对于指针——假设为<code>val</code>——<code>&amp;val</code>表示地址，<code>*val</code>表示存储在该地址的值；<code>*val</code>与常规int、double变量等效；</p>
+<p>举个例子：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> val = <span class="hljs-number">8</span>;
+<span class="hljs-keyword">int</span> * val_ad; <span class="hljs-comment">//声明一个指针</span>
+val_ad = &amp;val;<span class="hljs-comment">//将val的地址赋给指针</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The value of val:&quot;</span> &lt;&lt; val &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//:8</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The value of val_ad:&quot;</span> &lt;&lt; *val_ad &lt;&lt;<span class="hljs-built_in">endl</span>;<span class="hljs-comment">//:8</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The address of val:&quot;</span> &lt;&lt; &amp;val &lt;&lt; <span class="hljs-built_in">endl</span>; <span class="hljs-comment">//0x61feb8</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The address of val_ad:&quot;</span> &lt;&lt; val_ad &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61feb8</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;val + 1 = &quot;</span> &lt;&lt; *val_ad + <span class="hljs-number">1</span>&lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//val + 1 = 9</span></code></pre>
+<p>可以通过例子看到：int变量<code>val</code>和指针变量<code>val_ad</code>不过是一个硬币的两个面；由于<code>val_ad</code>指向<code>val</code>，所以<code>val</code>和<code>*val_ad</code>是完全等价的；可以像使用int变量那样使用<code>*val_ad</code>；</p>
+<h4 id="声明指针"><a href="#声明指针" class="headerlink" title="声明指针"></a>声明指针</h4><p>如前所言，<code>int * val_ad</code>声明了一个指针；这里我们详细介绍一下这种声明：</p>
+<p>首先要说明的的是：指针同数组一样，也必须基于其他类型；不能也不可能声明一个不带任何类型的指针；</p>
+<p>关于指针的表述方式有这么两种：</p>
+<p>我们即可以说<code>*val_ad</code>的类型是int，也可以说<code>val_ad</code>的类型是指向int的指针；这两种表述方式本质上是一致的：即<code>val_ad</code>是指针，<code>*val_ad</code>是int；</p>
+<p>关于解除引用运算符<code>*</code>的位置，是任意的：既可以像C程序员将<code>*</code>放在指针名左边：<code>int *val_ad;</code>——强调<code>*val_ad</code>是一个int类型的值；也可以像C++程序员将<code>*</code>放在int右边：<code>int* val_ad;</code>——强调<code>int*</code>是一种类型——指向int的指针；你可以对<code>*</code>左右两边的空格做任意取舍；</p>
+<p>不同于基本类型的声明，可以将两个变量连续声明，即<code>int i1, i2;</code>，这将创建两个int类型的变量；指针中这样声明将会创建一个指针和一个基本类型变量，如：<code>int* i1, i2;</code>，这将创建一个int类型的指针——<code>i1</code>，和一个int类型变量——<code>i2</code>；</p>
+<h4 id="地址的长度"><a href="#地址的长度" class="headerlink" title="地址的长度"></a>地址的长度</h4><p>虽然<code>int* val_int</code>和<code>double* val_double</code>分别指向不同长度的数据类型，但<code>val_int</code>和<code>val_double</code>的长度却是一样的；也就是说，int和double的地址的长度是一样长的；</p>
+<p>通常来说，地址需要2个字节还是4个字节，取决于计算机系统；</p>
+<h4 id="初始化指针"><a href="#初始化指针" class="headerlink" title="初始化指针"></a>初始化指针</h4><p>可以在声明语句中初始化指针；在这种情况下，被初始化的是指针，而不是它指向的值；</p>
+<pre><code class="hljs c++">   <span class="hljs-keyword">double</span> val = <span class="hljs-number">4.5</span>;
+   <span class="hljs-comment">//声明指针并初始化</span>
+   <span class="hljs-keyword">double</span>* val_double = &amp;val;
+<span class="hljs-built_in">cout</span> &lt;&lt; val_double;<span class="hljs-comment">//0x61feb0</span></code></pre>
+<p>在这个程序中，程序将<code>val_double</code>初始化为<code>val</code>的地址；</p>
+<h4 id="指针的危险"><a href="#指针的危险" class="headerlink" title="指针的危险"></a>指针的危险</h4><p>在C++中，创建指针时，计算机将会分配用于存储地址的内存，但不会分配存储指针所指向的数据的内存，这也就意味着，在声明指针之前，务必为数据提供内存空间；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">double</span>* val_double;
+*val_double = <span class="hljs-number">2333</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; val_double;</code></pre>
+<p>如上述程序，<code>val_double</code>确实是一个指针，但该指针指向哪里不得而知；运行该程序，我们会发现，编译会通过——编译器不会报错——但程序不显示任何输出，这意味着：<code>val_double</code>并没有保存任何地址；</p>
+<p><strong>在对指针应用<code>*</code>之前，一定要将指针初始化一个确定的适当的地址！！！</strong>——这是使用指针的金科玉律；</p>
+<h4 id="指针与数字"><a href="#指针与数字" class="headerlink" title="指针与数字"></a>指针与数字</h4><p>虽然计算机通常将地址当做整数来处理，但这并不意味着指针是整型；从概念上说，整数是可以执行加减乘除等运算的数字，而指针描述的是位置；对位置进行运算没有任何意义；</p>
+<p>如果要将整数赋给地址，不能简单的直接赋值，而需要使用强制类型转换来进行：</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">double</span>* val_double;
+val_double = (<span class="hljs-keyword">double</span>*)<span class="hljs-number">0x2333</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; val_double;</code></pre>
+<p>这里将<code>0x2233</code>强制转换为地址，然后赋给<code>val_double</code>；</p>
+<h4 id="new"><a href="#new" class="headerlink" title="new"></a>new</h4><p>上文提到的指针初始化方式是通过变量实现的，而变量时在编译时分配的有名称的内存，如何在程序运行时分配未命名的内存以存储值？这就需要用到<code>new</code>运算符；</p>
+<p>new运算符，通过标准句法将一块内存分配出来，由程序去判断需要多大内存，什么类型，然后返回地址，将地址赋给指针；</p>
+<p>举个例子：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//常规方法</span>
+<span class="hljs-keyword">int</span> higgen = <span class="hljs-number">18</span>;
+<span class="hljs-keyword">int</span>* higgen_p = &amp;higgen;
+
+<span class="hljs-comment">//new</span>
+<span class="hljs-keyword">int</span>* hig = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>;
+*hig = <span class="hljs-number">18</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; hig &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x717a80</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; *hig &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//18</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; higgen &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//18</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; higgen_p &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61feb4</span></code></pre>
+<p>在此例中，使用<code>new</code>运算符告诉程序，需要存储int的内存；<code>new</code>运算符根据类型来确定需要多大内存，找到之后将地址返回并赋给<code>hig</code>；此时，<code>hig</code>被声明为指向int类型的指针；</p>
+<p>在这里我们称<code>hig</code>指向一个<strong>数据对象</strong>，即为数据项分配的内存块；变量也是一种数据对象，但<code>hig</code>指向的内存不是变量；</p>
+<p>这样的方式使得程序在管理内存方面有更大的控制权；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> day = <span class="hljs-number">365</span>;
+<span class="hljs-keyword">int</span> * day_pointer = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>;
+*day_pointer = <span class="hljs-number">365</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;day:&quot;</span> &lt;&lt; day; 
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;;location:&quot;</span> &lt;&lt; &amp;day &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//day:365;location:0x61feac</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;*day_pointer:&quot;</span> &lt;&lt; *day_pointer;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;;location:&quot;</span> &lt;&lt; day_pointer &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//*day_pointer:365;location:0xfa7a90</span>
+
+<span class="hljs-keyword">double</span> * day_double = <span class="hljs-keyword">new</span> <span class="hljs-keyword">double</span>;
+*day_double = <span class="hljs-number">365.8848</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size of day:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(day);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;;size of &amp;day:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(&amp;day) &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//size of day:4;size of &amp;day:4</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size of *day_double:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(*day_double);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;;siez of day_double:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(day_double) &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//size of *day_double:8;siez of day_double:4</span></code></pre>
+<p>该程序分别为int类型和double类型的数据对象分配内存；</p>
+<p>通过程序我们可以看到：地址本身的长度不受类型和类型长度的影响——这就是声明指针要指明所指向类型的原因之一；</p>
+<p>对于指针还要特别注意的一点是：new分配的内存块通常与常规变量声明分配的内存块不同；</p>
+<p>new从<strong>堆（heap）</strong>和<strong>自由存储区（free store）</strong>的内存区域中分配内存，而常规变量声明存储在<strong>栈（stack）</strong>中；</p>
+<h4 id="delete"><a href="#delete" class="headerlink" title="delete"></a>delete</h4><p>需要内存时，用new来申请，当使用完内存后，可以用<code>delete</code>来讲内存归还给内存池；这可以帮助有效管理内存；归还或释放的内存可供程序的其他部分使用；</p>
+<p>delete的使用要点如下：</p>
+<ul>
+<li>delete要new配对使用，否则将引发内存泄漏（memory leak）；</li>
+<li>已经释放的内存块不能再释放，这样做的结果是不确定的；</li>
+<li>可以对空指针使用delete；</li>
+<li>不要创建两个指向同一内存块的指针，更不要对这样的指针使用delete，这将增加错误地删除同一个内存块两次的可能性；</li>
+</ul>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> jus = <span class="hljs-number">7</span>;
+<span class="hljs-keyword">int</span> * jus_p = &amp;jus;
+<span class="hljs-keyword">delete</span> jus_p;<span class="hljs-comment">//不合法</span></code></pre>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> * ps = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> ;
+*ps = <span class="hljs-number">155</span>;
+<span class="hljs-keyword">delete</span> ps;
+<span class="hljs-keyword">delete</span> ps;<span class="hljs-comment">//不合法的</span></code></pre>
+<pre><code class="hljs c++"><span class="hljs-keyword">int</span> * ascii = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span>;
+<span class="hljs-keyword">int</span> * ansi = ascii;<span class="hljs-comment">//两个指针指向同一块内存块</span>
+<span class="hljs-keyword">delete</span> ascii;<span class="hljs-comment">//不合法的</span></code></pre>
+<h4 id="动态数组"><a href="#动态数组" class="headerlink" title="动态数组"></a>动态数组</h4><p>对于大型数据对象来说，比如数组、字符串、结构等，应该使用new来管理内存；</p>
+<p>我们要记住，new是在运行时分配内存；</p>
+<p>对于数组而言，在编译时给数组分配内存称为<strong>静态联编（static binding）</strong>；在运行时创建数组称为<strong>动态联编（dynamic binding）</strong>；动态联编的数组称为<strong>动态数组（dynamic array）</strong>；</p>
+<h5 id="创建动态数组"><a href="#创建动态数组" class="headerlink" title="创建动态数组"></a>创建动态数组</h5><p>在C++中创建动态数组较为简单，只需要告诉new数组的元素类型及元素数目即可：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//dynamic array</span>
+<span class="hljs-keyword">int</span> * psome = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> [<span class="hljs-number">15</span>];</code></pre>
+<p>new返回第一个元素的地址；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; psome;<span class="hljs-comment">//0xe77020</span></code></pre>
+<p><code>psome</code>是指向int（数组第一个元素）的指针，由于编译器不能对psome是指向10个元素的第一个的情况进行追踪，所以需要在编写程序时进行跟踪元素的数目；但实际上，程序确实跟踪了分配的内存量。但这种信息不是公开的；</p>
+<p>对于使用new创建的数组，应该使用<code>delete []</code>来释放内存；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">delete</span> [] psome;</code></pre>
+<p>方括号告诉程序，应该释放整个数组，而不仅仅是指针指向的元素；</p>
+<p><code>new</code>和<code>delete</code>一一对应，<code>new []</code>也应该和<code>delete []</code>相对应；不能混合使用；</p>
+<h5 id="动态数组使用"><a href="#动态数组使用" class="headerlink" title="动态数组使用"></a>动态数组使用</h5><p>对于动态数组，使用方法极为简单：只要把指针当做数组名使用即可；</p>
+<p>可以这样做的原因是：在C和C++内部，都使用指针来处理数组，指针和数组等价是C和C++基本优点之一；</p>
+<pre><code class="hljs c++">psome[<span class="hljs-number">0</span>] = <span class="hljs-number">123</span>;
+psome[<span class="hljs-number">1</span>] = <span class="hljs-number">456</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; psome[<span class="hljs-number">0</span>] + psome[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//579</span></code></pre>
+<p>接着我们从概念上理解：以上例为例，在使用动态指针时，指针指向数组第一个元素的地址，即它指向包含15个int值的内存块中的第一个元素；假设int占4个字节，则程序向后数4个字节将指向第二个元素，以此类推，程序将知晓全部元素；</p>
+<p>指针与数组名的真正区别在于：指针是变量，可以修改其值，而数组名不行：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//change the num of the dynamic array</span>
+<span class="hljs-keyword">int</span> * bps = <span class="hljs-keyword">new</span> <span class="hljs-keyword">int</span> [<span class="hljs-number">5</span>];
+bps[<span class="hljs-number">0</span>] = <span class="hljs-number">1024</span>;
+bps[<span class="hljs-number">1</span>] = <span class="hljs-number">2048</span>;
+bps[<span class="hljs-number">2</span>] = <span class="hljs-number">3072</span>;
+bps[<span class="hljs-number">3</span>] = <span class="hljs-number">4096</span>;
+bps[<span class="hljs-number">4</span>] = <span class="hljs-number">5120</span>;
+
+bps += <span class="hljs-number">1</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; bps[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//2048</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; bps[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//3072</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; bps[<span class="hljs-number">4</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//21963</span>
+
+<span class="hljs-keyword">int</span> static_array[<span class="hljs-number">5</span>] &#123;<span class="hljs-number">1024</span>, <span class="hljs-number">2048</span>, <span class="hljs-number">3072</span>, <span class="hljs-number">4096</span>, <span class="hljs-number">5120</span>&#125;;
+<span class="hljs-comment">//static_array += 1;//Invalid operands to binary expression (&#x27;int [5]&#x27; and &#x27;int&#x27;)</span></code></pre>
+<p>如上例：<code>bps + 1</code>将导致数组指针指向第二个元素，将其-1又会指向原来的元素；而对数组名+1将直接导致编译器报错；</p>
+<p>但我们也能看到，将指针+1后，最后一个元素将导致不确定的结果；</p>
+<hr>
+<h3 id="4-8-指针、数组、指针算术"><a href="#4-8-指针、数组、指针算术" class="headerlink" title="4.8 指针、数组、指针算术"></a>4.8 指针、数组、指针算术</h3><h4 id="数组和指针等价的原因"><a href="#数组和指针等价的原因" class="headerlink" title="数组和指针等价的原因"></a>数组和指针等价的原因</h4><p>指针和数组等价的原因就在于<strong>指针算术（pointer arithmetic）</strong>和C++内部处理数组的方式；</p>
+<p>先来看一组代码：</p>
+<pre><code class="hljs c++"><span class="hljs-comment">//数组和指针</span>
+<span class="hljs-keyword">double</span> array1[<span class="hljs-number">3</span>] &#123;<span class="hljs-number">1000.0</span>, <span class="hljs-number">2000.0</span>, <span class="hljs-number">3000.0</span>&#125;;
+<span class="hljs-keyword">short</span> array2[<span class="hljs-number">3</span>] &#123;<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>&#125;;
+
+<span class="hljs-comment">//两种得到数组地址的方式</span>
+<span class="hljs-keyword">double</span> * array1_address = array1;<span class="hljs-comment">//数组名即地址</span>
+<span class="hljs-keyword">short</span> * array2_address = &amp;array2[<span class="hljs-number">0</span>];<span class="hljs-comment">//使用 &amp; 运算符</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;array1_address:&quot;</span> &lt;&lt; array1_address &lt;&lt; <span class="hljs-string">&quot; *array1_address:&quot;</span> &lt;&lt; *array1_address &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//array1_address:0x61fea0 *array1_address:1000</span>
+array1_address += <span class="hljs-number">1</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;array1_address:&quot;</span> &lt;&lt; array1_address &lt;&lt; <span class="hljs-string">&quot; *array1_address:&quot;</span> &lt;&lt; *array1_address &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//array1_address:0x61fea8 *array1_address:2000</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;array2_address:&quot;</span> &lt;&lt; array2_address &lt;&lt; <span class="hljs-string">&quot; *array2_address:&quot;</span> &lt;&lt; *array2_address &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//array2_address:0x61fe9a *array2_address:1</span>
+array2_address += <span class="hljs-number">1</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;array2_address:&quot;</span> &lt;&lt; array2_address &lt;&lt; <span class="hljs-string">&quot; *array2_address:&quot;</span> &lt;&lt; *array2_address &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//array2_address:0x61fe9c *array2_address:2</span></code></pre>
+<p>可以看到，C++将数组名解释为数组第一个元素的地址；因此，数组存在以下等式：</p>
+<blockquote>
+<p>array_name = &amp;array_name[0];</p>
+</blockquote>
+<p>因此可以将数组名赋给指针：<code>double * array1_address = array1;</code>；</p>
+<p><code>array1_address</code>表示数组第一个元素的地址，<code>*array1_address</code>则表示第一个元素的值，即1000；将指针——<code>array_address</code>——+1，指针将指向第二个元素，即2000；而指针增加的量等于它指向类型的字节数，在这里由<code>0x61fea0</code>到``0x61fea8，增加了8；而short类型则增加了2；</p>
+<pre><code class="hljs c++"><span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;array2[0]:&quot;</span> &lt;&lt; array2[<span class="hljs-number">0</span>];
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; array2[1]:&quot;</span> &lt;&lt; array2[<span class="hljs-number">1</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//array2[0]:1   array2[1]:2</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;*array2:&quot;</span> &lt;&lt; *array2;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; *(array2_address + 1):&quot;</span> &lt;&lt; *(array2_address + <span class="hljs-number">1</span>) &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//*array2:1     *(array2_address + 1):2</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;size of array2:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(array2);
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;   size of array2_address:&quot;</span> &lt;&lt; <span class="hljs-keyword">sizeof</span>(array2_address);
+<span class="hljs-comment">//size of array2:6   size of array2_address:4</span></code></pre>
+<p>延续上例，我们可以看到其数组通过索引来查询元素，就是通过指针算术来实现的；即：<code>array2[1] = *(array2_address + 1)</code>；这意味着先计算第二个元素的地址，然后找到存储在其中的值，这就是<code>array2[1]</code>的含义；从这里我们可以推导出一个等式，在使用数组表示法时，C++所执行转换为：</p>
+<blockquote>
+<p><code>array_name[i] = *(array_name + i)</code></p>
+</blockquote>
+<p>即使使用指针，C++也同样会执行这样的转换；</p>
+<p>所以，在很多情况下，我们都可以以相同方式使用指针名和数组名；多数情况下，他们都表示地址；区别之一是，可以修改指针的值，而数组名是常量；</p>
+<p>而另一个很大的区别是，对数组名使用<code>sizeof</code>得到的是数组的长度，而对指针名使用<code>sizeof</code>得到的是指针的长度；</p>
+<h4 id="指针和字符串"><a href="#指针和字符串" class="headerlink" title="指针和字符串"></a>指针和字符串</h4><p>我们知道，字符串的本质也是一种数组，指针与数组的特殊关系也能推广到字符串；</p>
+<p>声明一个C-风格字符串，其实质是将字符串的第一个字符的地址赋给变量；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> animal[<span class="hljs-number">15</span>] = <span class="hljs-string">&quot;bear&quot;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; animal;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot; is a animal.&quot;</span>;</code></pre>
+<p>在这里，animal接收了’b’的地址；在将字符串输出时，cout首先按照地址找到内存空间，然后识别这是一个字符串，随后开始打印，直到遇到空字符为止；</p>
+<p><code>&quot; is a animal.&quot;</code>这个字符串字面值同样也依照此理；在C++中，用引号括起来的字符串向数组名一样，也是第一个元素的地址；这意味着，对于数组中的字符串、用引号括起来的字符串常量以及指针所描述的字符串，处理的方式都是一样的；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> animal[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;bear&quot;</span>;
+<span class="hljs-keyword">const</span> <span class="hljs-keyword">char</span> * bird = <span class="hljs-string">&quot;wren&quot;</span>;
+<span class="hljs-comment">//char * ps;</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; animal &lt;&lt; <span class="hljs-string">&quot; and &quot;</span> &lt;&lt; bird &lt;&lt; <span class="hljs-built_in">endl</span>;
+	
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;the bird is point to:&quot;</span> &lt;&lt; *bird &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;the address of bird is:&quot;</span> &lt;&lt; &amp;bird &lt;&lt; <span class="hljs-built_in">endl</span>;</code></pre>
+<p>分析一下这个程序：创建一个char数组<code>animal</code>，等于将<code>&quot;bear&quot;</code>的第一个字符的地址赋给animal；</p>
+<p>之后创建了一个指针——指向char类型；<code>&quot;wren&quot;</code>本身便表示一个地址，因此这条语句便是将<code>&quot;wren&quot;</code>的地址赋给指针<code>bird</code>；所以可以像操控字符串那样操控指针<code>bird</code>；</p>
+<p>其次，用<code>const</code>来修饰，说明<code>wren</code>本身是一个字符串常量；这使得程序可以通过<code>bird</code>来访问它，去不能对它进行修改；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> * pa = animal;
+<span class="hljs-built_in">cout</span> &lt;&lt; pa &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//bear</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; (<span class="hljs-keyword">int</span>*)pa &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61fea8</span></code></pre>
+<p>一般来说，将指针传给cout，它将打印地址；但如果指针的类型为<code>char*</code>，则cout会打印该地址指向的字符串；如果要打印该字符串的地址，则需要进行强制类型转换为另一种类型；</p>
+<h5 id="字符串输入"><a href="#字符串输入" class="headerlink" title="字符串输入"></a>字符串输入</h5><p>如果想要在获取字符串输入，对于char数组来说，只要字符数小于数组长度便是安全的；然而如果将输入用指针来接收将是错误的；而更不安全的一种做法是将输入读入到还未初始化的指针，由于指针尚未初始化，程序不知道将字符串存储到哪里，这甚至有可能改写某些内存的信息；</p>
+<p>正确的做法是使用足够大的数组来接收字符串；</p>
+<p>这里另提供一种可以节省相对较多内存的方式来读入字符串；</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">char</span>* <span class="hljs-title">getname</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-comment">//创建临时数组</span>
+    <span class="hljs-keyword">char</span> temp[<span class="hljs-number">80</span>];
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter your name:&quot;</span>;
+    <span class="hljs-built_in">cin</span>.getline(temp,<span class="hljs-number">80</span>);
+
+    <span class="hljs-keyword">char</span> * ps = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-built_in">strlen</span>(temp) + <span class="hljs-number">1</span>];
+    <span class="hljs-built_in">strcpy</span>(ps,temp);
+
+    <span class="hljs-keyword">return</span> ps;
+&#125;</code></pre>
+<p>使用函数<code>getname()</code>来获取字符串输入，该函数创建临时数组来接收键盘输入，然后使用new来根据字符串大小创建合适的内存块，然后通过<code>strcpy()</code>将临时数组内的字符串复制到新开辟出来的内存，然后程序返回该指针；其实质是字符串的一个副本；</p>
+<pre><code class="hljs c++"><span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    <span class="hljs-keyword">char</span> * name;
+    name = getname();
+    <span class="hljs-built_in">cout</span> &lt;&lt; name &lt;&lt; <span class="hljs-string">&quot; at in &quot;</span> &lt;&lt; (<span class="hljs-keyword">int</span>*)name &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-comment">//Jackie Chen at in 0x1041630</span>
+    <span class="hljs-keyword">delete</span> []name;
+&#125;</code></pre>
+<p>此例展示了该函数的使用情况；</p>
+<p>按照这种方式进行字符串输入可以节省极大的内存空间；</p>
+<p>但是要注意的是，这种方法将new与delete分开放在不同的函数中，这种做法通常来说并不推荐，因为极容易忘记写delete，这里想说明的是这种做法也是可以的；</p>
+<h5 id="字符串复制"><a href="#字符串复制" class="headerlink" title="字符串复制"></a>字符串复制</h5><p>在C++中，有些编译器将字符串字面值视为只读常量，如果修改则会导致错误；而有些编译器则使用字符串字面值的一个副本来表示程序中所有的该字面值；</p>
+<p>如果需要复制字符串，不能简单的使用赋值运算符，否则将造成两个指针指向同一内存单元的情况；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> butterfly[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;butter&quot;</span>;
+<span class="hljs-keyword">char</span> * pb = butterfly;
+pb[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;c&#x27;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;butterfly:&quot;</span> &lt;&lt; butterfly &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//butterfly:cutter</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;pb:&quot;</span> &lt;&lt; pb &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//pb:cutter</span></code></pre>
+<p>如上，对副本的修改使得本身也改变了，这在某些情况下将造成麻烦，所以，正确的获得副本的方法应该是重新开辟一块内存空间，然后存储相应字符串；</p>
+<p>首先，我们应该分配内存，这可以重新声明一个数组或者使用new来完成；</p>
+<p>其次，将字符串存储到该内存中；这一步不能用赋值运算符，否则将修改目标数组的地址；这里我们使用库函数<code>strcpy()</code>，这个函数接收两个参数，第一个是目标地址，第二个是要复制的字符串的地址；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> butterfly[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;butter&quot;</span>;
+<span class="hljs-keyword">char</span> * pbcopy = <span class="hljs-keyword">new</span> <span class="hljs-keyword">char</span>[<span class="hljs-built_in">strlen</span>(butterfly) + <span class="hljs-number">1</span>];
+<span class="hljs-built_in">strcpy</span>(pbcopy,butterfly);
+
+<span class="hljs-built_in">cout</span> &lt;&lt; butterfly &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//butter</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; pbcopy &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//butter</span>
+
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The address of butterfly:&quot;</span> &lt;&lt; (<span class="hljs-keyword">int</span>*)butterfly &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//The address of butterfly:0x61fea8</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;The address of pbcopy:&quot;</span> &lt;&lt; (<span class="hljs-keyword">int</span>*)pbcopy &lt;&lt; <span class="hljs-built_in">endl</span>;
+<span class="hljs-comment">//The address of pbcopy:0x827018</span>
+
+pbcopy[<span class="hljs-number">0</span>] = <span class="hljs-string">&#x27;c&#x27;</span>;
+<span class="hljs-built_in">cout</span> &lt;&lt; butterfly &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//butter</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; pbcopy &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//cutter</span></code></pre>
+<p>如上，我们可以清晰看到，两个字符串的内存地址并不一样，对<code>pbcopy</code>的改动也没有影响原本的字符串；这样我们就获得了一份完美的副本；</p>
+<p>延伸一下， 如果将一个字符串字面值复制到目标数组中，如果数组足以存储下，自然是安全的，如果不能，则会造成很大的麻烦；那么这种情况下，更建议使用库函数<code>strncpy()</code>；该函数有3个参数，第一个为目标数组的地址，第二个为所要复制的字符串的地址，第三个为要复制的最大字符数；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">char</span> butterfly[<span class="hljs-number">20</span>] = <span class="hljs-string">&quot;butter&quot;</span>;
+<span class="hljs-built_in">strncpy</span>(butterfly,<span class="hljs-string">&quot;is not a butterfly,but not a bee.&quot;</span>,<span class="hljs-number">19</span>);
+butterfly[<span class="hljs-number">19</span>] = <span class="hljs-string">&#x27;\0&#x27;</span>;</code></pre>
+<p>这样将，使得最大19个字符被复制到<code>butterfly</code>中；</p>
+<p>但是要注意的是，如果函数还未到达字符串结尾之前，目标内存已经用完，该函数将不会在字符串结尾添加空字符；因此，为了保险起见，我们应当手动添加空字符，在函数之后将字符串最后一个字符改为空字符，使得函数在复制完毕后添加空字符，以标记字符串结尾；</p>
+<h4 id="动态结构"><a href="#动态结构" class="headerlink" title="动态结构"></a>动态结构</h4><p>在运行时创建数组优于在编译时创建数组，对于结构来说也是如此；使用new可以创建动态结构；</p>
+<h5 id="创建动态数组-1"><a href="#创建动态数组-1" class="headerlink" title="创建动态数组"></a>创建动态数组</h5><p>动态数组的创建是很简单的，原理就是利用自定义类型开辟一块用于存储结构的内存块；</p>
+<pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">basketball_player</span></span>
+<span class="hljs-class">&#123;</span>
+    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];
+    <span class="hljs-keyword">int</span> age;
+&#125;;
+
+	basketball_player * player1 = <span class="hljs-keyword">new</span> basketball_player;</code></pre>
+<p>如上，动态结构就创建好了；</p>
+<h5 id="使用动态结构"><a href="#使用动态结构" class="headerlink" title="使用动态结构"></a>使用动态结构</h5><p>由于动态结构返回的是一个地址，所以不能直接用指针名访问成员；</p>
+<p>这里提供两种方法：一是用<strong>箭头成员运算符（-&gt;）</strong>，由指针名指向成员的方式来访问成员；二是用解除引用运算符（*），使得指针化为被指向的值，即结构；</p>
+<p>这里给出完整示例：</p>
+<pre><code class="hljs c++"><span class="hljs-meta">#<span class="hljs-meta-keyword">include</span> <span class="hljs-meta-string">&lt;iostream&gt;</span></span>
+<span class="hljs-keyword">using</span> <span class="hljs-keyword">namespace</span> <span class="hljs-built_in">std</span>;
+
+<span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">basketball_player</span></span>
+<span class="hljs-class">&#123;</span>
+    <span class="hljs-keyword">char</span> name[<span class="hljs-number">20</span>];
+    <span class="hljs-keyword">int</span> age;
+&#125;;
+<span class="hljs-function"><span class="hljs-keyword">int</span> <span class="hljs-title">main</span><span class="hljs-params">()</span></span>
+<span class="hljs-function"></span>&#123;
+    basketball_player * player1 = <span class="hljs-keyword">new</span> basketball_player;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the name:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; player1 -&gt; name;
+    <span class="hljs-comment">//Enter the name:Shirly</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-string">&quot;Enter the age:&quot;</span>;
+    <span class="hljs-built_in">cin</span> &gt;&gt; player1 -&gt; age;
+    <span class="hljs-comment">//Enter the age:28</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; <span class="hljs-built_in">endl</span>;
+
+    <span class="hljs-built_in">cout</span> &lt;&lt; (*player1).name &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//Shirly</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; (*player1).age &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//28</span>
+
+    <span class="hljs-keyword">delete</span> player1;
+
+    <span class="hljs-keyword">return</span> <span class="hljs-number">0</span>;
+&#125;</code></pre>
+<p>这里运用了两种方式来访问结构成员；</p>
+<p>如何判定什么时候该用什么？当结构标识符为结构名时，应用句点运算符；如果结构标识符为指向结构的指针，则应该使用箭头成员运算符；</p>
+<h4 id="自动存储、静态存储和动态存储"><a href="#自动存储、静态存储和动态存储" class="headerlink" title="自动存储、静态存储和动态存储"></a>自动存储、静态存储和动态存储</h4><p>通俗地讲，这三种存储方式决定了一个变量的生命周期；</p>
+<p>自动存储即在函数内部定义的常规变量的存储方式，这种变量称为自动变量；它们在所属的函数被调用时产生，在函数结束时消亡；自动变量实际上是一个局部变量，其作用域为包含它的代码块；</p>
+<p>自动存储通常存储在栈中；这意味着执行代码块时，变量被依次加入栈中，而在离开代码块时，将按相反的顺序释放这些变量，这被称为<strong>后进先出（LIFO）</strong>；</p>
+<p>静态存储是整个程序运行期间都存在的存储方式；通常有两种方式使变量称为静态：一，在函数外声明；二：使用<code>static</code>关键字；</p>
+<p>例如<code>static int free = 23333;</code></p>
+<p>动态存储即使用new和delete来开辟和释放内存的方法；它们管理一个内存池，这被称之为<strong>自由存储空间（free store）</strong>或<strong>堆（heap）</strong>；该内存池同自动存储、静态存储的内存是分开的；</p>
+<p>数据的生命周期不完全受程序和函数的生存时间控制；因此，在管理内存上，new和delete赋予程序员更大的操作空间，但也因此增加了内存管理的风险；</p>
+<hr>
+<h3 id="4-9-类型组合"><a href="#4-9-类型组合" class="headerlink" title="4.9 类型组合"></a>4.9 类型组合</h3><p>将指针同其他类型组合：</p>
+<h4 id="指针同结构组合"><a href="#指针同结构组合" class="headerlink" title="指针同结构组合"></a>指针同结构组合</h4><pre><code class="hljs c++"><span class="hljs-class"><span class="hljs-keyword">struct</span> <span class="hljs-title">caract</span></span>
+<span class="hljs-class">&#123;</span>
+    <span class="hljs-keyword">int</span> num;
+&#125;;
+	<span class="hljs-comment">//使用指针来访问结构成员</span>
+    caract * year = <span class="hljs-keyword">new</span> caract;
+    year -&gt; num = <span class="hljs-number">15</span>;
+    <span class="hljs-built_in">cout</span> &lt;&lt; year -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//15</span>
+    <span class="hljs-built_in">cout</span> &lt;&lt; year &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0xec1630</span>
+    <span class="hljs-keyword">delete</span> year;</code></pre>
+<h4 id="指针同结构数组组合"><a href="#指针同结构数组组合" class="headerlink" title="指针同结构数组组合"></a>指针同结构数组组合</h4><pre><code class="hljs c++"><span class="hljs-comment">//创建结构数组，使用指针进行访问</span>
+caract months[<span class="hljs-number">12</span>];
+months[<span class="hljs-number">0</span>].num = <span class="hljs-number">1</span>;
+months[<span class="hljs-number">1</span>].num = <span class="hljs-number">2</span>;
+months[<span class="hljs-number">2</span>].num = <span class="hljs-number">3</span>;
+
+<span class="hljs-built_in">cout</span> &lt;&lt; months -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; (months + <span class="hljs-number">1</span>) -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//2</span></code></pre>
+<p>这里要注意的一点是：<code>months</code>是数组名，也是一个指针，<code>months[0]</code>是一个结构，所以需要使用句点运算符来访问成员；<code>months[0].num</code>是该结构的成员；</p>
+<h4 id="指针同指针数组组合"><a href="#指针同指针数组组合" class="headerlink" title="指针同指针数组组合"></a>指针同指针数组组合</h4><pre><code class="hljs c++"><span class="hljs-comment">//创建指针数组，使用指针来访问它</span>
+caract i1,i2,i3;
+i1.num = <span class="hljs-number">1000</span>;
+i2.num = <span class="hljs-number">2000</span>;
+i3.num = <span class="hljs-number">3000</span>;
+
+caract * pc[<span class="hljs-number">3</span>] = &#123;&amp;i1, &amp;i2, &amp;i3&#125;;
+<span class="hljs-comment">//pc[3]是指针数组，则pc是数组名，pc[0]是指针</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; pc[<span class="hljs-number">0</span>] -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1000</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; pc[<span class="hljs-number">0</span>] &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61febc</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; pc &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//0x61fea8</span></code></pre>
+<p>不要觉得复杂，只要理清层次关系就好；</p>
+<p>事实上，我们甚至可以创建一个指向结构数组的指针；</p>
+<pre><code class="hljs c++">caract ** ppc = pc;
+<span class="hljs-built_in">cout</span> &lt;&lt; (*ppc) -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//1000</span>
+<span class="hljs-built_in">cout</span> &lt;&lt; (*(ppc + <span class="hljs-number">1</span>)) -&gt; num &lt;&lt; <span class="hljs-built_in">endl</span>;<span class="hljs-comment">//2000</span></code></pre>
+<p>在这里，<code>pc</code>是一个数组名，也是一个指针，指向第一个元素；<code>ppc</code>也是一个指针，指向一个指向<code>caract</code>的指针；</p>
+<p><code>ppc</code>指向<code>pc</code>中的第一个元素——<code>*ppc</code>，即<code>&amp;i1</code>，所以<code>(*ppc) -&gt; num</code>为<code>i1</code>的<code>num</code>成员；</p>
+<p>通俗地理解就是<code>ppc</code>是一个指针，指向一个<code>caract</code>数组<code>pc</code>，由于这个数组存储指针，所以有两层解除引用运算符；</p>
+<p>关于这种用法，更简单地做法是使用<code>auto</code>自动推断；</p>
+<pre><code class="hljs c++"><span class="hljs-keyword">auto</span> ppc = pc;</code></pre>
+
+            </div>
+            <hr>
+            <div>
+              <div class="post-metas mb-3">
+                
+                  <div class="post-meta mr-3">
+                    <i class="iconfont icon-category"></i>
+                    
+                      <a class="hover-with-bg" href="/Plato-Ideal.github.io/categories/C/">C++</a>
+                    
+                  </div>
+                
+                
+              </div>
+              
+                <p class="note note-warning">本博客所有文章除特别声明外，均采用 <a target="_blank" href="https://creativecommons.org/licenses/by-sa/4.0/deed.zh" rel="nofollow noopener noopener">CC BY-SA 4.0 协议</a> ，转载请注明出处！</p>
+              
+              
+                <div class="post-prevnext row">
+                  <article class="post-prev col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/19/C-PrimerPlus-Chap04-Day08/">
+                        <i class="iconfont icon-arrowleft"></i>
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap04-Day08</span>
+                        <span class="visible-mobile">上一篇</span>
+                      </a>
+                    
+                  </article>
+                  <article class="post-next col-6">
+                    
+                    
+                      <a href="/Plato-Ideal.github.io/2021/02/16/C-PrimerPlus-Chap04-Day06/">
+                        <span class="hidden-mobile">C++-PrimerPlus-Chap04-Day06</span>
+                        <span class="visible-mobile">下一篇</span>
+                        <i class="iconfont icon-arrowright"></i>
+                      </a>
+                    
+                  </article>
+                </div>
+              
+            </div>
+
+            
+              <!-- Comments -->
+              <article class="comments" id="comments">
+                
+                
+
+              </article>
+            
+          </article>
+        </div>
+      </div>
+    </div>
+    
+      <div class="d-none d-lg-block col-lg-2 toc-container" id="toc-ctn">
+        <div id="toc">
+  <p class="toc-header"><i class="iconfont icon-list"></i>&nbsp;目录</p>
+  <div id="tocbot"></div>
+</div>
+
+      </div>
+    
+  </div>
+</div>
+
+<!-- Custom -->
+
+
+    
+  </main>
+
+  
+    <a id="scroll-top-button" href="#" role="button">
+      <i class="iconfont icon-arrowup" aria-hidden="true"></i>
+    </a>
+  
+
+  
+
+  
+
+  
+
+  <footer class="mt-5">
+  <div class="text-center py-3">
+    <div>
+      <a href="" rel=""><span></span></a>
+      <i class=""></i>
+      <a href="" target="" rel="">
+        <span></span></a>
+    </div>
+    
+  <div class="statistics">
+    
+    
+
+    
+      
+        <!-- 不蒜子统计PV -->
+        <span id="busuanzi_container_site_pv" style="display: none">
+            总访问量 
+            <span id="busuanzi_value_site_pv"></span>
+             次
+          </span>
+      
+      
+        <!-- 不蒜子统计UV -->
+        <span id="busuanzi_container_site_uv" style="display: none">
+            总访客数 
+            <span id="busuanzi_value_site_uv"></span>
+             人
+          </span>
+      
+    
+  </div>
+
+
+    
+
+    
+  </div>
+</footer>
+
+<!-- SCRIPTS -->
+<script  src="https://cdn.staticfile.org/jquery/3.4.1/jquery.min.js" ></script>
+<script  src="https://cdn.staticfile.org/twitter-bootstrap/4.4.1/js/bootstrap.min.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/debouncer.js" ></script>
+<script  src="/Plato-Ideal.github.io/js/main.js" ></script>
+
+<!-- Plugins -->
+
+
+  
+    <script  src="/Plato-Ideal.github.io/js/lazyload.js" ></script>
+  
+
+
+
+  
+
+
+
+  <script defer src="https://cdn.staticfile.org/clipboard.js/2.0.6/clipboard.min.js" ></script>
+  <script  src="/Plato-Ideal.github.io/js/clipboard-use.js" ></script>
+
+
+
+  <script defer src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" ></script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/tocbot/4.11.1/tocbot.min.js" ></script>
+  <script>
+    $(document).ready(function () {
+      var boardCtn = $('#board-ctn');
+      var boardTop = boardCtn.offset().top;
+
+      tocbot.init({
+        tocSelector: '#tocbot',
+        contentSelector: '#post-body',
+        headingSelector: 'h1,h2,h3,h4,h5,h6',
+        linkClass: 'tocbot-link',
+        activeLinkClass: 'tocbot-active-link',
+        listClass: 'tocbot-list',
+        isCollapsedClass: 'tocbot-is-collapsed',
+        collapsibleClass: 'tocbot-is-collapsible',
+        collapseDepth: 0,
+        scrollSmooth: true,
+        headingsOffset: -boardTop
+      });
+      if ($('.toc-list-item').length > 0) {
+        $('#toc').css('visibility', 'visible');
+      }
+    });
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/anchor-js/4.2.2/anchor.min.js" ></script>
+  <script>
+    anchors.options = {
+      placement: "right",
+      visible: "hover",
+      
+      icon: "§"
+      
+    };
+    var el = "h1,h2,h3,h4,h5,h6".split(",");
+    var res = [];
+    for (item of el) {
+      res.push(".markdown-body > " + item)
+    }
+    anchors.add(res.join(", "))
+  </script>
+
+
+
+
+
+  <script  src="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.js" ></script>
+  <link  rel="stylesheet" href="https://cdn.staticfile.org/fancybox/3.5.7/jquery.fancybox.min.css" />
+
+  <script>
+    $('#post img:not(.no-zoom img, img[no-zoom]), img[zoom]').each(
+      function () {
+        var element = document.createElement('a');
+        $(element).attr('data-fancybox', 'images');
+        $(element).attr('href', $(this).attr('src'));
+        $(this).wrap(element);
+      }
+    );
+  </script>
+
+
+
+
+
+  
+
+  
+    <!-- MathJax -->
+    <script>
+      MathJax = {
+        tex: {
+          inlineMath: [['$', '$'], ['\\(', '\\)']]
+        },
+        options: {
+          renderActions: {
+            findScript: [10, doc => {
+              document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+                const display = !!node.type.match(/; *mode=display/);
+                const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+                const text = document.createTextNode('');
+                node.parentNode.replaceChild(text, node);
+                math.start = { node: text, delim: '', n: 0 };
+                math.end = { node: text, delim: '', n: 0 };
+                doc.math.push(math);
+              });
+            }, '', false],
+            insertedScript: [200, () => {
+              document.querySelectorAll('mjx-container').forEach(node => {
+                let target = node.parentNode;
+                if (target.nodeName.toLowerCase() === 'li') {
+                  target.parentNode.classList.add('has-jax');
+                }
+              });
+            }, '', false]
+          }
+        }
+      };
+    </script>
+
+    <script async src="https://cdn.staticfile.org/mathjax/3.0.5/es5/tex-svg.js" ></script>
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+    <!-- Baidu Analytics -->
+    <script defer>
+      var _hmt = _hmt || [];
+      (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?50ab9df2f9155ca17e687c9a88bb77ed";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+      })();
+    </script>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+
+
+
+
+</body>
+</html>
